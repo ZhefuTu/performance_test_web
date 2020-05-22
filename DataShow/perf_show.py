@@ -3,7 +3,7 @@
 import os
 import re
 
-TEST_DATA_PATH = "/home/graphsql/TestPlatform/perf"
+TEST_DATA_PATH = "./perf"
 
 
 def convert_time(t):
@@ -77,7 +77,7 @@ def read_file(path, max_time, kind):
                 break
         elif kind == 'hub_load':
             try:
-                if 'bigtest/tests/loading/dataset/1.csv' in line:
+                if 'loading/dataset/1.csv' in line:
                     pattern = re.compile('.* (\d*) kl/s.*')
                     speed = int(re.match(pattern, line).group(1))
                     max_t = max(max_t, speed)
@@ -120,6 +120,7 @@ def get_result_info(kind='batch_query'):
     max_time = {'single': 0, 'cluster': 0}
     for node in nodes:
         cur_path = os.path.join(TEST_DATA_PATH, node)
+        print os.listdir('./')
         dirs = os.listdir(cur_path)
         dirs.sort(key=dir_sort_by_time)
         for dir in dirs:
@@ -133,12 +134,12 @@ def get_result_info(kind='batch_query'):
                     continue
                 files = os.listdir(dir_path)
                 if node == 'cluster' and kind == 'normal_load':
-                    temp = [0, version, 0, 0]
+                    temp = [dir, version, 0, 0]
                     for file in files:
                         if file.startswith(kind):
-                            time = time_format(file)
+                            # time = time_format(file)
                             file_path = os.path.join(dir_path, file)
-                            temp[0] = time
+                            # temp[0] = time
                             query_timelist, max_t = read_file(
                                 file_path, max_time[node], kind)
                             if len(query_timelist) != 4:
@@ -153,7 +154,7 @@ def get_result_info(kind='batch_query'):
                 else:
                     for file in files:
                         if file.startswith(kind):
-                            time = time_format(file)
+                            # time = time_format(file)
                             file_path = os.path.join(dir_path, file)
                             temp = [dir, version]
                             query_timelist, max_t = read_file(
