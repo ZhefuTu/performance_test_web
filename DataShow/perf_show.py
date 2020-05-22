@@ -33,7 +33,7 @@ def read_file(path, max_time, kind):
             failed_flag = True
             break
         if kind == 'batch_query':
-            if 'Non batch mode query' in line:
+            if 'Non batch mode query' in line or 'Non distributed mode query' in line:
                 try:
                     for delta in [2, 5, 7, 5]:
                         index += delta
