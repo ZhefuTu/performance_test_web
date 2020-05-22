@@ -1,0 +1,36 @@
+[2K  [LOADING] /hd1/tigergraph/document/benchmark/setup/./data/twitter_rv.net
+[2K  [=============================================================== ] 99%, 733 kl/s
+[4A[2KJob "snap_graph_m1.1538416549959" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 1 )
+[2K  [LOADED]
+[2K  +----------------------------------------------------------------------------------------------------------+
+  |                                                      FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+  |/hd1/tigergraph/document/benchmark/setup/./data/twitter_rv.net |     1468365182 |    734 kl/s |  1999.11 s|
+  +----------------------------------------------------------------------------------------------------------+
+[7A[2KJob "snap_graph_m1.1538416549959" loading status
+[2K[FINISHED] m1 ( Finished: 1 / Total: 1 )
+[2K  [LOADED]
+[2K  +----------------------------------------------------------------------------------------------------------+
+[2K  |                                                      FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/hd1/tigergraph/document/benchmark/setup/./data/twitter_rv.net |     1468365182 |    734 kl/s |  1999.11 s|
+[2K  +----------------------------------------------------------------------------------------------------------+
+*** Elapsed loading time = 2008 sec
+
+*** Loading summary
+vertex count: 41,652,230, edge count: 1,468,365,182
+
+Non batch mode query:
+{"version":{"api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6270259,"loop_count":47}]}
+real	3m36.176s
+user	0m0.004s
+sys	0m0.004s
+{"version":{"api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	10m6.793s
+user	0m0.000s
+sys	0m0.016s
+
+Batch mode query:
+{"version":{"api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	10m52.643s
+user	0m0.000s
+sys	0m0.016s

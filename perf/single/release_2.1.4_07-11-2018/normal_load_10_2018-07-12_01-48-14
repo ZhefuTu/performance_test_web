@@ -1,0 +1,38 @@
+Normal loading of tpch data with scale factor: 10
+1-th loading:
+[2K  [LOADED]
+[2K  +-----------------------------------------------------------------------------------------------------------------------+
+[2K  |                                                                   FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/hd1/product/lib/gle/regress/resources/data_set/tpch/./data_10/customer.tbl |        1500000 |    342 kl/s |     4.38 s|
+[2K  |/hd1/product/lib/gle/regress/resources/data_set/tpch/./data_10/lineitem.tbl |       59986052 |    184 kl/s |   324.36 s|
+[2K  |  /hd1/product/lib/gle/regress/resources/data_set/tpch/./data_10/nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |  /hd1/product/lib/gle/regress/resources/data_set/tpch/./data_10/orders.tbl |       15000000 |    275 kl/s |    54.41 s|
+[2K  |    /hd1/product/lib/gle/regress/resources/data_set/tpch/./data_10/part.tbl |        2000000 |    495 kl/s |     4.04 s|
+[2K  |/hd1/product/lib/gle/regress/resources/data_set/tpch/./data_10/partsupp.tbl |        8000000 |    271 kl/s |    29.43 s|
+[2K  |  /hd1/product/lib/gle/regress/resources/data_set/tpch/./data_10/region.tbl |              5 |       5 l/s |     1.00 s|
+[2K  |/hd1/product/lib/gle/regress/resources/data_set/tpch/./data_10/supplier.tbl |         100000 |     91 kl/s |     1.10 s|
+[2K  +-----------------------------------------------------------------------------------------------------------------------+
+Time           ---cpu-- ---mem-- ---tcp-- -----traffic---- nvme1n1- nvme0n1- nvme0n1p  ---load- 
+Time             util     util   retran    bytin  bytout     util     util     util     load1   
+12/07/18-00:40   0.21     0.85     0.00   ------  ------     0.02     0.42     0.42      0.00   
+12/07/18-00:45   4.45     4.59     0.00   ------  ------    30.85     0.67     0.67      1.06   
+12/07/18-00:50   5.43     8.37     0.00   ------  ------    10.18     1.35     1.35      1.72   
+12/07/18-00:55  12.75    16.14     0.00   ------  ------    65.41     0.07     0.07     11.47   
+12/07/18-01:00  81.05    24.46     0.01   ------  ------    86.37     0.06     0.06     25.24   
+12/07/18-01:05  81.11    31.64     0.01   ------  ------    71.42     0.05     0.05     21.58   
+12/07/18-01:10  82.97    46.74     0.01   ------  ------    35.64     0.07     0.07     22.46   
+12/07/18-01:15  42.03    38.81     0.00   ------  ------     6.33     0.03     0.03     13.00   
+12/07/18-01:20  88.01    35.30     0.00   ------  ------     0.57     0.03     0.03     14.43   
+12/07/18-01:25  86.74    35.54     0.00   ------  ------     0.55     0.00     0.00     12.70   
+12/07/18-01:30  78.99    34.81     0.00   ------  ------     1.25     0.02     0.02     14.43   
+12/07/18-01:35  83.10    34.60     0.00   ------  ------     0.53     0.01     0.01     12.37   
+12/07/18-01:40  35.74    13.36     0.00   ------  ------    19.02     0.08     0.08      1.69   
+12/07/18-01:45  38.83    55.06     0.01   ------  ------    33.46     0.15     0.15      9.05   
+
+MAX             88.01    55.06     0.00   ------  ------    86.37     1.35     1.35     25.24   
+MEAN            55.48    29.19     0.00   ------  ------    27.81     0.20     0.20     12.40   
+MIN              0.21     0.85     0.00   ------  ------     0.02     0.07     0.07      0.00   
+----------------- summary ------------------
+Total Lines: 86586082
+Total time: 419
+Average speed: 206649

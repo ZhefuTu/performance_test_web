@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0038)http://v3.bootcss.com/examples/theme/# -->
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/img/logo.jpg">
+
+    <title>performance_test_show</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <!-- <link href="http://v3.bootcss.com/examples/theme/theme.css" rel="stylesheet"> -->
+
+    <!-- <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet"> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+    <!-- <script language="javascript" type="text/javascript" src="/htdocs/js/jquery-1.8.3.min.js"></script> -->
+    
+    <!-- <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script> -->
+    <!-- <script type="text/javascript" language="javascript" src="/htdocs/js/bootstrap.min.js"></script> -->
+    <!-- <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script> -->
+    <script src="/static/js/echarts.js" type="text/javascript" ></script>
+    <script src="/static/js/perf.js" type="text/javascript" ></script>
+
+
+    <style>
+        .two_fig {width:100%;height:600px;display: flex;justify-content: center;}
+        .one_fig {float:left;width:45%;height:500px;}
+        .figure {float:left;width:95%;height:500px;left:25px;}
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            draw_line_pic("batch_query", "single");
+            draw_line_pic("batch_query", "cluster");
+            draw_line_pic("normal_load", "single");
+            draw_line_pic("normal_load", "cluster");
+            draw_line_pic("hub_load", "single");
+            draw_line_pic("hub_load", "cluster");
+        });
+    </script>
+</head>
+
+<body role="document" style="
+                            font-family: '微软雅黑'; 
+                            /*background-image:url(/files/img/*.jpg);*/
+                            background-size:100%;
+                            background-attachment:fixed;
+                            background-repeat:no-repeat;
+                            ">
+    <div>
+            <center>
+            <div class="two_fig">
+
+                <div class="one_fig">
+                    <center>
+                    <h2> Query in Single Mode </h2>
+                    <div id="batch_query_single" class="figure"></div>
+                    </center>
+                </div>
+                <div class="one_fig">
+                    <center>
+                    <h2> Query in Cluster Mode </h2>
+                    <div id="batch_query_cluster" class="figure"></div>
+                    </center>
+                </div>
+            </div>
+
+            <div class="two_fig">
+
+                <div class="one_fig">
+                    <center>
+                    <h2> Normal Load in Single Mode </h2>
+                    <div id="normal_load_single" class="figure"></div>
+                    </center>
+                </div>
+                <div class="one_fig">
+                    <center>
+                    <h2> Normal Load in Cluster Mode </h2>
+                    <div id="normal_load_cluster" class="figure"></div>
+                    </center>
+                </div>
+            </div>
+
+            <div class="two_fig">
+
+                <div class="one_fig">
+                    <center>
+                    <h2> Hub Load in Single Mode </h2>
+                    <div id="hub_load_single" class="figure"></div>
+                    </center>
+                </div>
+                <div class="one_fig">
+                    <center>
+                    <h2> Hub Load in Cluster Mode </h2>
+                    <div id="hub_load_cluster" class="figure"></div>
+                    </center>
+                </div>
+            </div>
+            </center>
+
+
+        <!-- <br>
+        <h2> normal_load_single </h2>
+        <div id="normal_load_single" style="width:800px;height:500px;"></div>
+        <br>
+        <h2> normal_load_cluster </h2>
+        <div id="normal_load_cluster" style="width:800px;height:500px;"></div>
+        <br>
+        <h2> hub_load_single </h2>
+        <div id="hub_load_single" style="width:800px;height:500px;"></div>
+        <br>
+        <h2> hub_load_cluster </h2>
+        <div id="hub_load_cluster" style="width:800px;height:500px;"></div> -->
+    </div>
+</body>
+</html>

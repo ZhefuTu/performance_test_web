@@ -1,0 +1,43 @@
+[2K[RUNNING] m1 ( Finished: 0 / Total: 1 )
+[2K  [LOADING] /home/tigergraph/tigergraph/app/3.0.0/document/benchmark/setup/./data/twitter_rv.net
+[2K  [============================================================== ] 99%, 1505 kl/s
+[4A[2KJob "snap_graph.load_snap.file.m1.1590118710171" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 1 )
+[2K  [LOADED]
+[2K  +--------------------------------------------------------------------------------------------------------------------------------+
+  |                                                                            FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+  |/home/tigergraph/tigergraph/app/3.0.0/document/benchmark/setup/./data/twitter_rv.net |     1468365182 |   1503 kl/s |   976.50 s|
+  +--------------------------------------------------------------------------------------------------------------------------------+
+[7A[2KJob "snap_graph.load_snap.file.m1.1590118710171" loading status
+[2K[FINISHED] m1 ( Finished: 1 / Total: 1 )
+[2K  [LOADED]
+[2K  +--------------------------------------------------------------------------------------------------------------------------------+
+[2K  |                                                                            FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/tigergraph/app/3.0.0/document/benchmark/setup/./data/twitter_rv.net |     1468365182 |   1503 kl/s |   976.50 s|
+[2K  +--------------------------------------------------------------------------------------------------------------------------------+
+*** Elapsed loading time = 986 sec
+
+*** Loading summary
+
+Non distributed mode query:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6267111,"loop_count":49}]}
+real	3m43.410s
+user	0m0.008s
+sys	0m0.000s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":true,"message":"Runtime Error: divider is zero."}
+real	0m43.937s
+user	0m0.004s
+sys	0m0.000s
+
+distributed mode query:
+wcc: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6267111,"loop_count":49}]}
+real	2m23.695s
+user	0m0.004s
+sys	0m0.000s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	3m14.957s
+user	0m0.004s
+sys	0m0.004s

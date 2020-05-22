@@ -1,0 +1,22 @@
+Non batch mode query:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6265231,"loop_count":53}]}
+real	2m27.403s
+user	0m0.000s
+sys	0m0.008s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	8m21.187s
+user	0m0.012s
+sys	0m0.000s
+
+Batch mode query:
+wcc: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6265231,"loop_count":53}]}
+real	2m47.579s
+user	0m0.000s
+sys	0m0.008s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	8m23.173s
+user	0m0.004s
+sys	0m0.012s

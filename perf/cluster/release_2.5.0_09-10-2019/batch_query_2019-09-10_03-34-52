@@ -1,0 +1,43 @@
+[2K  [LOADING] /hd1/tigergraph/document/benchmark/setup/./data/twitter_rv.net
+[2K  [============================================================== ] 99%, 1618 kl/s
+[4A[2KJob "snap_graph.load_snap.file.m1.1568084139352" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 1 )
+[2K  [LOADED]
+[2K  +----------------------------------------------------------------------------------------------------------+
+  |                                                      FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+  |/hd1/tigergraph/document/benchmark/setup/./data/twitter_rv.net |     1468365182 |   1616 kl/s |   908.12 s|
+  +----------------------------------------------------------------------------------------------------------+
+[7A[2KJob "snap_graph.load_snap.file.m1.1568084139352" loading status
+[2K[FINISHED] m1 ( Finished: 1 / Total: 1 )
+[2K  [LOADED]
+[2K  +----------------------------------------------------------------------------------------------------------+
+[2K  |                                                      FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/hd1/tigergraph/document/benchmark/setup/./data/twitter_rv.net |     1468365182 |   1616 kl/s |   908.12 s|
+[2K  +----------------------------------------------------------------------------------------------------------+
+*** Elapsed loading time = 915 sec
+
+*** Loading summary
+vertex count: 41,652,230, edge count: 1,468,365,182
+
+Non batch mode query:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6267233,"loop_count":46}]}
+real	3m49.361s
+user	0m0.004s
+sys	0m0.008s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	12m12.737s
+user	0m0.004s
+sys	0m0.012s
+
+Batch mode query:
+wcc: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6267233,"loop_count":46}]}
+real	2m20.516s
+user	0m0.004s
+sys	0m0.000s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	3m41.295s
+user	0m0.008s
+sys	0m0.000s

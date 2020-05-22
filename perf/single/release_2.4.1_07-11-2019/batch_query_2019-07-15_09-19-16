@@ -1,0 +1,43 @@
+[2K[RUNNING] m1 ( Finished: 0 / Total: 1 )
+[2A[2KJob "snap_graph.load_snap.file.m1.1563164635382" loading status
+[2K[RUNNING] m1 ( Finished: 0 / Total: 1 )
+[2A[2KJob "snap_graph.load_snap.file.m1.1563164635382" loading status
+[2K[RUNNING] m1 ( Finished: 0 / Total: 1 )
+[2A[2KJob "snap_graph.load_snap.file.m1.1563164635382" loading status
+[2K[RUNNING] m1 ( Finished: 0 / Total: 1 )
+[2A[2KJob "snap_graph.load_snap.file.m1.1563164635382" loading status
+[2K[RUNNING] m1 ( Finished: 0 / Total: 1 )
+[2A[2KJob "snap_graph.load_snap.file.m1.1563164635382" loading status
+[2K[FAILED] m1 ( Finished: 0 / Total: 1 )
+  [FAILED]
+  +-------------------------------------------------------------------------------------------------------------------------+
+  |                                                      FILENAME |   LOADED LINES |   AVG SPEED |   DURATION |   PERCENTAGE|
+  |/hd1/tigergraph/document/benchmark/setup/./data/twitter_rv.net |              0 |       0 l/s |     0.00 s |          0 %|
+  +-------------------------------------------------------------------------------------------------------------------------+
+*** Elapsed loading time = 612 sec
+
+*** Loading summary
+vertex count: 0, edge count: 0
+
+Non batch mode query:
+{"error":true,"message":"The query didn't finish because it exceeded the query timeout threshold (6000 seconds). To increase the query time, please check the error code for details.","results":[],"code":"REST-3000"}
+real	100m0.266s
+user	0m0.056s
+sys	0m0.052s
+pagerank: 
+{"error":true,"message":"The query didn't finish because it exceeded the query timeout threshold (2500 seconds). To increase the query time, please check the error code for details.","results":[],"code":"REST-3000"}
+real	41m40.148s
+user	0m0.036s
+sys	0m0.012s
+
+Batch mode query:
+wcc: 
+{"error":true,"message":"The query didn't finish because it exceeded the query timeout threshold (6000 seconds). To increase the query time, please check the error code for details.","results":[],"code":"REST-3000"}
+real	100m0.356s
+user	0m0.060s
+sys	0m0.048s
+pagerank: 
+{"error":true,"message":"The query didn't finish because it exceeded the query timeout threshold (2500 seconds). To increase the query time, please check the error code for details.","results":[],"code":"REST-3000"}
+real	41m40.164s
+user	0m0.020s
+sys	0m0.024s

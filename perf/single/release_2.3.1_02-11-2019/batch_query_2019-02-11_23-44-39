@@ -1,0 +1,43 @@
+[2K  [LOADING] /hd1/tigergraph/document/benchmark/setup/./data/twitter_rv.net
+[2K  [=============================================================== ] 99%, 768 kl/s
+[4A[2KJob "snap_graph_m1.1549925010386" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 1 )
+[2K  [LOADED]
+[2K  +----------------------------------------------------------------------------------------------------------+
+  |                                                      FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+  |/hd1/tigergraph/document/benchmark/setup/./data/twitter_rv.net |     1468365182 |    769 kl/s |  1908.97 s|
+  +----------------------------------------------------------------------------------------------------------+
+[7A[2KJob "snap_graph_m1.1549925010386" loading status
+[2K[FINISHED] m1 ( Finished: 1 / Total: 1 )
+[2K  [LOADED]
+[2K  +----------------------------------------------------------------------------------------------------------+
+[2K  |                                                      FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/hd1/tigergraph/document/benchmark/setup/./data/twitter_rv.net |     1468365182 |    769 kl/s |  1908.97 s|
+[2K  +----------------------------------------------------------------------------------------------------------+
+*** Elapsed loading time = 1918 sec
+
+*** Loading summary
+vertex count: 41,652,230, edge count: 1,468,365,182
+
+Non batch mode query:
+{"version":{"api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6270238,"loop_count":47}]}
+real	2m42.475s
+user	0m0.008s
+sys	0m0.004s
+pagerank: 
+{"version":{"api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	9m53.358s
+user	0m0.016s
+sys	0m0.000s
+
+Batch mode query:
+wcc: 
+{"version":{"api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6270238,"loop_count":1}]}
+real	3m6.384s
+user	0m0.004s
+sys	0m0.004s
+pagerank: 
+{"version":{"api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	10m10.414s
+user	0m0.016s
+sys	0m0.000s

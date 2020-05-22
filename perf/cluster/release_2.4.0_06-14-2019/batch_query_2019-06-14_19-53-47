@@ -1,0 +1,43 @@
+[2K  [LOADING] /hd1/tigergraph/document/benchmark/setup/./data/twitter_rv.net
+[2K  [============================================================== ] 99%, 1560 kl/s
+[4A[2KJob "snap_graph.load_snap.file.m1.1560540995818" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 1 )
+[2K  [LOADED]
+[2K  +----------------------------------------------------------------------------------------------------------+
+  |                                                      FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+  |/hd1/tigergraph/document/benchmark/setup/./data/twitter_rv.net |     1468365182 |   1558 kl/s |   942.29 s|
+  +----------------------------------------------------------------------------------------------------------+
+[7A[2KJob "snap_graph.load_snap.file.m1.1560540995818" loading status
+[2K[FINISHED] m1 ( Finished: 1 / Total: 1 )
+[2K  [LOADED]
+[2K  +----------------------------------------------------------------------------------------------------------+
+[2K  |                                                      FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/hd1/tigergraph/document/benchmark/setup/./data/twitter_rv.net |     1468365182 |   1558 kl/s |   942.29 s|
+[2K  +----------------------------------------------------------------------------------------------------------+
+*** Elapsed loading time = 950 sec
+
+*** Loading summary
+vertex count: 41,652,230, edge count: 1,468,365,182
+
+Non batch mode query:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":true,"message":"Endpoint is not found from url = /query/wcc, please use GET /endpoints to list all valid endpoints.","code":"REST-1000"}
+real	0m0.045s
+user	0m0.000s
+sys	0m0.004s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":true,"message":"Endpoint is not found from url = /query/pagerank, please use GET /endpoints to list all valid endpoints.","code":"REST-1000"}
+real	0m0.005s
+user	0m0.004s
+sys	0m0.000s
+
+Batch mode query:
+wcc: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":true,"message":"Endpoint is not found from url = /query/wcc, please use GET /endpoints to list all valid endpoints.","code":"REST-1000"}
+real	0m0.005s
+user	0m0.000s
+sys	0m0.004s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":true,"message":"Endpoint is not found from url = /query/pagerank, please use GET /endpoints to list all valid endpoints.","code":"REST-1000"}
+real	0m0.004s
+user	0m0.000s
+sys	0m0.000s

@@ -1,0 +1,20 @@
+Loading benchmark data
+1K hub-nodes Loading [second]: 
+
+[2K  [============================================================== ] 99%, 1486 kl/s
+[4A[2KJob "poc_graph.load1.file.m1.1579144296128" loading status
+[2K[FINISHED] m1 ( Finished: 1 / Total: 1 )
+[2K  [LOADED]
+[2K  +------------------------------------------------------------------------------------+
+  |                                FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+  |/hd1/bigtest/tests/loading/dataset/1.csv |     1200000000 |   1485 kl/s |   807.94 s|
+  +------------------------------------------------------------------------------------+
+
+  +------------------------------------------------------------------------------------+
+[7A[2KJob "poc_graph.load2.file.m1.1579145173751" loading status
+[2K[FINISHED] m1 ( Finished: 1 / Total: 1 )
+[2K  [LOADED]
+[2K  +------------------------------------------------------------------------------------+
+[2K  |                                FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/hd1/bigtest/tests/loading/dataset/2.csv |     1200000000 |   1471 kl/s |   815.36 s|
+[2K  +------------------------------------------------------------------------------------+

@@ -1,0 +1,13 @@
+Loading benchmark data
+1K hub-nodes Loading [second]: 
+
+[2K  [============================================================== ] 99%, 1790 kl/s
+[4A[2KJob "poc_graph.load1.file.m1.1581116870680" loading status
+[2K[FINISHED] m1 ( Finished: 1 / Total: 1 )
+[2K  [LOADED]
+[2K  +------------------------------------------------------------------------------------+
+  |                                FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+  |/hd1/bigtest/tests/loading/dataset/1.csv |     1200000000 |   1787 kl/s |   671.18 s|
+  +------------------------------------------------------------------------------------+
+
+Semantic Check Fails: The job load2 could not be found!

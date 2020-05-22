@@ -1,0 +1,43 @@
+[2K  [============================================================== ] 99%, 1580 kl/s
+[4A[2KJob "snap_graph.load_snap.file.m1.1588833924060" loading status
+[2K[RUNNING] m1 ( Finished: 0 / Total: 1 )
+[2K  [LOADING] /hd1/tigergraph/app/3.0.0/document/benchmark/setup/./data/twitter_rv.net
+[2K  [============================================================== ] 99%, 1579 kl/s
+[4A[2KJob "snap_graph.load_snap.file.m1.1588833924060" loading status
+[2K[RUNNING] m1 ( Finished: 0 / Total: 1 )
+[2K  [LOADING] /hd1/tigergraph/app/3.0.0/document/benchmark/setup/./data/twitter_rv.net
+[2K  [============================================================== ] 99%, 1579 kl/s
+[4A[2KJob "snap_graph.load_snap.file.m1.1588833924060" loading status
+[2K[FINISHED] m1 ( Finished: 1 / Total: 1 )
+[2K  [LOADED]
+[2K  +--------------------------------------------------------------------------------------------------------------------+
+  |                                                                FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+  |/hd1/tigergraph/app/3.0.0/document/benchmark/setup/./data/twitter_rv.net |     1468365182 |   1577 kl/s |   930.69 s|
+  +--------------------------------------------------------------------------------------------------------------------+
+*** Elapsed loading time = 936 sec
+
+*** Loading summary
+vertex count: 41,652,230, edge count: 1,468,365,182
+
+Non batch mode query:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6267144,"loop_count":49}]}
+real	2m23.714s
+user	0m0.008s
+sys	0m0.000s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	8m32.909s
+user	0m0.000s
+sys	0m0.012s
+
+Batch mode query:
+wcc: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6267144,"loop_count":49}]}
+real	3m9.843s
+user	0m0.000s
+sys	0m0.008s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	8m49.481s
+user	0m0.000s
+sys	0m0.012s

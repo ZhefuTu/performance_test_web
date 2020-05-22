@@ -1,0 +1,26 @@
+Normal loading of tpch data with scale factor: 10
+1-th loading:
+[2K  [LOADED]
+[2K  +-----------------------------------------------------------------------------+
+[2K  |                         FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/hd1/bigtest/data_30/customer.tbl |        4500000 |    621 kl/s |     7.24 s|
+[2K  |/hd1/bigtest/data_30/lineitem.tbl |      179998372 |    339 kl/s |   530.63 s|
+[2K  |  /hd1/bigtest/data_30/nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |  /hd1/bigtest/data_30/orders.tbl |       45000000 |    730 kl/s |    61.61 s|
+[2K  |    /hd1/bigtest/data_30/part.tbl |        6000000 |    582 kl/s |    10.31 s|
+[2K  |/hd1/bigtest/data_30/partsupp.tbl |       24000000 |    531 kl/s |    45.16 s|
+[2K  |  /hd1/bigtest/data_30/region.tbl |              5 |       5 l/s |     1.00 s|
+[2K  |/hd1/bigtest/data_30/supplier.tbl |         300000 |    171 kl/s |     1.75 s|
+[2K  +-----------------------------------------------------------------------------+
+Time           ---cpu-- ---mem-- ---tcp-- -----traffic---- -loop0-- -loop1-- -loop2-- -loop3-- -loop4-- nvme1n1- nvme0n1- nvme0n1p  ---load- 
+Time             util     util   retran    bytin  bytout     util     util     util     util     util     util     util     util     load1   
+08/05/20-02:25  30.60    39.27     0.00   ------  ------     0.00     0.00     0.00     0.00     0.00    13.64     0.08     0.08     16.32   
+08/05/20-02:30  72.37    65.40     0.00   ------  ------     0.00     0.00     0.00     0.01     0.00    30.62     0.04     0.04     15.09   
+
+MAX             72.37    65.40     0.00   ------  ------     0.00     0.00     0.00     0.00     0.00    30.62     0.08     0.08     16.32   
+MEAN            72.37    65.40     0.00   ------  ------     0.00     0.00     0.00     0.01     0.00    30.62     0.04     0.04     15.09   
+MIN             30.60    39.27     0.00   ------  ------     0.00     0.00     0.00     0.00     0.00    13.64     0.08     0.08     15.09   
+----------------- summary ------------------
+Total Lines: 259798402
+Total time: 658
+Average speed: 394830

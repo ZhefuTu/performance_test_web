@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Platform</title>
+	<!-- Bootstrap Styles-->
+    <link href="/static/assets/css/bootstrap.css" rel="stylesheet" />
+     <!-- FontAwesome Styles-->
+    <link href="/static/assets/css/font-awesome.css" rel="stylesheet" />
+     <!-- Morris Chart Styles-->
+    <!-- <link href="/static/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" /> -->
+        <!-- Custom Styles-->
+    <link href="/static/assets/css/custom-styles.css" rel="stylesheet" />
+     <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+    <script src="/static/assets/js/jquery-1.10.2.js"></script>
+      <!-- Bootstrap Js -->
+    <script src="/static/assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="/static/assets/js/jquery.metisMenu.js"></script>
+     <!-- Morris Chart Js -->
+    <!-- <script src="/static/assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="/static/assets/js/morris/morris.js"></script> -->
+      <!-- Custom Js -->
+    <script src="/static/assets/js/custom-scripts.js"></script>
+    <script src="/static/js/echarts.js" type="text/javascript" ></script>
+    <script src="/static/js/perf.js" type="text/javascript" ></script>
+
+    <style>
+        /*.two_fig {width:1500px;height:500px;}*/
+        /*.one_fig {float:left;width:550px;height:350px;}*/
+        .figure {float:left;width:100%;height:500px;left:8px;}
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            draw_line_pic("batch_query", "single");
+            draw_line_pic("batch_query", "cluster");
+            draw_line_pic("normal_load", "single");
+            draw_line_pic("normal_load", "cluster");
+            draw_line_pic("hub_load", "single");
+            draw_line_pic("hub_load", "cluster");
+        });
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><i class="fa fa-globe"></i> <strong>TigerGraph </strong></a>
+            </div>
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+					<li>
+                        <a href="/datashow/index" class="active-menu"><i class="fa fa-bar-chart-o"></i> Performance Test</a>
+                    </li>
+                    <li>
+                        <a href="/datashow/empty"><i class="fa fa-fw fa-file"></i> Empty</a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper" >
+            <div id="page-inner">
+			     <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header">
+                            Results <small>performance test on single/cluster node/s</small>
+                        </h1>
+                    </div>
+                </div> 
+                 <!-- /. ROW  -->
+             
+                <div class="row">     
+                    <div class="col-md-6 col-sm-12 col-xs-12">                     
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Query in Single mode
+                            </div>
+                            <div class="panel-body">
+                                <div id="batch_query_single" class="figure"></div>
+                            </div>
+                        </div>            
+                    </div>
+
+                    <div class="col-md-6 col-sm-12 col-xs-12">                     
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Query in Cluster mode
+                            </div>
+                            <div class="panel-body">
+                                <div id="batch_query_cluster" class="figure"></div>
+                            </div>
+                        </div>            
+                    </div> 
+                </div>
+
+                <div class="row">     
+                    <div class="col-md-6 col-sm-12 col-xs-12">                     
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Normal Load in Single mode
+                            </div>
+                            <div class="panel-body">
+                                <div id="normal_load_single" class="figure"></div>
+                            </div>
+                        </div>            
+                    </div>
+
+                    <div class="col-md-6 col-sm-12 col-xs-12">                     
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Normal Load in Cluster mode
+                            </div>
+                            <div class="panel-body">
+                                <div id="normal_load_cluster" class="figure"></div>
+                            </div>
+                        </div>            
+                    </div> 
+                </div>
+
+                <div class="row">     
+                    <div class="col-md-6 col-sm-12 col-xs-12">                     
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Hub Load in Single node
+                            </div>
+                            <div class="panel-body">
+                                <div id="hub_load_single" class="figure"></div>
+                            </div>
+                        </div>            
+                    </div>
+
+                    <div class="col-md-6 col-sm-12 col-xs-12">                     
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Hub Load in Cluster node
+                            </div>
+                            <div class="panel-body">
+                                <div id="hub_load_cluster" class="figure"></div>
+                            </div>
+                        </div>            
+                    </div> 
+                </div>
+				<!-- <footer><p>Copyright &copy; 2016.Company name All rights reserved.<a target="_blank" href="http://www.freemoban.com/">www.freemoban.com</a></p></footer> -->
+			</div>
+             <!-- /. PAGE INNER  -->
+        </div>
+         <!-- /. PAGE WRAPPER  -->
+    </div>
+     <!-- /. WRAPPER  -->
+   
+</body>
+</html>

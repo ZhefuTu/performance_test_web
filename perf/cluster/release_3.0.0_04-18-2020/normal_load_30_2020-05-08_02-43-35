@@ -1,0 +1,28 @@
+Normal loading of tpch data with scale factor: 30
+1-th loading:
+[2K  [LOADED]
+[2K  +-----------------------------------------------------------------------------+
+[2K  |                         FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/hd1/bigtest/data_30/customer.tbl |        4500000 |    623 kl/s |     7.22 s|
+[2K  |/hd1/bigtest/data_30/lineitem.tbl |      179998372 |    344 kl/s |   522.39 s|
+[2K  |  /hd1/bigtest/data_30/nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |  /hd1/bigtest/data_30/orders.tbl |       45000000 |    678 kl/s |    66.33 s|
+[2K  |    /hd1/bigtest/data_30/part.tbl |        6000000 |    878 kl/s |     6.83 s|
+[2K  |/hd1/bigtest/data_30/partsupp.tbl |       24000000 |    508 kl/s |    47.23 s|
+[2K  |  /hd1/bigtest/data_30/region.tbl |              5 |       5 l/s |     1.00 s|
+[2K  |/hd1/bigtest/data_30/supplier.tbl |         300000 |    116 kl/s |     2.58 s|
+[2K  +-----------------------------------------------------------------------------+
+Time           ---cpu-- ---mem-- ---tcp-- -----traffic---- -loop0-- -loop1-- -loop2-- -loop3-- -loop4-- nvme1n1- nvme0n1- nvme0n1p  ---load- 
+Time             util     util   retran    bytin  bytout     util     util     util     util     util     util     util     util     load1   
+08/05/20-02:25  30.60    39.27     0.00   ------  ------     0.00     0.00     0.00     0.00     0.00    13.64     0.08     0.08     16.32   
+08/05/20-02:30  72.37    65.40     0.00   ------  ------     0.00     0.00     0.00     0.01     0.00    30.62     0.04     0.04     15.09   
+08/05/20-02:35  59.06    31.71     0.00   ------  ------     0.00     0.00     0.00     0.00     0.00    35.28     0.17     0.17     17.01   
+08/05/20-02:40  74.61    58.58     0.00   ------  ------     0.00     0.00     0.00     0.00     0.00    31.20     0.33     0.33     16.11   
+
+MAX             74.61    65.40     0.00   ------  ------     0.00     0.00     0.00     0.00     0.00    35.28     0.33     0.33     17.01   
+MEAN            68.68    51.90     0.00   ------  ------     0.00     0.00     0.00     0.00     0.00    32.37     0.18     0.18     16.07   
+MIN             30.60    31.71     0.00   ------  ------     0.00     0.00     0.00     0.00     0.00    13.64     0.08     0.08     15.09   
+----------------- summary ------------------
+Total Lines: 259798402
+Total time: 654
+Average speed: 397245

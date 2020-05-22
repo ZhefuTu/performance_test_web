@@ -1,0 +1,57 @@
+pagerank query: curl -X GET 'http://172.30.1.90:9000/query/snap_graph/pagerank?iteration=VALUE&dampingFactor=VALUE'. Add -H "Authorization: Bearer TOKEN" if authentication is enabled.
+ksubgraph query: curl -X GET 'http://172.30.1.90:9000/query/snap_graph/ksubgraph?start_node=VALUE&depth=VALUE'. Add -H "Authorization: Bearer TOKEN" if authentication is enabled.
+
+[                                                                 ] 0% (0/3)   [                                                                 ] 0% (0/3)   [====                                                             ] 6% (0/3)   [========                                                         ] 12% (0/3)  [=============                                                    ] 19% (0/3)  [=================                                                ] 25% (0/3)  [=====================                                            ] 31% (0/3)  [=========================                                        ] 38% (1/3)  [=============================                                    ] 44% (1/3)  [=================================                                ] 50% (1/3)  [======================================                           ] 57% (1/3)  [=========================================                        ] 63% (1/3)  [=============================================                    ] 69% (2/3)  [==================================================               ] 76% (2/3)  [======================================================           ] 82% (2/3)  [==========================================================       ] 88% (2/3)  [==============================================================   ] 95% (2/3)  [=================================================================] 100% (3/3) 
+*** Elapsed time = 142 sec
+Waiting for downloading dataset ...
+Waiting for downloading dataset ...
+Waiting for downloading dataset ...
+
+*** STEP 4: Load data
+Start loading twitter dataset at 2019-09-09 23:52:43
+File size about 24.37 GiB
+The loading time will vary on different machines
+
+Graph 'snap_graph' does not exist.
+*** Elapsed loading time = 0 sec
+
+*** Loading summary
+Vertex/edge number checking exception: No JSON object could be decoded
+vertex count: -1, edge count: -1
+
+Non batch mode query:
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body bgcolor="white">
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.14.0</center>
+</body>
+</html>
+
+real	0m0.038s
+user	0m0.008s
+sys	0m0.000s
+pagerank: 
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body bgcolor="white">
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.14.0</center>
+</body>
+</html>
+
+real	0m0.004s
+user	0m0.000s
+sys	0m0.000s
+
+Batch mode query:
+wcc: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":true,"message":"Endpoint is not found from url = /query/wcc, please use GET /endpoints to list all valid endpoints.","code":"REST-1000"}
+real	0m0.004s
+user	0m0.000s
+sys	0m0.000s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":true,"message":"Endpoint is not found from url = /query/pagerank, please use GET /endpoints to list all valid endpoints.","code":"REST-1000"}
+real	0m0.004s
+user	0m0.000s
+sys	0m0.000s

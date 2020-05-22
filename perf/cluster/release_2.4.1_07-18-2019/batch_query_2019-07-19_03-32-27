@@ -1,0 +1,43 @@
+[2K  [=============================================================  ] 98%, 1539 kl/s
+[4A[2KJob "snap_graph.load_snap.file.m1.1563504871649" loading status
+[2K[RUNNING] m1 ( Finished: 0 / Total: 1 )
+[2K  [LOADING] /hd1/tigergraph/document/benchmark/setup/./data/twitter_rv.net
+[2K  [============================================================== ] 99%, 1538 kl/s
+[4A[2KJob "snap_graph.load_snap.file.m1.1563504871649" loading status
+[2K[RUNNING] m1 ( Finished: 0 / Total: 1 )
+[2K  [LOADING] /hd1/tigergraph/document/benchmark/setup/./data/twitter_rv.net
+[2K  [============================================================== ] 99%, 1539 kl/s
+[4A[2KJob "snap_graph.load_snap.file.m1.1563504871649" loading status
+[2K[FINISHED] m1 ( Finished: 1 / Total: 1 )
+[2K  [LOADED]
+[2K  +----------------------------------------------------------------------------------------------------------+
+  |                                                      FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+  |/hd1/tigergraph/document/benchmark/setup/./data/twitter_rv.net |     1468365182 |   1537 kl/s |   955.14 s|
+  +----------------------------------------------------------------------------------------------------------+
+*** Elapsed loading time = 959 sec
+
+*** Loading summary
+vertex count: 41,652,230, edge count: 1,468,365,182
+
+Non batch mode query:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6266957,"loop_count":71}]}
+real	3m30.824s
+user	0m0.004s
+sys	0m0.004s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	10m43.696s
+user	0m0.012s
+sys	0m0.000s
+
+Batch mode query:
+wcc: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6266957,"loop_count":71}]}
+real	2m16.089s
+user	0m0.000s
+sys	0m0.004s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	3m30.106s
+user	0m0.008s
+sys	0m0.000s

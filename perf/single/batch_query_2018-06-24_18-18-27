@@ -1,0 +1,25 @@
+*** STEP 1: Start to download dataset in background, pid = 5304
+
+*** STEP 2: Configure query running thread to 16
+
+*** STEP 3: Create the graph schema, loading job, and install queries
+*** Elapsed time = 0 sec
+Waiting for downloading dataset ...
+Waiting for downloading dataset ...
+Waiting for downloading dataset ...
+Waiting for downloading dataset ...
+Waiting for downloading dataset ...
+
+*** STEP 4: Load data
+Start loading twitter dataset at 2018-06-24 18:18:26
+File size about 24.37 GiB
+The loading time will vary on different machines
+
+*** Elapsed loading time = 0 sec
+
+*** Loading summary
+
+Non batch mode query:
+{"version":{"api":"v2","schema":0},"error":true,"message":"Endpoint is not found from url = /query/wcc, please use GET /endpoints to list all valid endpoints.","code":"REST-1000"}{"version":{"api":"v2","schema":0},"error":true,"message":"Endpoint is not found from url = /query/pagerank, please use GET /endpoints to list all valid endpoints.","code":"REST-1000"}
+Batch mode query:
+{"version":{"api":"v2","schema":0},"error":true,"message":"Endpoint is not found from url = /query/pagerank, please use GET /endpoints to list all valid endpoints.","code":"REST-1000"}
