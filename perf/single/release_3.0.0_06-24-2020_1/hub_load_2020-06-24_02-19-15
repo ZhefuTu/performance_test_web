@@ -1,0 +1,10 @@
+Loading benchmark data
+1K hub-nodes Loading [second]: 
+[4A[2KJob "poc_graph.load1.file.m1.1592964723353" loading status
+[2K[RUNNING] m1 ( Finished: 0 / Total: 1 )
+[2K  [LOADING] /home/tigergraph/hub_load/./1.csv
+[2K  [===========================================                    ] 69%, 2184 kl/s
+[4A[2K[ERROR] m1 RESTPP is down.
+[2K
+[2K
+[2K

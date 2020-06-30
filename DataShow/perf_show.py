@@ -77,7 +77,7 @@ def read_file(path, max_time, kind):
                 break
         elif kind == 'hub_load':
             try:
-                if 'loading/dataset/1.csv' in line:
+                if '/1.csv' in line:
                     pattern = re.compile('.* (\d*) kl/s.*')
                     speed = int(re.match(pattern, line).group(1))
                     max_t = max(max_t, speed)

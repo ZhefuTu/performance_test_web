@@ -1,0 +1,43 @@
+
+[                                                                 ] 0% (0/3)   [                                                                 ] 0% (0/3)   [====                                                             ] 6% (0/3)   [========                                                         ] 12% (0/3)  [=============                                                    ] 19% (0/3)  [=================                                                ] 25% (0/3)  [=====================                                            ] 31% (0/3)  [=========================                                        ] 38% (1/3)  [=============================                                    ] 44% (1/3)  [=================================                                ] 50% (1/3)  [======================================                           ] 57% (1/3)  [=========================================                        ] 63% (1/3)  [=============================================                    ] 69% (2/3)  [==================================================               ] 76% (2/3)  [======================================================           ] 82% (2/3)  [==========================================================       ] 88% (2/3)  [==============================================================   ] 95% (2/3)  [=================================================================] 100% (3/3) 
+Query installed successfully, but refresh restpp fails, please manually restart restpp to refresh.
+*** Elapsed time = 148 sec
+Waiting for downloading dataset ...
+Waiting for downloading dataset ...
+Waiting for downloading dataset ...
+
+*** STEP 4: Load data
+Start loading twitter dataset at 2020-06-24 02:25:23
+File size about 24.37 GiB
+The loading time will vary on different machines
+
+m1 RESTPP got error with message "Failed to POST http://127.0.0.1:9000/restpploader/snap_graph: HTTP 404 graph schema not found", abort the current loading job on all machines.
+Try to abort loading job 'snap_graph.load_snap.file.m1.1592965523506', it may take a while ...
+[ABORT_SUCCESS] No active Loading Job to abort.
+Failed to run loading job load_snap
+*** Elapsed loading time = 0 sec
+
+*** Loading summary
+
+Non distributed mode query:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":true,"message":"Endpoint is not found from url = /query/wcc, please use GET /endpoints to list all valid endpoints.","code":"REST-1000"}
+real	0m0.010s
+user	0m0.007s
+sys	0m0.000s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":true,"message":"Endpoint is not found from url = /query/pagerank, please use GET /endpoints to list all valid endpoints.","code":"REST-1000"}
+real	0m0.006s
+user	0m0.000s
+sys	0m0.006s
+
+distributed mode query:
+wcc: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":true,"message":"Endpoint is not found from url = /query/wcc, please use GET /endpoints to list all valid endpoints.","code":"REST-1000"}
+real	0m0.019s
+user	0m0.004s
+sys	0m0.003s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":true,"message":"Endpoint is not found from url = /query/pagerank, please use GET /endpoints to list all valid endpoints.","code":"REST-1000"}
+real	0m0.006s
+user	0m0.006s
+sys	0m0.000s

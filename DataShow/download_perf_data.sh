@@ -9,7 +9,7 @@ echo $now_time > ./last_time.txt
 files=$(aws s3 ls s3://release-package-stats/performance_data/ --recursive | awk '{print $4}')
 for file in $files
 do
-  local_file=$(echo $file | sed -e 's|performance_data|\/home\/graphsql\/TestPlatform\/perf|g')
+  local_file=$(echo $file | sed -e 's|performance_data|\/home\/graphsql\/performance_test_web\/perf|g')
   if [[ "$file" == */ ]]
   then
     [[ ! -d "$local_file" ]] && mkdir -p $local_file

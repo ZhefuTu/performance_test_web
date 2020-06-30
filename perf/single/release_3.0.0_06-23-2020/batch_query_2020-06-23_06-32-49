@@ -1,0 +1,43 @@
+The query wcc cannot be added!
+*** Elapsed time = 48 sec
+Waiting for downloading dataset ...
+Waiting for downloading dataset ...
+Waiting for downloading dataset ...
+Waiting for downloading dataset ...
+Waiting for downloading dataset ...
+
+*** STEP 4: Load data
+Start loading twitter dataset at 2020-06-23 06:31:46
+File size about 24.37 GiB
+The loading time will vary on different machines
+
+m1 RESTPP got error with message "Failed to POST http://172.31.22.115:9000/restpploader/snap_graph: HTTP 404 graph schema not found", abort the current loading job on all machines.
+Try to abort loading job 'snap_graph.load_snap.file.m1.1592893906821', it may take a while ...
+[ABORT_SUCCESS] No active Loading Job to abort.
+Failed to run loading job load_snap
+*** Elapsed loading time = 1 sec
+
+*** Loading summary
+
+Non distributed mode query:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":true,"message":"Endpoint is not found from url = /query/wcc, please use GET /endpoints to list all valid endpoints.","code":"REST-1000"}
+real	0m0.067s
+user	0m0.005s
+sys	0m0.005s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":true,"message":"Endpoint is not found from url = /query/pagerank, please use GET /endpoints to list all valid endpoints.","code":"REST-1000"}
+real	0m0.006s
+user	0m0.000s
+sys	0m0.006s
+
+distributed mode query:
+wcc: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":true,"message":"Endpoint is not found from url = /query/wcc, please use GET /endpoints to list all valid endpoints.","code":"REST-1000"}
+real	0m0.007s
+user	0m0.004s
+sys	0m0.003s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":true,"message":"Endpoint is not found from url = /query/pagerank, please use GET /endpoints to list all valid endpoints.","code":"REST-1000"}
+real	0m0.007s
+user	0m0.006s
+sys	0m0.000s
