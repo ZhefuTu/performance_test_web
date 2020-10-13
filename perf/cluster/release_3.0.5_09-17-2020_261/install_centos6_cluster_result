@@ -1,0 +1,73 @@
+--------------Stage 0: uninstall platform------------------
+Downloading installation package https://dl.tigergraph.com/enterprise-edition/tigergraph-3.0.5-offline.tar.gz
+Download finished
+tigergraph-3.0.5-offline.tar.gz
+get install version
+install version is 3
+TG3.x installation begin
+--------------Stage 1: fresh install on ec2 cluster server ------------------
+
+   _______                 ______                 __
+  /_  __(_)___ ____  _____/ ____/________ _____  / /_
+   / / / / __ `/ _ \/ ___/ / __/ ___/ __ `/ __ \/ __ \
+  / / / / /_/ /  __/ /  / /_/ / /  / /_/ / /_/ / / / /
+ /_/ /_/\__, /\___/_/   \____/_/   \__,_/ .___/_/ /_/
+       /____/                          /_/
+
+
+Welcome to the TigerGraph platform installer! 
+
+[PROGRESS]: 03:19:17 Fresh install TigerGraph platform ... 
+[PROGRESS]: 03:19:17 Read cluster config file from /tmp/modularized_test/install/tigergraph-3.0.5-offline/install_conf.json 
+[NOTE    ]: Parsing config item: BasicConfig
+[NOTE    ]: Parsing config item: TigerGraph
+[NOTE    ]: Parsing config item: SSHPort
+[NOTE    ]: Parsing config item: Username
+[NOTE    ]: Parsing config item: Password
+[NOTE    ]: Parsing config item: RootDir
+[NOTE    ]: Parsing config item: License
+[NOTE    ]: Parsing config item: NodeList
+[NOTE    ]: Parsing config item: AdvancedConfig
+[NOTE    ]: Parsing config item: ClusterConfig
+[NOTE    ]: Parsing config item: LoginConfig
+
+[NOTE    ]: The installer will make the following changes to system:
+(it is recommended to accept the changes, but the installation will continue if they are rejected.) 
+1. Set NTP system time synchronization, do you accept? 
+(If rejected, it is user's responsiblity to synchronize the system time among cluster nodes) (y/N): Reject
+2. Set iptables (firewall) rules among cluster nodes, do you accept? 
+(If rejected, it is user's responsiblity to make tcp ports open among cluster nodes) (y/N): Reject
+
+[PROGRESS]: 03:19:18 Checking the cluster/node environment and configuration ... 
+------------------------------------------------------------
+[PROGRESS]: 03:19:19 Checking login and scp functionality in the cluster 
+------------------------------------------------------------
+[PROGRESS]: 03:19:19 Waiting 'Checking login and scp functionality' to be done on nodes (m1,m2,m3), this may take a while ... 
+[NOTE    ]: Job 'Checking login and scp functionality' on node m1 succeeded 
+[NOTE    ]: Job 'Checking login and scp functionality' on node m2 succeeded 
+[NOTE    ]: Job 'Checking login and scp functionality' on node m3 succeeded 
+------------------------------------------------------------
+[PROGRESS]: 03:19:29 Prechecking each node in background concurrently ... 
+------------------------------------------------------------
+[NOTE    ]: Retrieve the internal IP of m1 (172.31.92.177) 
+[NOTE    ]: Internal IP obtained: 172.31.92.177 
+[NOTE    ]: Retrieve the internal IP of m2 (172.31.95.14) 
+[NOTE    ]: Internal IP obtained: 172.31.95.14 
+[NOTE    ]: Retrieve the internal IP of m3 (172.31.80.25) 
+[NOTE    ]: Internal IP obtained: 172.31.80.25 
+
+[PROGRESS]: 03:19:31 Wait until Prechecking on each node to finish, this may take a while ... 
+
+[NOTE    ]: Job Prechecking on node m1 done 
+
+[NOTE    ]: Job Prechecking on node m2 done 
+[ERROR   ]: Prechecking failed on node m2 (172.31.95.14), please check the following log:
+      /tmp/modularized_test/install/tigergraph-3.0.5-offline/logs/precheck.log.m2 
+
+[NOTE    ]: Job Prechecking on node m3 done 
+[ERROR   ]: Prechecking failed on node m3 (172.31.80.25), please check the following log:
+      /tmp/modularized_test/install/tigergraph-3.0.5-offline/logs/precheck.log.m3 
+------------------------------------------------------------
+[ERROR   ]: Prechecking on one or more nodes failed 
+installation finished, cost 89 s
+tigergraph version is 

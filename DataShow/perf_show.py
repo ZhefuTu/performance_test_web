@@ -2,6 +2,7 @@
 
 import os
 import re
+import pprint
 
 TEST_DATA_PATH = "./perf"
 
@@ -83,11 +84,6 @@ def read_file(path, max_time, kind):
                     max_t = max(max_t, speed)
                     result.append(speed)
                     break
-                # if 'bigtest/tests/loading/dataset/2.csv' in line:
-                #     pattern = re.compile('.* (\d*) kl/s.*')
-                #     speed = int(re.match(pattern, line).group(1))
-                #     max_t = max(max_t, speed)
-                #     result.append(speed)
             except:
                 failed_flag = True
                 break
@@ -114,71 +110,109 @@ def time_format(file_path):
     return '%s %s' % (t[0], ':'.join(t[1].split('-')[:2]))
 
 
-def get_result_info(kind='batch_query'):
-    nodes = ['single', 'cluster']
-    result_info = {'single': [], 'cluster': []}
-    max_time = {'single': 0, 'cluster': 0}
-    for node in nodes:
-        cur_path = os.path.join(TEST_DATA_PATH, node)
-        print os.listdir('./')
-        dirs = os.listdir(cur_path)
-        dirs.sort(key=dir_sort_by_time)
-        for dir in dirs:
-            dir_path = os.path.join(cur_path, dir)
-            if os.path.isdir(dir_path): 
-                version = '_'.join(dir.split('release')[-1].split('_')[1:-1])
-                # version = '_'.join(dir.split('_')[1:-1])
+def get_result_info(kind='batch_query', node='single'):
+    result_info = []
+    max_time = 0
 
-                version_num = re.match('.*(\d\.\d\.\d).*', dir)
-                if not version_num or version_num.group(1) <= '2.2.0':
-                    continue
-                files = os.listdir(dir_path)
-                if node == 'cluster' and kind == 'normal_load':
-                    temp = [dir, version, 0, 0]
-                    for file in files:
-                        if file.startswith(kind):
-                            # time = time_format(file)
-                            file_path = os.path.join(dir_path, file)
-                            # temp[0] = time
-                            query_timelist, max_t = read_file(
-                                file_path, max_time[node], kind)
-                            if len(query_timelist) != 4:
-                                continue
+    cur_path = os.path.join(TEST_DATA_PATH, node)
+    dirs = os.listdir(cur_path)
+    dirs.sort(key=dir_sort_by_time)
+    for dir in dirs:
+        dir_path = os.path.join(cur_path, dir)
+        if os.path.isdir(dir_path): 
+            # version = '_'.join(dir.split('release')[-1].split('_')[1:-1])
+            # version = '_'.join(dir.split('_')[1:-1])
+            # version = re.search("\d\.\d\.\d", dir)
+
+            version = re.match('.*(\d\.\d\.\d).*', dir)
+            if not version or version.group(1) <= '2.2.0':
+                continue
+            version = version.group(1)
+            files = os.listdir(dir_path)
+            if node == 'cluster' and kind == 'normal_load':
+                temp = [dir, version, 0, 0]
+                for file in files:
+                    if file.startswith(kind):
+                        # time = time_format(file)
+                        file_path = os.path.join(dir_path, file)
+                        # temp[0] = time
+                        query_timelist, max_t = read_file(
+                            file_path, max_time, kind)
+                        if len(query_timelist) != 4:
+                            continue
+                        else:
+                            if query_timelist[0] == 10:
+                                temp[2] = query_timelist[3]
                             else:
-                                if query_timelist[0] == 10:
-                                    temp[2] = query_timelist[3]
-                                else:
-                                    temp[3] = query_timelist[3]
-                                max_time[node] = max(max_time[node], max_t)
-                    result_info[node].append(temp)
-                else:
-                    for file in files:
-                        if file.startswith(kind):
-                            # time = time_format(file)
-                            file_path = os.path.join(dir_path, file)
-                            temp = [dir, version]
-                            query_timelist, max_t = read_file(
-                                file_path, max_time[node], kind)
-                            if kind == 'batch_query' and len(query_timelist) != 4:
-                                continue
-                            elif kind == 'normal_load' and len(query_timelist) != 4:
-                                continue
-                            elif kind == 'hub_load' and len(query_timelist) != 1:
-                                continue
-                            temp.extend(query_timelist)
-                            result_info[node].append(temp)
-                            max_time[node] = max(max_time[node], max_t)
-    single_len = len(result_info['single'][0])
-    cluster_len = len(result_info['cluster'][0])
-    result = {'single': [], 'cluster': []}
-    for i in range(single_len):
-        result['single'].append([])
-    for i in range(cluster_len):
-        result['cluster'].append([])
-    for k, v in result_info.iteritems():
-        for info in v:
-            for i in range(len(result[k])):
-                result[k][i].append(info[i])
-    for k in max_time.keys():
-        max_time[k] = ((int(max_time[k]) / 10) + 1) * 10
+                                temp[3] = query_timelist[3]
+                            max_time = max(max_time, max_t)
+                if temp[2] != 0 and temp[3] != 0:
+                    result_info.append(temp)
+            else:
+                for file in files:
+                    if file.startswith(kind):
+                        # time = time_format(file)
+                        file_path = os.path.join(dir_path, file)
+                        temp = [dir, version]
+                        query_timelist, max_t = read_file(
+                            file_path, max_time, kind)
+                        if kind == 'batch_query' and len(query_timelist) != 4:
+                            continue
+                        elif kind == 'normal_load' and len(query_timelist) != 4:
+                            continue
+                        elif kind == 'hub_load' and len(query_timelist) != 1:
+                            continue
+                        temp.extend(query_timelist)
+                        result_info.append(temp)
+                        max_time = max(max_time, max_t)
+
+    data_len = len(result_info[0])
+    result = []
+    for i in range(data_len):
+        result.append([])
+    for info in result_info:
+        for i in range(len(result)):
+            result[i].append(info[i])
+    max_time = ((int(max_time) / 10) + 1) * 10
     return result, max_time
+
+def get_table_html(result, kind, node):
+    html = ""
+    html = "<table class='table table-hover table-bordered'><tr><th>%s</th>"%node
+    for version in result[1]:
+        html += "<th>%s</th>" %version
+    if kind == "batch_query":
+        # non batch wcc
+        html += "</tr><tr><td>wcc</td>"
+        for info in result[2]:
+            html += "<td>%s</td>"%info
+        # non batch pagerank
+        html += "</tr><tr><td>pagerank</td>"
+        for info in result[3]:
+            html += "<td>%s</td>"%info
+        # non batch wcc
+        html += "</tr><tr><td>distributed wcc</td>"
+        for info in result[4]:
+            html += "<td>%s</td>"%info
+        # non batch wcc
+        html += "</tr><tr><td>distributed pagerank</td>"
+        for info in result[5]:
+            html += "<td>%s</td>"%info
+    elif kind == "normal_load" and node == "single":
+        html += "</tr><tr><td>tpch load</td>"
+        for info in result[5]:
+            html += "<td>%s</td>"%info
+    elif kind == "normal_load" and node == "cluster":
+        html += "</tr><tr><td>tpch load 10GB</td>"
+        for info in result[2]:
+            html += "<td>%s</td>"%info
+        # non batch pagerank
+        html += "</tr><tr><td>tpch load 30GB</td>"
+        for info in result[3]:
+            html += "<td>%s</td>"%info
+    elif kind == "hub_load":
+        html += "</tr><tr><td>hub load</td>"
+        for info in result[2]:
+            html += "<td>%s</td>"%info
+    html += "</tr></table>"
+    return html

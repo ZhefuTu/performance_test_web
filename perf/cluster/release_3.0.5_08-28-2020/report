@@ -1,0 +1,44 @@
+=====================installation=====================
+===============================================================
+TigerGraph is successfully started! 
+===============================================================
+
+[NOTE    ]: Time synchronization check passed 
+Thank you for using TigerGraph platform!
+[NOTE    ]: Please login to node m1 (172.31.93.187) of the platform to continue. 
+[NOTE    ]: The TigerGraph user: tigergraph
+installation finished in 165 seconds
+tigergraph version is 3.0
+=====================Batch Query=====================
+Non distributed mode query:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6268637,"loop_count":71}]}
+real	4m12.054s
+user	0m0.004s
+sys	0m0.006s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	10m58.086s
+user	0m0.011s
+sys	0m0.007s
+
+distributed mode query:
+wcc: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6268637,"loop_count":71}]}
+real	2m45.232s
+user	0m0.005s
+sys	0m0.004s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	3m31.691s
+user	0m0.002s
+sys	0m0.007s
+=====================Tpch Load=====================
+----------------- summary ------------------
+Total Lines: 86586082
+Total time: 131
+Average speed: 660962
+----------------- summary ------------------
+Total Lines: 259798402
+Total time: 410
+Average speed: 633654
+=====================Hub Load=====================

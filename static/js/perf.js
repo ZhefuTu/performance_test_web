@@ -31,7 +31,7 @@ function draw_line_pic(kind, node){
             if (kind=="batch_query") {
                 category_list = ['non_batch_wcc','non_batch_pgrank','batch_wcc','batch_pgrank'];
                 y_name = 'time_cost';
-                color_list = ['#00EE00', '#FF9F7F','#FFD700','#EE00EE'];
+                color_list = ['#17A589', '#A93226','#76D7C4','#D98880'];
             }else if (kind=="normal_load" && node=="single") {
                 category_list = ['normal_load'];
                 y_name = 'avg_speed';
@@ -56,6 +56,10 @@ function draw_line_pic(kind, node){
                 };
                 seriesTotal.push(item_line);
             };
+
+            var myTable = document.getElementById(kind+"_"+node+"_table");
+            console.log(myTable)
+            myTable.innerHTML = result.table_html;
 
             var myChart = echarts.init(document.getElementById(kind +"_"+node));
             var option = {

@@ -1,0 +1,18 @@
+[04:47:38] Retrieve TigerGraph system configuration
+[04:47:38] acquiring file lock: /home/tigergraph/tigergraph/tmp/gbar.lock
+[04:47:38] file lock acquired
+environment variable GSQL_USERNAME not set, gsql username is required...
+GSQL Username: environment variable GSQL_PASSWORD not set, gsql password is required...
+GSQL Password: **********
+[04:47:55] Start workgroup
+[04:48:02] check loading before backup
+[04:48:02] Snapshot GPE/GSE data
+[04:48:11] Snapshot DICT data
+[04:48:11] Dump data for GSQL
+[04:48:11] Dump data for GUI
+[04:48:11] Calc checksum
+[04:48:11] Compress backup data
+[04:48:17] Pack data
+[04:48:19] Put archive backup_tag-20200827044801 to repo-local
+[04:48:20] Terminate workgroup
+Backup to backup_tag-20200827044801 finished in 41s.

@@ -1,0 +1,36 @@
+=====================installation=====================
+===============================================================
+TigerGraph is successfully started! 
+===============================================================
+
+[NOTE    ]: Time synchronization check passed 
+Thank you for using TigerGraph platform!
+[NOTE    ]: Please login to node m1 (127.0.0.1) of the platform to continue. 
+[NOTE    ]: The TigerGraph user: tigergraph
+installation finished in 140 seconds
+tigergraph version is 3.1
+=====================Batch Query=====================
+Non distributed mode query:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":true,"message":"Endpoint is not found from url = /query/wcc, please use GET /endpoints to list all valid endpoints.","code":"REST-1000"}
+real	0m0.008s
+user	0m0.003s
+sys	0m0.002s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":true,"message":"Endpoint is not found from url = /query/pagerank, please use GET /endpoints to list all valid endpoints.","code":"REST-1000"}
+real	0m0.008s
+user	0m0.001s
+sys	0m0.003s
+
+distributed mode query:
+wcc: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":true,"message":"Endpoint is not found from url = /query/wcc, please use GET /endpoints to list all valid endpoints.","code":"REST-1000"}
+real	0m0.008s
+user	0m0.001s
+sys	0m0.003s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":true,"message":"Endpoint is not found from url = /query/pagerank, please use GET /endpoints to list all valid endpoints.","code":"REST-1000"}
+real	0m0.008s
+user	0m0.000s
+sys	0m0.004s
+=====================Tpch Load=====================
+=====================Hub Load=====================

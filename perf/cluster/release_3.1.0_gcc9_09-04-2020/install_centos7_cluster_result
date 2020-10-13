@@ -1,0 +1,120 @@
+--------------Stage 0: uninstall platform------------------
+Downloading installation package https://local-packages.s3.amazonaws.com/tigergraph-tg_3.1.0_dev-wip_test_5633-offline.tar.gz
+tigergraph-tg_3.1.0_dev-wip_test_5633-offline.tar.gz
+get install version
+install version is 3
+TG3.x installation begin
+--------------Stage 1: fresh install on ec2 cluster server ------------------
+
+   _______                 ______                 __
+  /_  __(_)___ ____  _____/ ____/________ _____  / /_
+   / / / / __ `/ _ \/ ___/ / __/ ___/ __ `/ __ \/ __ \
+  / / / / /_/ /  __/ /  / /_/ / /  / /_/ / /_/ / / / /
+ /_/ /_/\__, /\___/_/   \____/_/   \__,_/ .___/_/ /_/
+       /____/                          /_/
+
+
+Welcome to the TigerGraph platform installer! 
+
+[PROGRESS]: 17:31:42 Fresh install TigerGraph platform ... 
+[PROGRESS]: 17:31:42 Read cluster config file from /tmp/modularized_test/install/tigergraph-tg_3.1.0_dev-wip_test_5633-offline/install_conf.json 
+[NOTE    ]: Parsing config item: BasicConfig
+[NOTE    ]: Parsing config item: TigerGraph
+[NOTE    ]: Parsing config item: SSHPort
+[NOTE    ]: Parsing config item: Username
+[NOTE    ]: Parsing config item: Password
+[NOTE    ]: Parsing config item: RootDir
+[NOTE    ]: Parsing config item: License
+[NOTE    ]: Parsing config item: NodeList
+[NOTE    ]: Parsing config item: AdvancedConfig
+[NOTE    ]: Parsing config item: ClusterConfig
+[NOTE    ]: Parsing config item: LoginConfig
+
+[NOTE    ]: The installer will make the following changes to system:
+(it is recommended to accept the changes, but the installation will continue if they are rejected.) 
+1. Set NTP system time synchronization, do you accept? 
+(If rejected, it is user's responsiblity to synchronize the system time among cluster nodes) (y/N): Reject
+2. Set iptables (firewall) rules among cluster nodes, do you accept? 
+(If rejected, it is user's responsiblity to make tcp ports open among cluster nodes) (y/N): Reject
+
+[PROGRESS]: 17:31:43 Checking the cluster/node environment and configuration ... 
+------------------------------------------------------------
+[PROGRESS]: 17:31:43 Checking login and scp functionality in the cluster 
+------------------------------------------------------------
+[PROGRESS]: 17:31:43 Waiting 'Checking login and scp functionality' to be done on nodes (m1,m2,m3), this may take a while ... 
+[NOTE    ]: Job 'Checking login and scp functionality' on node m1 succeeded 
+[NOTE    ]: Job 'Checking login and scp functionality' on node m2 succeeded 
+[NOTE    ]: Job 'Checking login and scp functionality' on node m3 succeeded 
+------------------------------------------------------------
+[PROGRESS]: 17:31:45 Prechecking each node in background concurrently ... 
+------------------------------------------------------------
+[NOTE    ]: Retrieve the internal IP of m1 (172.31.82.230) 
+[NOTE    ]: Internal IP obtained: 172.31.82.230 
+[NOTE    ]: Retrieve the internal IP of m2 (172.31.85.220) 
+[NOTE    ]: Internal IP obtained: 172.31.85.220 
+[NOTE    ]: Retrieve the internal IP of m3 (172.31.80.13) 
+[NOTE    ]: Internal IP obtained: 172.31.80.13 
+
+[PROGRESS]: 17:31:46 Wait until Prechecking on each node to finish, this may take a while ... 
+
+[NOTE    ]: Job Prechecking on node m1 done 
+
+[NOTE    ]: Job Prechecking on node m2 done 
+
+[NOTE    ]: Job Prechecking on node m3 done 
+------------------------------------------------------------
+[NOTE    ]: Prechecking on all nodes succeeded 
+
+
+[WARNING ]: Skip setting iptables (firewall) rules 
+[PROGRESS]: 17:31:58 Wait until setup firewall on each node to finish, this may take a while ... 
+[PROGRESS]: 17:31:58 Checking ports access in the cluster... 
+------------------------------------------------------------
+[NOTE    ]: Node m1 (172.31.82.230) port check passed 
+[NOTE    ]: Node m2 (172.31.85.220) port check passed 
+[NOTE    ]: Node m3 (172.31.80.13) port check passed 
+------------------------------------------------------------
+[PROGRESS]: 17:32:04 Upload offline package to all cluster nodes 
+------------------------------------------------------------
+[PROGRESS]: 17:32:04 Waiting 'uploading package' to be done on nodes (m1,m2,m3), this may take a while ... 
+[NOTE    ]: Job 'uploading package' on node m1 succeeded 
+[NOTE    ]: Job 'uploading package' on node m2 succeeded 
+[NOTE    ]: Job 'uploading package' on node m3 succeeded 
+------------------------------------------------------------
+[NOTE    ]: Successfully uploaded offline package to all cluster nodes. 
+
+[PROGRESS]: 17:32:30 Installing TigerGraph platform on each node in background concurrently, this may take approximately 10 minutes... 
+------------------------------------------------------------
+[NOTE    ]: Installing TigerGraph platform on node m1 is done 
+[NOTE    ]: Installing TigerGraph platform on node m2 is done 
+[NOTE    ]: Installing TigerGraph platform on node m3 is done 
+------------------------------------------------------------
+[NOTE    ]: Installation on all nodes succeeded 
+
+===============================================================
+Congratulations! Installation Finished! 
+===============================================================
+
+[PROGRESS]: 17:34:13 Start tigergraph service, this may take a while ... 
+[34m[   Info] [0m[32mStarting[0m EXE
+[34m[   Info] [0m[32mStarting[0m CTRL
+[34m[   Info] Generating config files to all machines[0m
+[34m[   Info] Successfully applied configuration change. Please restart services to make it effective immediately.[0m
+[34m[   Info] [0m[32mInitializing[0m KAFKA
+[34m[   Info] [0m[32mStarting[0m EXE
+[34m[   Info] [0m[32mStarting[0m CTRL
+[34m[   Info] [0m[32mStarting[0m ZK ETCD DICT KAFKA ADMIN GSE NGINX GPE RESTPP KAFKASTRM-LL KAFKACONN TS3SERV GSQL TS3 IFM GUI
+[34m[   Info] Applying config[0m
+[33m[Warning] No difference from staging config, config apply is skipped.[0m
+[34m[   Info] Successfully applied configuration change. Please restart services to make it effective immediately.[0m
+[34m[   Info] Cluster is initialized successfully[0m
+===============================================================
+TigerGraph is successfully started! 
+===============================================================
+
+[NOTE    ]: Time synchronization check passed 
+Thank you for using TigerGraph platform!
+[NOTE    ]: Please login to node m1 (172.31.82.230) of the platform to continue. 
+[NOTE    ]: The TigerGraph user: tigergraph
+installation finished in 184 seconds
+tigergraph version is 3.1

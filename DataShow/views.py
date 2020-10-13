@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 from django.http import HttpResponse
-from perf_show import get_result_info
+from perf_show import get_result_info, get_table_html
 import json
 import os
 
@@ -31,18 +31,18 @@ def get_perf_data(request):
         result = {}
         result['x_name'] = 'version'
 
-        batch_query, max_time = get_result_info(kind)
-        batch_query_info = batch_query[node]
-        result['xa'] = batch_query_info[0]
-        result['ya'] = batch_query_info[1]
+        data_info, max_time = get_result_info(kind, node)
+        result['xa'] = data_info[0]
+        result['ya'] = data_info[1]
 
         result['data'] = []
-        data_len = len(batch_query_info) - 2
+        data_len = len(data_info) - 2
         for i in range(data_len):
             result['data'].append([])
-        for i in range(len(batch_query_info[0])):
+        for i in range(len(data_info[0])):
             for j in range(data_len):
-                result['data'][j].append({'value': batch_query_info[
-                                 j + 2][i], 'date': batch_query_info[0][i]})
-        result['max_time'] = max_time[node]
+                result['data'][j].append({'value': data_info[
+                    j + 2][i], 'date': data_info[0][i]})
+        result['max_time'] = max_time
+        result["table_html"] = get_table_html(data_info, kind, node)
         return HttpResponse(json.dumps(result, ensure_ascii=False), content_type="application/json,charset=utf-8")

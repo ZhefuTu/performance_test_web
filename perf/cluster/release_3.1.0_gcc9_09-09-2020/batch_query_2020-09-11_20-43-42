@@ -1,0 +1,43 @@
+[4A[2KJob "snap_graph.load_snap.file.m1.1599851440498" loading status
+[2K[RUNNING] m1 ( Finished: 0 / Total: 1 )
+[2K  [LOADING] /home/tigergraph/tigergraph/app/3.1.0/document/benchmark/setup/./data/twitter_rv.net
+[2K  [=================================                              ] 53%, 1562 kl/s
+[4A[2KJob "snap_graph.load_snap.file.m1.1599851440498" loading status
+[2K[RUNNING] m1 ( Finished: 0 / Total: 1 )
+[2K  [LOADING] /home/tigergraph/tigergraph/app/3.1.0/document/benchmark/setup/./data/twitter_rv.net
+[2K  [=================================                              ] 53%, 1562 kl/s
+[4A[2KJob "snap_graph.load_snap.file.m1.1599851440498" loading status
+[2K[FAILED] m1 ( Finished: 0 / Total: 1 )
+[2K  [FAILED]
+[2K  +-----------------------------------------------------------------------------------------------------------------------------------------------+
+  |                                                                            FILENAME |   LOADED LINES |   AVG SPEED |   DURATION |   PERCENTAGE|
+  |/home/tigergraph/tigergraph/app/3.1.0/document/benchmark/setup/./data/twitter_rv.net |      789782059 |   1562 kl/s |   505.60 s |         53 %|
+  +-----------------------------------------------------------------------------------------------------------------------------------------------+
+*** Elapsed loading time = 1117 sec
+
+*** Loading summary
+Vertex/edge number checking exception: 'results'
+vertex count: -1, edge count: -1
+
+Non distributed mode query:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":1560281,"loop_count":71}]}
+real	2m29.568s
+user	0m0.006s
+sys	0m0.001s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	5m3.353s
+user	0m0.003s
+sys	0m0.007s
+
+distributed mode query:
+wcc: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":1560281,"loop_count":71}]}
+real	1m53.163s
+user	0m0.004s
+sys	0m0.003s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	1m57.597s
+user	0m0.003s
+sys	0m0.005s

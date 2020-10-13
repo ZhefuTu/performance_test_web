@@ -1,0 +1,18 @@
+Normal loading of tpch data with scale factor: 10
+scale 10 loading:
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        1500000 |    993 kl/s |     1.51 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |       59986052 |    647 kl/s |    92.70 s|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |  /home/tigergraph/load_data/./orders.tbl |       15000000 |    791 kl/s |    18.96 s|
+[2K  |    /home/tigergraph/load_data/./part.tbl |        2000000 |   1178 kl/s |     1.70 s|
+[2K  |/home/tigergraph/load_data/./partsupp.tbl |        8000000 |   1404 kl/s |     5.70 s|
+[2K  |  /home/tigergraph/load_data/./region.tbl |              5 |       5 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./supplier.tbl |         100000 |     97 kl/s |     1.02 s|
+[2K  +-------------------------------------------------------------------------------------+
+Load data cost time: 132 s
+----------------- summary ------------------
+Total Lines: 86586082
+Total time: 123
+Average speed: 703951

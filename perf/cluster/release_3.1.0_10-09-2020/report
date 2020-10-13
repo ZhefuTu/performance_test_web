@@ -1,0 +1,23 @@
+=====================installation=====================
+not find install result under /home/tigergraph/results
+=====================Batch Query=====================
+
+   LOADED LINES    AVG SPEED    DURATION
+     1468365182    1589 kl/s    923.71 s
+   LOADED LINES    AVG SPEED    DURATION
+     1468365182    1589 kl/s    923.71 s
+Non distributed mode query:
+wcc:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	2m24.029s
+pagerank:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6268578,"loop_count":46}]}
+real	3m27.565s
+distributed mode query:
+wcc:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	2m20.233s
+pagerank:
+real	3m31.501s
+=====================Tpch Load=====================
+=====================Hub Load=====================

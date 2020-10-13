@@ -23,7 +23,7 @@
     <!-- <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet"> -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/static/js/jquery.js"></script>
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
@@ -43,6 +43,7 @@
         .two_fig {width:100%;height:600px;display: flex;justify-content: center;}
         .one_fig {float:left;width:45%;height:500px;}
         .figure {float:left;width:95%;height:500px;left:25px;}
+        .data_table{overflow:scroll;width:90%;}
     </style>
 
     <script type="text/javascript">
@@ -54,6 +55,18 @@
             draw_line_pic("hub_load", "single");
             draw_line_pic("hub_load", "cluster");
         });
+        function toggle_table(index, button){
+            // $("#table_"+index).toggle();
+            var text = $(button).text();
+            if(text=="Show Table"){
+                $(button).text("Hide Table");
+                $("#table_"+index).css({"display":"block"});
+            }else{
+                $(button).text("Show Table");
+                $("#table_"+index).css({"display":"none"});
+            };
+            
+        };
     </script>
 </head>
 
@@ -65,69 +78,99 @@
                             background-repeat:no-repeat;
                             ">
     <div>
+        <center>
+        <!-- batch query -->
+        <div class="two_fig">
+
+            <div class="one_fig">
+                <center>
+                <h2> Query in Single Mode </h2>
+                <div id="batch_query_single" class="figure"></div>
+                <br>
+                <button class="btn btn-default" onclick="toggle_table(1, this);">Show Table</button>
+                </center>
+            </div>
+            <div class="one_fig">
+                <center>
+                <h2> Query in Cluster Mode </h2>
+                <div id="batch_query_cluster" class="figure"></div>
+                <br>
+                <button class="btn btn-default" onclick="toggle_table(2, this);">Show Table</button>
+                </center>
+            </div>
+        </div>
+        <div id="table_1" style="display: none">
             <center>
-            <div class="two_fig">
-
-                <div class="one_fig">
-                    <center>
-                    <h2> Query in Single Mode </h2>
-                    <div id="batch_query_single" class="figure"></div>
-                    </center>
-                </div>
-                <div class="one_fig">
-                    <center>
-                    <h2> Query in Cluster Mode </h2>
-                    <div id="batch_query_cluster" class="figure"></div>
-                    </center>
-                </div>
-            </div>
-
-            <div class="two_fig">
-
-                <div class="one_fig">
-                    <center>
-                    <h2> Normal Load in Single Mode </h2>
-                    <div id="normal_load_single" class="figure"></div>
-                    </center>
-                </div>
-                <div class="one_fig">
-                    <center>
-                    <h2> Normal Load in Cluster Mode </h2>
-                    <div id="normal_load_cluster" class="figure"></div>
-                    </center>
-                </div>
-            </div>
-
-            <div class="two_fig">
-
-                <div class="one_fig">
-                    <center>
-                    <h2> Hub Load in Single Mode </h2>
-                    <div id="hub_load_single" class="figure"></div>
-                    </center>
-                </div>
-                <div class="one_fig">
-                    <center>
-                    <h2> Hub Load in Cluster Mode </h2>
-                    <div id="hub_load_cluster" class="figure"></div>
-                    </center>
-                </div>
-            </div>
+            <div id="batch_query_single_table" class="data_table"></div>
             </center>
+        </div>
+        <div id="table_2" style="display: none">
+            <center>
+            <div id="batch_query_cluster_table" class="data_table"></div>
+            </center>
+        </div>
+        
+        <!-- normal load -->
 
+        <div class="two_fig">
+            <div class="one_fig">
+                <center>
+                <h2> Tpch Load in Single Mode </h2>
+                <div id="normal_load_single" class="figure"></div>
+                <br>
+                <button class="btn btn-default" onclick="toggle_table(3, this);">Show Table</button>
+                </center>
+            </div>
+            <div class="one_fig">
+                <center>
+                <h2> Tpch Load in Cluster Mode </h2>
+                <div id="normal_load_cluster" class="figure"></div>
+                <br>
+                <button class="btn btn-default" onclick="toggle_table(4, this);">Show Table</button>
+                </center>
+            </div>
+        </div>
+        <div id="table_3" style="display: none">
+            <center>
+            <div id="normal_load_single_table" class="data_table"></div>
+            </center>
+        </div>
+        <div id="table_4" style="display: none">
+            <center>
+            <div id="normal_load_cluster_table" class="data_table"></div>
+            </center>
+        </div>
 
-        <!-- <br>
-        <h2> normal_load_single </h2>
-        <div id="normal_load_single" style="width:800px;height:500px;"></div>
-        <br>
-        <h2> normal_load_cluster </h2>
-        <div id="normal_load_cluster" style="width:800px;height:500px;"></div>
-        <br>
-        <h2> hub_load_single </h2>
-        <div id="hub_load_single" style="width:800px;height:500px;"></div>
-        <br>
-        <h2> hub_load_cluster </h2>
-        <div id="hub_load_cluster" style="width:800px;height:500px;"></div> -->
+        <!-- hub load -->
+        <div class="two_fig">
+            <div class="one_fig">
+                <center>
+                <h2> Hub Load in Single Mode </h2>
+                <div id="hub_load_single" class="figure"></div>
+                <br>
+                <button class="btn btn-default" onclick="toggle_table(5, this);">Show Table</button>
+                </center>
+            </div>
+            <div class="one_fig">
+                <center>
+                <h2> Hub Load in Cluster Mode </h2>
+                <div id="hub_load_cluster" class="figure"></div>
+                <br>
+                <button class="btn btn-default" onclick="toggle_table(6, this);">Show Table</button>
+                </center>
+            </div>
+        </div>
+        <div id="table_5" style="display: none">
+            <center>
+            <div id="hub_load_single_table" class="data_table"></div>
+            </center>
+        </div>
+        <div id="table_6" style="display: none">
+            <center>
+            <div id="hub_load_cluster_table" class="data_table"></div>
+            </center>
+        </div>
+        </center>
     </div>
 </body>
 </html>

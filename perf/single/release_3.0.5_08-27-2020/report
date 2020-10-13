@@ -1,0 +1,44 @@
+=====================installation=====================
+===============================================================
+TigerGraph is successfully started! 
+===============================================================
+
+[NOTE    ]: Time synchronization check passed 
+Thank you for using TigerGraph platform!
+[NOTE    ]: Please login to node m1 (172.31.91.188) of the platform to continue. 
+[NOTE    ]: The TigerGraph user: tigergraph
+installation finished in 165 seconds
+tigergraph version is 3.0
+=====================Create Schema=====================
+Starting GPE GSE RESTPP
+Successfully started GPE GSE RESTPP in 0.088 seconds
+The graph tpc_graph is created.
+Cost time: 24 s
+=====================load data=====================
+=====================installation=====================
+not find install result under /home/tigergraph/results
+=====================Batch Query=====================
+Non distributed mode query:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6268610,"loop_count":47}]}
+real	3m43.681s
+user	0m0.002s
+sys	0m0.007s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	11m13.050s
+user	0m0.005s
+sys	0m0.011s
+
+distributed mode query:
+wcc: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6268610,"loop_count":47}]}
+real	2m30.404s
+user	0m0.001s
+sys	0m0.006s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	3m14.964s
+user	0m0.002s
+sys	0m0.007s
+=====================Tpch Load=====================
+=====================Hub Load=====================

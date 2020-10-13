@@ -1,0 +1,9 @@
+Using graph 'tpc_graph'
+Restpp refresh failed.
+Please check the status of the services and restart restpp.
+The job load_tpc is created.
+m1 RESTPP got error with message "Failed to POST http://127.0.0.1:9000/restpploader/tpc_graph: HTTP 404 graph schema not found", abort the current loading job on all machines.
+Try to abort loading job 'tpc_graph.load_tpc.file.m1.1599175069113', it may take a while ...
+[ABORT_SUCCESS] No active Loading Job to abort.
+Failed to run loading job load_tpc
+Load data cost time: 2 s

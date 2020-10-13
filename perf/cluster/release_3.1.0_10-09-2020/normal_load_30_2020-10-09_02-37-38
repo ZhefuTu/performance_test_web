@@ -1,0 +1,28 @@
+Normal loading of tpch data with scale factor: 30
+scale 30 loading:
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    786 kl/s |     5.72 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    602 kl/s |   298.60 s|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |  /home/tigergraph/load_data/./orders.tbl |       45000000 |    774 kl/s |    58.10 s|
+[2K  |    /home/tigergraph/load_data/./part.tbl |        6000000 |   1358 kl/s |     4.42 s|
+[2K  |/home/tigergraph/load_data/./partsupp.tbl |       24000000 |    936 kl/s |    25.62 s|
+[2K  |  /home/tigergraph/load_data/./region.tbl |              5 |       5 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./supplier.tbl |         300000 |    251 kl/s |     1.19 s|
+[2K  +-------------------------------------------------------------------------------------+
+[2K
+Load data cost time: 403 s
+Time           ---cpu-- ---mem-- ---tcp-- -----traffic---- nvme0n1- nvme0n1p  ---load- 
+Time             util     util   retran    bytin  bytout     util     util     load1   
+09/10/20-02:20   6.03    12.98     0.00   ------  ------    24.17    24.17      0.64   
+09/10/20-02:25  33.46    13.48     0.00   ------  ------    22.50    22.50      2.96   
+09/10/20-02:30   7.67    16.68     0.00   ------  ------    26.30    26.30      1.41   
+09/10/20-02:35  63.95    36.39     0.00   ------  ------    41.08    41.08     20.90   
+
+MAX             63.95    36.39     0.00   ------  ------    41.08    41.08     20.90   
+MEAN            35.03    22.18     0.00   ------  ------    29.96    29.96      8.42   
+MIN              6.03    12.98     0.00   ------  ------    22.50    22.50      0.64   
+----------------- summary ------------------
+Total Lines: 259798402
+Total time: 395
+Average speed: 657717

@@ -1,0 +1,4 @@
+Using graph 'tpc_graph'
+Compiling token bank fails with error
+The job load_tpc could not be created!
+Load data cost time: 0 s

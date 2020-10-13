@@ -1,0 +1,33 @@
+Normal loading of tpch data with scale factor: 10
+scale 10 loading:
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        1500000 |    592 kl/s |     2.53 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |       59986052 |    215 kl/s |   278.52 s|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |  /home/tigergraph/load_data/./orders.tbl |       15000000 |    222 kl/s |    67.50 s|
+[2K  |    /home/tigergraph/load_data/./part.tbl |        2000000 |    227 kl/s |     8.77 s|
+[2K  |/home/tigergraph/load_data/./partsupp.tbl |        8000000 |    527 kl/s |    15.16 s|
+[2K  |  /home/tigergraph/load_data/./region.tbl |              5 |       5 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./supplier.tbl |         100000 |     94 kl/s |     1.06 s|
+  +-------------------------------------------------------------------------------------+
+Load data cost time: 387 s
+Time           ---cpu-- ---mem-- ---tcp-- -----traffic---- nvme0n1- nvme0n1p  ---load- 
+Time             util     util   retran    bytin  bytout     util     util     load1   
+29/08/20-21:40  41.91    29.01     0.01   ------  ------    80.83    80.83     17.42   
+29/08/20-21:45  55.62    34.60     0.01   ------  ------    97.95    97.95     14.23   
+29/08/20-21:50  50.50    41.49     0.01   ------  ------    97.76    97.76     12.87   
+29/08/20-21:55  55.20    39.45     0.02   ------  ------     2.28     2.28     23.28   
+29/08/20-22:00  93.71    40.00     0.04   ------  ------     0.34     0.34     24.51   
+29/08/20-22:05  84.76    38.60     0.05   ------  ------     0.73     0.73     29.26   
+29/08/20-22:10  94.48    39.09     0.05   ------  ------     0.32     0.32     26.87   
+29/08/20-22:15  14.73    25.44     0.00   ------  ------    16.21    16.21      3.85   
+29/08/20-22:20  37.52    39.49     0.01   ------  ------    62.24    62.24      6.40   
+
+MAX             94.48    41.49     0.01   ------  ------    97.95    97.95     29.26   
+MEAN            60.82    37.27     0.02   ------  ------    34.73    34.73     17.66   
+MIN             14.73    25.44     0.01   ------  ------     0.34     0.34      3.85   
+----------------- summary ------------------
+Total Lines: 86586082
+Total time: 375
+Average speed: 230896

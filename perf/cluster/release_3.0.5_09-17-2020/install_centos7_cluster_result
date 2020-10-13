@@ -1,0 +1,79 @@
+--------------Stage 0: uninstall platform------------------
+Downloading installation package https://dl.tigergraph.com/enterprise-edition/tigergraph-3.0.5-offline.tar.gz
+Download finished
+tigergraph-3.0.5-offline.tar.gz
+get install version
+install version is 3
+TG3.x installation begin
+--------------Stage 1: fresh install on ec2 cluster server ------------------
+
+   _______                 ______                 __
+  /_  __(_)___ ____  _____/ ____/________ _____  / /_
+   / / / / __ `/ _ \/ ___/ / __/ ___/ __ `/ __ \/ __ \
+  / / / / /_/ /  __/ /  / /_/ / /  / /_/ / /_/ / / / /
+ /_/ /_/\__, /\___/_/   \____/_/   \__,_/ .___/_/ /_/
+       /____/                          /_/
+
+
+Welcome to the TigerGraph platform installer! 
+
+[PROGRESS]: 02:29:12 Fresh install TigerGraph platform ... 
+[PROGRESS]: 02:29:12 Read cluster config file from /tmp/modularized_test/install/tigergraph-3.0.5-offline/install_conf.json 
+[NOTE    ]: Parsing config item: BasicConfig
+[NOTE    ]: Parsing config item: TigerGraph
+[NOTE    ]: Parsing config item: SSHPort
+[NOTE    ]: Parsing config item: Username
+[NOTE    ]: Parsing config item: Password
+[NOTE    ]: Parsing config item: RootDir
+[NOTE    ]: Parsing config item: License
+[NOTE    ]: Parsing config item: NodeList
+[NOTE    ]: Parsing config item: AdvancedConfig
+[NOTE    ]: Parsing config item: ClusterConfig
+[NOTE    ]: Parsing config item: LoginConfig
+
+[NOTE    ]: The installer will make the following changes to system:
+(it is recommended to accept the changes, but the installation will continue if they are rejected.) 
+1. Set NTP system time synchronization, do you accept? 
+(If rejected, it is user's responsiblity to synchronize the system time among cluster nodes) (y/N): Reject
+2. Set iptables (firewall) rules among cluster nodes, do you accept? 
+(If rejected, it is user's responsiblity to make tcp ports open among cluster nodes) (y/N): Reject
+
+[PROGRESS]: 02:29:12 Checking the cluster/node environment and configuration ... 
+------------------------------------------------------------
+[PROGRESS]: 02:29:12 Checking login and scp functionality in the cluster 
+------------------------------------------------------------
+[PROGRESS]: 02:29:12 Waiting 'Checking login and scp functionality' to be done on nodes (m1,m2,m3), this may take a while ... 
+[NOTE    ]: Job 'Checking login and scp functionality' on node m1 succeeded 
+[NOTE    ]: Job 'Checking login and scp functionality' on node m2 succeeded 
+[NOTE    ]: Job 'Checking login and scp functionality' on node m3 succeeded 
+------------------------------------------------------------
+[PROGRESS]: 02:29:15 Prechecking each node in background concurrently ... 
+------------------------------------------------------------
+[NOTE    ]: Retrieve the internal IP of m1 (172.31.94.28) 
+[NOTE    ]: Internal IP obtained: 172.31.94.28 
+[NOTE    ]: Retrieve the internal IP of m2 (172.31.86.113) 
+[NOTE    ]: Internal IP obtained: 172.31.86.113 
+[NOTE    ]: Retrieve the internal IP of m3 (172.31.94.185) 
+[NOTE    ]: Internal IP obtained: 172.31.94.185 
+
+[PROGRESS]: 02:29:16 Wait until Prechecking on each node to finish, this may take a while ... 
+
+[NOTE    ]: Job Prechecking on node m1 done 
+
+[NOTE    ]: Job Prechecking on node m2 done 
+
+[NOTE    ]: Job Prechecking on node m3 done 
+------------------------------------------------------------
+[NOTE    ]: Prechecking on all nodes succeeded 
+
+
+[WARNING ]: Skip setting iptables (firewall) rules 
+[PROGRESS]: 02:30:09 Wait until setup firewall on each node to finish, this may take a while ... 
+[PROGRESS]: 02:30:10 Checking ports access in the cluster... 
+------------------------------------------------------------
+[ERROR   ]: Node m1 (172.31.94.28) cannot access the required ports of one or more cluster nodes, please check the log: /tmp/modularized_test/install/tigergraph-3.0.5-offline/logs/ports_check.log.m1 
+[ERROR   ]: Node m2 (172.31.86.113) cannot access the required ports of one or more cluster nodes, please check the log: /tmp/modularized_test/install/tigergraph-3.0.5-offline/logs/ports_check.log.m2 
+[ERROR   ]: Node m3 (172.31.94.185) cannot access the required ports of one or more cluster nodes, please check the log: /tmp/modularized_test/install/tigergraph-3.0.5-offline/logs/ports_check.log.m3 
+[ERROR   ]: The check_ports on one or more nodes failed 
+installation finished, cost 77 s
+tigergraph version is 

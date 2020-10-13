@@ -1,0 +1,36 @@
+=====================installation=====================
+TigerGraph is successfully started! 
+installation finished in 184 seconds
+=====================Batch Query=====================
+Non distributed mode query:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":3008336,"loop_count":71}]}
+real	2m57.914s
+user	0m0.007s
+sys	0m0.002s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	7m40.496s
+user	0m0.006s
+sys	0m0.008s
+
+distributed mode query:
+wcc: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":3008336,"loop_count":71}]}
+real	2m15.211s
+user	0m0.005s
+sys	0m0.002s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	2m47.236s
+user	0m0.004s
+sys	0m0.004s
+=====================Tpch Load=====================
+----------------- summary ------------------
+Total Lines: 86586082
+Total time: 126
+Average speed: 687191
+----------------- summary ------------------
+Total Lines: 259798402
+Total time: 402
+Average speed: 646264
+=====================Hub Load=====================
