@@ -39,10 +39,10 @@ MODULE_HEADS = [
     # "gse_compaction_disable",
 ]
 
-RESULT_DIR="E:/work/release_test_result"
-PERFORMANCE_DIR="E:/work/performance_test_web/perf"
-# RESULT_DIR="/home/graphsql/release_test_result"
-# PERFORMANCE_DIR="/home/graphsql/performance_test_web/perf"
+# RESULT_DIR="E:/work/release_test_result"
+# PERFORMANCE_DIR="E:/work/performance_test_web/perf"
+RESULT_DIR="/home/graphsql/release_test_result"
+PERFORMANCE_DIR="/home/graphsql/performance_test_web/perf"
 
 def get_module_heads():
     html_content = ""
