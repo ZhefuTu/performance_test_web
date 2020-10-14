@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.utils.safestring import mark_safe
 from django.http import HttpResponse
 from perf_show import get_result_info, get_table_html
-from release_test_result import get_release_result
+from release_test_result import get_release_result, get_module_heads
 import json
 import os
 
@@ -51,15 +51,27 @@ def get_perf_data(request):
 
 def show_release_test(request):
     context = {}
+    context['th_content'] = mark_safe(get_module_heads())
     context['table_content'] = mark_safe(get_release_result())
     return render(request, 'DataShow/release_test_result.html', context)
 
 def show_report(request):
     file_path = request.GET.get("file_path","")
-    if file_path:
+    if os.path.isfile(file_path):
+        result = ""
         f= open(file_path, "r")
         data = f.readlines()
-        data = "<br>".join(data)
-        return HttpResponse(data)
+        for line in data:
+            result += "<span>%s</span><br>"%line
+        return HttpResponse(result)
+    elif os.path.isdir(file_path):
+        files = os.listdir(file_path)
+        result = ""
+        for file in files:
+            f = open(os.path.join(file_path, file), "r")
+            data = f.readlines()
+            result += '<br><br><span style="background-color:yellow">File: %s</span><br>'%file
+            result += "<br>".join(data)
+        return HttpResponse(result)
     else:
         return HttpResponse("No file path given!")
