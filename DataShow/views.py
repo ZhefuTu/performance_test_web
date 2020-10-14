@@ -2,8 +2,10 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
+from django.utils.safestring import mark_safe
 from django.http import HttpResponse
 from perf_show import get_result_info, get_table_html
+from release_test_result import get_release_result
 import json
 import os
 
@@ -46,3 +48,18 @@ def get_perf_data(request):
         result['max_time'] = max_time
         result["table_html"] = get_table_html(data_info, kind, node)
         return HttpResponse(json.dumps(result, ensure_ascii=False), content_type="application/json,charset=utf-8")
+
+def show_release_test(request):
+    context = {}
+    context['table_content'] = mark_safe(get_release_result())
+    return render(request, 'DataShow/release_test_result.html', context)
+
+def show_report(request):
+    file_path = request.GET.get("file_path","")
+    if file_path:
+        f= open(file_path, "r")
+        data = f.readlines()
+        data = "<br>".join(data)
+        return HttpResponse(data)
+    else:
+        return HttpResponse("No file path given!")

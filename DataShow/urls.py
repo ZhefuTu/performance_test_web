@@ -22,4 +22,6 @@ urlpatterns = [
     url(r'^empty', views.empty),
     url(r'^performance_test', views.show_performance_test),
     url(r'^perf_data', views.get_perf_data),
+    url(r'^release_test', views.show_release_test),
+    url(r'^show_report', views.show_report),
 ]
