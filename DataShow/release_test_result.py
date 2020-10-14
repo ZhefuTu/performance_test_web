@@ -315,7 +315,7 @@ def get_module_result(module_name, file_path):
             if "export finished" in line:
                 r_str = "Pass"
             if "export finished" in line:
-                s_result = line
+                s_result = line.split("cost ")[-1]
         return [r_str, s_result, file_path.replace("\\", "/").replace("/", "//")]
     elif module_name == "database_import":
         r_str = "Failed"
@@ -324,7 +324,7 @@ def get_module_result(module_name, file_path):
             if "check result PASS" in line:
                 r_str = "Pass"
             if "import finished" in line:
-                s_result = line
+                s_result = line.split("cost ")[-1]
         return [r_str, s_result, file_path.replace("\\", "/").replace("/", "//")]
     elif module_name == "clear_graph_store":
         r_str = "Failed"
@@ -342,7 +342,7 @@ def get_module_result(module_name, file_path):
             if "kafka loading finished" in line:
                 r_str = "Pass"
             if "kafka loading finished" in line:
-                s_result = line
+                s_result = line.split("cost ")[-1]
         return [r_str, s_result, file_path.replace("\\", "/").replace("/", "//")]
     return ["", "", ""]
 
