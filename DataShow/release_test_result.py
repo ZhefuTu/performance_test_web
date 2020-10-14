@@ -272,6 +272,78 @@ def get_module_result(module_name, file_path):
             if 'Average speed:' in line and r_str == "Pass":
                 s_result = line.split(" ")[2] + "l/s"
         return [r_str, s_result, file_path.replace("\\","/")]
+    elif module_name == "query_installation":
+        r_str = "Failed"
+        s_result = ""
+        for line in data:
+            if "simple query installation finished" in line:
+                r_str = "Pass"
+            if "simple query installation finished" in line:
+                s_result = line.split("cost")[-1]
+        return [r_str, s_result, file_path.replace("\\", "/").replace("/", "//")]
+    elif module_name == "concurrent_load":
+        r_str = "Failed"
+        s_result = ""
+        for line in data:
+            if "concurrent load finished" in line:
+                r_str = "Pass"
+            if "concurrent load finished" in line:
+                s_result = line.split("cost")[-1]
+        return [r_str, s_result, file_path.replace("\\", "/").replace("/", "//")]
+    elif module_name == "backup":
+        r_str = "Failed"
+        s_result = ""
+        for line in data:
+            if "finished in" in line:
+                r_str = "Pass"
+            if "finished in" in line:
+                s_result = line.split(" ")[-1]
+        return [r_str, s_result, file_path.replace("\\", "/").replace("/", "//")]
+    elif module_name == "restore":
+        r_str = "Failed"
+        s_result = ""
+        for line in data:
+            if "finished in" in line:
+                r_str = "Pass"
+            if "finished in" in line:
+                s_result = line.split(" ")[-1]
+        return [r_str, s_result, file_path.replace("\\", "/").replace("/", "//")]
+    elif module_name == "database_export":
+        r_str = "Failed"
+        s_result = ""
+        for line in data:
+            if "export finished" in line:
+                r_str = "Pass"
+            if "export finished" in line:
+                s_result = line
+        return [r_str, s_result, file_path.replace("\\", "/").replace("/", "//")]
+    elif module_name == "database_import":
+        r_str = "Failed"
+        s_result = ""
+        for line in data:
+            if "check result PASS" in line:
+                r_str = "Pass"
+            if "import finished" in line:
+                s_result = line
+        return [r_str, s_result, file_path.replace("\\", "/").replace("/", "//")]
+    elif module_name == "clear_graph_store":
+        r_str = "Failed"
+        s_result = ""
+        for line in data:
+            if "graph store cleared" in line:
+                r_str = "Pass"
+            if "graph store cleared" in line:
+                s_result = line.split(",")[0].split("in")[-1]
+        return [r_str, s_result, file_path.replace("\\", "/").replace("/", "//")]
+    elif module_name == "kafka_load":
+        r_str = "Failed"
+        s_result = ""
+        for line in data:
+            if "kafka loading finished" in line:
+                r_str = "Pass"
+            if "kafka loading finished" in line:
+                s_result = line
+        return [r_str, s_result, file_path.replace("\\", "/").replace("/", "//")]
     return ["", "", ""]
 
 def get_time(tag):
