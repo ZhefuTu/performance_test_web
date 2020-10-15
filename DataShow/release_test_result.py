@@ -118,8 +118,7 @@ def get_module_result(module_name, file_path):
             for s in check_string:
                 if s in line:
                     flag_count += 1
-                    break
-            if flag_count == len(check_string):
+            if flag_count == len(check_string) + 1:
                 r_str = "Pass"
             if "Deletion cost time" in line:
                 s_result = line.split(" ")[3] + " s"
