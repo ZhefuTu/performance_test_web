@@ -2,6 +2,7 @@
 
 import re
 import os
+import hashlib
 
 MODULE_HEADS = [
     "install",
@@ -348,41 +349,30 @@ def get_module_result(module_name, file_path):
 def get_time(tag):
     return tag.split("+")[1]
 
+def index_sort(info):
+    index_front = []
+    index_behind = []
+    for i in info.keys():
+        if "+" in i:
+            index_behind.append(i)
+        else:
+            index_front.append("%s+%s"%(i,info[i]["lastest_time"]))
+    index_front.sort(key=get_time, reverse=True)
+    for i in range(len(index_front)):
+        index_front[i] = index_front[i].split("+")[0]
+    index_behind.sort(key=get_time, reverse=True)
+    index_front.extend(index_behind)
+    return index_front
+
 def get_release_result():
     # return "<tr>"+"<td>pass</td>"*(len(MODULE_HEADS)+1)+"</tr>"
-    dirs = os.listdir(RESULT_DIR)
+    report_dirs = [RESULT_DIR, os.path.join(PERFORMANCE_DIR, "single"), os.path.join(PERFORMANCE_DIR, "cluster")]
     # {version: {tag_job_id :{module_name:["Pass","cost time:188s","e:/hdhdhdh"]}}}
     result = {}
-    for dir in dirs:
-        dir_path = os.path.join(RESULT_DIR, dir)
-        if not os.path.isdir(dir_path):
-            continue
-        version = re.match('.*(\d\.\d\.\d).*', dir)
-        if not version or version.group(1) < '2.5.0':
-            continue
-        version = version.group(1)
-        if version not in result:
-            result[version] = {}
-        test_plan = dir.split('_release')[0]
-        time = re.match('.*(\d\d-\d\d-\d\d\d\d).*', dir)
-        time = time.group(1)
-        job_id = dir.split('_')[-1]
-        index = "%s+%s+%s"%(test_plan, time, job_id)
-        if index not in result[version]:
-            result[version][index] = {}
-
-        files = os.listdir(dir_path)
-        for file_name in files:
-            file_path = os.path.join(dir_path, file_name)
-            module_name = get_module_name(file_name, file_path)
-            if module_name:
-                module_result = get_module_result(module_name, file_path)
-                result[version][index][module_name] = module_result
-
-    for mode in ["single", "cluster"]:
-        dirs2 = os.listdir(os.path.join(PERFORMANCE_DIR, mode))
-        for dir in dirs2:
-            dir_path = os.path.join(PERFORMANCE_DIR, mode+"/"+dir)
+    for report_dir in report_dirs:
+        dirs = os.listdir(report_dir)
+        for dir in dirs:
+            dir_path = os.path.join(report_dir, dir)
             if not os.path.isdir(dir_path):
                 continue
             version = re.match('.*(\d\.\d\.\d).*', dir)
@@ -391,20 +381,37 @@ def get_release_result():
             version = version.group(1)
             if version not in result:
                 result[version] = {}
-            test_plan = "performance_%s"%mode
             time = re.match('.*(\d\d-\d\d-\d\d\d\d).*', dir)
             time = time.group(1)
-            index = "%s+%s"%(test_plan, time)
-            if index not in result[version]:
-                result[version][index] = {}
-            else:
-                for i in range(10):
-                    if "%s_%d"%(index, i) not in result[version]:
-                        index = "%s_%d"%(index, i)
-                        break
-                result[version][index] = {}
 
             files = os.listdir(dir_path)
+            if "gadmin_version" in files:
+                check_sum, lastest_time = get_version_checksum_and_time(os.path.join(dir_path, "gadmin_version"))
+                index = "%s_%s"%(version, check_sum)
+                if index not in result[version]:
+                    result[version][index] = {"lastest_time": lastest_time}
+            else:
+                if "single" in dir_path or "cluster" in dir_path:
+                    if "single" in dir_path:
+                        mode = "single"
+                    else:
+                        mode = "cluster"
+                    test_plan = "performance_%s"%mode
+                    index = "%s+%s"%(test_plan, time)
+                    if index not in result[version]:
+                        result[version][index] = {}
+                    else:
+                        for i in range(10):
+                            if "%s_%d"%(index, i) not in result[version]:
+                                index = "%s_%d"%(index, i)
+                                break
+                        result[version][index] = {}
+                else:
+                    test_plan = dir.split('_release')[0]
+                    job_id = dir.split('_')[-1]
+                    index = "%s+%s+%s"%(test_plan, time, job_id)
+                    if index not in result[version]:
+                        result[version][index] = {}
             for file_name in files:
                 file_path = os.path.join(dir_path, file_name)
                 module_name = get_module_name(file_name, file_path)
@@ -419,12 +426,16 @@ def get_release_result():
     for ver in ver_list:
         html_ver_tr = [""] * (len(MODULE_HEADS)+1)
         html_ver_tr[0] = ver
-        index_list = result[ver].keys()
-        index_list.sort(key=get_time, reverse=True)
+        # index_list = result[ver].keys()
+        index_list = index_sort(result[ver])
+        # index_list.sort(key=get_time, reverse=True)
         html_tag_tbody = []
         for ind in index_list:
             html_tag_tr = [""] * (len(MODULE_HEADS)+1)
-            html_tag_tr[0] = ind.split("+")[0] + " " + ind.split("+")[1]
+            if "+" in ind:
+                html_tag_tr[0] = ind.split("+")[0] + " " + ind.split("+")[1]
+            else:
+                html_tag_tr[0] = ind[:16]
             module_info = result[ver][ind]
             for i in range(len(MODULE_HEADS)):
                 mod = MODULE_HEADS[i]
@@ -468,3 +479,25 @@ def get_td_html(td):
 
 def get_version_button(td):
     return '<a onclick="click_version(this)">%s</a>' % td
+
+def get_version_checksum_and_time(version_path):
+    f = open(version_path, 'r')
+    info = f.readlines()
+    info = info[0].replace("\n", "")
+    if "TigerGraph version" not in info:
+        return None, None
+    info = info.split(" ")
+    if info[2] >= "3.0.0":
+        info = info[3:]
+        count = len(info)/6
+        commit_str=""
+        lastest_time = "1900-01-01 00:00:00"
+        for i in range(count):
+            commit_str += info[i*6+2]
+            temp_time = info[i*6+3] + " " + info[i*6+4]
+            if temp_time > lastest_time:
+                lastest_time = temp_time
+        m = hashlib.md5()
+        m.update(commit_str)
+        check_sum = m.hexdigest()
+    return check_sum, lastest_time
