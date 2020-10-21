@@ -386,10 +386,10 @@ def get_release_result():
 
             files = os.listdir(dir_path)
             if "gadmin_version" in files:
-                check_sum, lastest_time = get_version_checksum_and_time(os.path.join(dir_path, "gadmin_version"))
+                check_sum, lastest_time, gadmin_info = get_version_checksum_and_time(os.path.join(dir_path, "gadmin_version"))
                 index = "%s_%s"%(version, check_sum)
                 if index not in result[version]:
-                    result[version][index] = {"lastest_time": lastest_time}
+                    result[version][index] = {"lastest_time": lastest_time, "gadmin_info": gadmin_info}
             else:
                 if "single" in dir_path or "cluster" in dir_path:
                     if "single" in dir_path:
@@ -432,11 +432,12 @@ def get_release_result():
         html_tag_tbody = []
         for ind in index_list:
             html_tag_tr = [""] * (len(MODULE_HEADS)+1)
+            module_info = result[ver][ind]
             if "+" in ind:
                 html_tag_tr[0] = ind.split("+")[0] + " " + ind.split("+")[1]
             else:
-                html_tag_tr[0] = ind[:16]
-            module_info = result[ver][ind]
+                # html_tag_tr[0] = ind[:16]
+                html_tag_tr[0] = '<a data-toggle="tooltip" data-html="true" data-placement="right" title="%s">%s</a>'%(module_info['gadmin_info'],ind[:16])
             for i in range(len(MODULE_HEADS)):
                 mod = MODULE_HEADS[i]
                 if mod in module_info:
@@ -458,7 +459,10 @@ def get_release_result():
         for info in html_tag_tbody:
             html_content += "<tr>"
             for td in info:
-                html_content += "<td>%s</td>"%get_td_html(td)
+                if str(td).startswith("<a"):
+                    html_content += "<td>%s</td>"%td
+                else:
+                    html_content += "<td>%s</td>"%get_td_html(td)
             html_content += "</tr>"
         html_content += '</tbody>'
     return html_content
@@ -485,14 +489,19 @@ def get_version_checksum_and_time(version_path):
     info = f.readlines()
     info = info[0].replace("\n", "")
     if "TigerGraph version" not in info:
-        return None, None
+        return None, None, None
     info = info.split(" ")
     if info[2] >= "3.0.0":
         info = info[3:]
         count = len(info)/6
         commit_str=""
         lastest_time = "1900-01-01 00:00:00"
+        gadmin_info = ""
+        max_len = [0]*count
         for i in range(count):
+            for j in range(6):
+                if len(info[i*6+j]) > max_len[j]:
+                    max_len[j] = len(info[i*6+j])
             commit_str += info[i*6+2]
             temp_time = info[i*6+3] + " " + info[i*6+4]
             if temp_time > lastest_time:
@@ -500,4 +509,10 @@ def get_version_checksum_and_time(version_path):
         m = hashlib.md5()
         m.update(commit_str)
         check_sum = m.hexdigest()
-    return check_sum, lastest_time
+        for i in range(count):
+            for j in range(6):
+                gadmin_info += info[i*6+j] + "&nbsp;"*(max_len[j] - len(info[i*6+j])) + "&nbsp;"*2
+            gadmin_info += "<br>"
+        return check_sum, lastest_time, gadmin_info
+    else:
+        return "", "", ""
