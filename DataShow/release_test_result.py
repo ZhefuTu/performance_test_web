@@ -2,6 +2,7 @@
 
 import re
 import os
+import hashlib
 
 MODULE_HEADS = [
     "install",
@@ -118,8 +119,7 @@ def get_module_result(module_name, file_path):
             for s in check_string:
                 if s in line:
                     flag_count += 1
-                    break
-            if flag_count == len(check_string):
+            if flag_count == len(check_string) + 1:
                 r_str = "Pass"
             if "Deletion cost time" in line:
                 s_result = line.split(" ")[3] + " s"
@@ -283,7 +283,7 @@ def get_module_result(module_name, file_path):
                 r_str = "Pass"
             if "simple query installation finished" in line:
                 s_result = line.split("cost")[-1]
-        return [r_str, s_result, file_path.replace("\\", "/").replace("/", "//")]
+        return [r_str, s_result, file_path.replace("\\", "/")]
     elif module_name == "concurrent_load":
         r_str = "Failed"
         s_result = ""
@@ -292,7 +292,7 @@ def get_module_result(module_name, file_path):
                 r_str = "Pass"
             if "concurrent load finished" in line:
                 s_result = line.split("cost")[-1]
-        return [r_str, s_result, file_path.replace("\\", "/").replace("/", "//")]
+        return [r_str, s_result, file_path.replace("\\", "/")]
     elif module_name == "backup":
         r_str = "Failed"
         s_result = ""
@@ -300,8 +300,8 @@ def get_module_result(module_name, file_path):
             if "finished in" in line:
                 r_str = "Pass"
             if "finished in" in line:
-                s_result = line.split(" ")[-1]
-        return [r_str, s_result, file_path.replace("\\", "/").replace("/", "//")]
+                s_result = line.split(" ")[-1].replace(".", "")
+        return [r_str, s_result, file_path.replace("\\", "/")]
     elif module_name == "restore":
         r_str = "Failed"
         s_result = ""
@@ -309,8 +309,8 @@ def get_module_result(module_name, file_path):
             if "finished in" in line:
                 r_str = "Pass"
             if "finished in" in line:
-                s_result = line.split(" ")[-1]
-        return [r_str, s_result, file_path.replace("\\", "/").replace("/", "//")]
+                s_result = line.split(" ")[-1].replace(".", "")
+        return [r_str, s_result, file_path.replace("\\", "/")]
     elif module_name == "database_export":
         r_str = "Failed"
         s_result = ""
@@ -319,7 +319,7 @@ def get_module_result(module_name, file_path):
                 r_str = "Pass"
             if "export finished" in line:
                 s_result = line.split("cost ")[-1]
-        return [r_str, s_result, file_path.replace("\\", "/").replace("/", "//")]
+        return [r_str, s_result, file_path.replace("\\", "/")]
     elif module_name == "database_import":
         r_str = "Failed"
         s_result = ""
@@ -328,7 +328,7 @@ def get_module_result(module_name, file_path):
                 r_str = "Pass"
             if "import finished" in line:
                 s_result = line.split("cost ")[-1]
-        return [r_str, s_result, file_path.replace("\\", "/").replace("/", "//")]
+        return [r_str, s_result, file_path.replace("\\", "/")]
     elif module_name == "clear_graph_store":
         r_str = "Failed"
         s_result = ""
@@ -337,7 +337,7 @@ def get_module_result(module_name, file_path):
                 r_str = "Pass"
             if "graph store cleared" in line:
                 s_result = line.split(",")[0].split("in")[-1]
-        return [r_str, s_result, file_path.replace("\\", "/").replace("/", "//")]
+        return [r_str, s_result, file_path.replace("\\", "/")]
     elif module_name == "kafka_load":
         r_str = "Failed"
         s_result = ""
@@ -346,47 +346,36 @@ def get_module_result(module_name, file_path):
                 r_str = "Pass"
             if "kafka loading finished" in line:
                 s_result = line.split("cost ")[-1]
-        return [r_str, s_result, file_path.replace("\\", "/").replace("/", "//")]
+        return [r_str, s_result, file_path.replace("\\", "/")]
     return ["", "", ""]
 
 def get_time(tag):
     return tag.split("+")[1]
 
+def index_sort(info):
+    index_front = []
+    index_behind = []
+    for i in info.keys():
+        if "+" in i:
+            index_behind.append(i)
+        else:
+            index_front.append("%s+%s"%(i,info[i]["lastest_time"]))
+    index_front.sort(key=get_time, reverse=True)
+    for i in range(len(index_front)):
+        index_front[i] = index_front[i].split("+")[0]
+    index_behind.sort(key=get_time, reverse=True)
+    index_front.extend(index_behind)
+    return index_front
+
 def get_release_result():
     # return "<tr>"+"<td>pass</td>"*(len(MODULE_HEADS)+1)+"</tr>"
-    dirs = os.listdir(RESULT_DIR)
+    report_dirs = [RESULT_DIR, os.path.join(PERFORMANCE_DIR, "single"), os.path.join(PERFORMANCE_DIR, "cluster")]
     # {version: {tag_job_id :{module_name:["Pass","cost time:188s","e:/hdhdhdh"]}}}
     result = {}
-    for dir in dirs:
-        dir_path = os.path.join(RESULT_DIR, dir)
-        if not os.path.isdir(dir_path):
-            continue
-        version = re.match('.*(\d\.\d\.\d).*', dir)
-        if not version or version.group(1) < '2.5.0':
-            continue
-        version = version.group(1)
-        if version not in result:
-            result[version] = {}
-        test_plan = dir.split('_release')[0]
-        time = re.match('.*(\d\d-\d\d-\d\d\d\d).*', dir)
-        time = time.group(1)
-        job_id = dir.split('_')[-1]
-        index = "%s+%s+%s"%(test_plan, time, job_id)
-        if index not in result[version]:
-            result[version][index] = {}
-
-        files = os.listdir(dir_path)
-        for file_name in files:
-            file_path = os.path.join(dir_path, file_name)
-            module_name = get_module_name(file_name, file_path)
-            if module_name:
-                module_result = get_module_result(module_name, file_path)
-                result[version][index][module_name] = module_result
-
-    for mode in ["single", "cluster"]:
-        dirs2 = os.listdir(os.path.join(PERFORMANCE_DIR, mode))
-        for dir in dirs2:
-            dir_path = os.path.join(PERFORMANCE_DIR, mode+"/"+dir)
+    for report_dir in report_dirs:
+        dirs = os.listdir(report_dir)
+        for dir in dirs:
+            dir_path = os.path.join(report_dir, dir)
             if not os.path.isdir(dir_path):
                 continue
             version = re.match('.*(\d\.\d\.\d).*', dir)
@@ -395,20 +384,37 @@ def get_release_result():
             version = version.group(1)
             if version not in result:
                 result[version] = {}
-            test_plan = "performance_%s"%mode
             time = re.match('.*(\d\d-\d\d-\d\d\d\d).*', dir)
             time = time.group(1)
-            index = "%s+%s"%(test_plan, time)
-            if index not in result[version]:
-                result[version][index] = {}
-            else:
-                for i in range(10):
-                    if "%s_%d"%(index, i) not in result[version]:
-                        index = "%s_%d"%(index, i)
-                        break
-                result[version][index] = {}
 
             files = os.listdir(dir_path)
+            if "gadmin_version" in files:
+                check_sum, lastest_time, gadmin_info = get_version_checksum_and_time(os.path.join(dir_path, "gadmin_version"))
+                index = "%s_%s"%(version, check_sum)
+                if index not in result[version]:
+                    result[version][index] = {"lastest_time": lastest_time, "gadmin_info": gadmin_info}
+            else:
+                if "single" in dir_path or "cluster" in dir_path:
+                    if "single" in dir_path:
+                        mode = "single"
+                    else:
+                        mode = "cluster"
+                    test_plan = "performance_%s"%mode
+                    index = "%s+%s"%(test_plan, time)
+                    if index not in result[version]:
+                        result[version][index] = {}
+                    else:
+                        for i in range(10):
+                            if "%s_%d"%(index, i) not in result[version]:
+                                index = "%s_%d"%(index, i)
+                                break
+                        result[version][index] = {}
+                else:
+                    test_plan = dir.split('_release')[0]
+                    job_id = dir.split('_')[-1]
+                    index = "%s+%s+%s"%(test_plan, time, job_id)
+                    if index not in result[version]:
+                        result[version][index] = {}
             for file_name in files:
                 file_path = os.path.join(dir_path, file_name)
                 module_name = get_module_name(file_name, file_path)
@@ -423,13 +429,18 @@ def get_release_result():
     for ver in ver_list:
         html_ver_tr = [""] * (len(MODULE_HEADS)+1)
         html_ver_tr[0] = ver
-        index_list = result[ver].keys()
-        index_list.sort(key=get_time, reverse=True)
+        # index_list = result[ver].keys()
+        index_list = index_sort(result[ver])
+        # index_list.sort(key=get_time, reverse=True)
         html_tag_tbody = []
         for ind in index_list:
             html_tag_tr = [""] * (len(MODULE_HEADS)+1)
-            html_tag_tr[0] = ind.split("+")[0] + " " + ind.split("+")[1]
             module_info = result[ver][ind]
+            if "+" in ind:
+                html_tag_tr[0] = ind.split("+")[0] + " " + ind.split("+")[1]
+            else:
+                # html_tag_tr[0] = ind[:16]
+                html_tag_tr[0] = '<a data-toggle="tooltip" data-html="true" data-placement="right" title="%s">%s</a>'%(module_info['gadmin_info'],ind[:16])
             for i in range(len(MODULE_HEADS)):
                 mod = MODULE_HEADS[i]
                 if mod in module_info:
@@ -451,7 +462,10 @@ def get_release_result():
         for info in html_tag_tbody:
             html_content += "<tr>"
             for td in info:
-                html_content += "<td>%s</td>"%get_td_html(td)
+                if str(td).startswith("<a"):
+                    html_content += "<td>%s</td>"%td
+                else:
+                    html_content += "<td>%s</td>"%get_td_html(td)
             html_content += "</tr>"
         html_content += '</tbody>'
     return html_content
@@ -472,3 +486,36 @@ def get_td_html(td):
 
 def get_version_button(td):
     return '<a onclick="click_version(this)">%s</a>' % td
+
+def get_version_checksum_and_time(version_path):
+    f = open(version_path, 'r')
+    info = f.readlines()
+    info = info[0].replace("\n", "")
+    if "TigerGraph version" not in info:
+        return None, None, None
+    info = info.split(" ")
+    if info[2] >= "3.0.0":
+        info = info[3:]
+        count = len(info)/6
+        commit_str=""
+        lastest_time = "1900-01-01 00:00:00"
+        gadmin_info = ""
+        max_len = [0]*count
+        for i in range(count):
+            for j in range(6):
+                if len(info[i*6+j]) > max_len[j]:
+                    max_len[j] = len(info[i*6+j])
+            commit_str += info[i*6+2]
+            temp_time = info[i*6+3] + " " + info[i*6+4]
+            if temp_time > lastest_time:
+                lastest_time = temp_time
+        m = hashlib.md5()
+        m.update(commit_str)
+        check_sum = m.hexdigest()
+        for i in range(count):
+            for j in range(6):
+                gadmin_info += info[i*6+j] + "&nbsp;"*(max_len[j] - len(info[i*6+j])) + "&nbsp;"*2
+            gadmin_info += "<br>"
+        return check_sum, lastest_time, gadmin_info
+    else:
+        return "", "", ""

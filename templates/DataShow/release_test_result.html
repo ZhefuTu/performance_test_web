@@ -47,10 +47,13 @@
         .childrens{display: none;}
         a:hover {cursor:pointer;}
         a {color: #000000;}
+        .tooltip-inner {white-space:nowrap;max-width: none;text-align: left;}
+        /*.tooltip {min-width:1000px;}*/
     </style>
 
     <script type="text/javascript">
         $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
         });
         function click_version(button){
             $(button).parent().parent().parent().next(".childrens").toggle();
