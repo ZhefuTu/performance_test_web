@@ -184,6 +184,9 @@ def get_module_result(module_name, file_path):
             if 'Congratulations! Upgrade Finished!' in line:
                 r_str = "Pass"
                 break
+            elif 'gui server is up' in line:
+                r_str = "Pass"
+                break
         return [r_str, s_result, file_path.replace("\\","/")]
     elif module_name == "token_config":
         r_str = "Failed"
