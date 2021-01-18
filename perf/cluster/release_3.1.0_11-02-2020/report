@@ -1,0 +1,31 @@
+=====================installation=====================
+TigerGraph is successfully started! 
+installation finished, cost 183 s
+=====================Batch Query=====================
+
+
+   LOADED LINES    AVG SPEED    DURATION
+     1468365182    1593 kl/s    921.24 s
+Non distributed mode query:
+wcc:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	31m40.865s
+pagerank:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6268675,"loop_count":47}]}
+real	82m26.469s
+distributed mode query:
+wcc:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	2m56.928s
+pagerank:
+real	3m46.125s
+=====================Tpch Load=====================
+----------------- summary ------------------
+Total Lines: 86586082
+Total time: 141
+Average speed: 614085
+----------------- summary ------------------
+Total Lines: 259798402
+Total time: 432
+Average speed: 601385
+=====================Hub Load=====================

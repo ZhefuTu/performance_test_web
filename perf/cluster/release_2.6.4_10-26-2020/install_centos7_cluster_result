@@ -1,0 +1,921 @@
+--------------Stage 0: uninstall platform------------------
+Downloading installation package https://local-packages.s3.amazonaws.com/tigergraph-tg_2.6.4_dev-mit_test_6143-offline.tar.gz
+Download finished
+tigergraph-tg_2.6.4_dev-mit_test_6143-offline.tar.gz
+get install version
+install version is 2
+TG2.x installation begin
+   _______                 ______                 __
+  /_  __(_)___ ____  _____/ ____/________ _____  / /_
+   / / / / __ `/ _ \/ ___/ / __/ ___/ __ `/ __ \/ __ \
+  / / / / /_/ /  __/ /  / /_/ / /  / /_/ / /_/ / / / /
+ /_/ /_/\__, /\___/_/   \____/_/   \__,_/ .___/_/ /_/
+       /____/                          /_/
+
+Welcome to the TigerGraph platform installer! 
+
+[PROGRESS]: Read cluster config file from /tmp/modularized_test/install/tigergraph-tg_2.6.4_dev-mit_test_6143-offline/cluster_config.json 
+Parsing config item: nodes.login
+Parsing config item: tigergraph.user.password
+Parsing config item: tigergraph.root.dir
+Parsing config item: nodes.ip
+Parsing config item: HA.option
+Parsing config item: tigergraph.user.name
+Parsing config item: license.key
+[NOTE    ]: The path to install TigerGraph platform and store graph data: /home/tigergraph/tigergraph 
+
+[NOTE    ]: The installer will make the following changes to system:
+(it is recommended to accept the changes, but the installation will continue if they are rejected.) 
+1. Set NTP system time synchronization, do you accept? 
+(If rejected, it is user's responsiblity to synchronize the system time among cluster nodes) (y/N): Reject
+2. Set iptables (firewall) rules among cluster nodes, do you accept? 
+(If rejected, it is user's responsiblity to make tcp ports open among cluster nodes) (y/N): Reject
+
+[PROGRESS]: Checking the cluster environment and configuration ... 
+------------------------------------------------------------
+[PROGRESS]: Checking the login of node m1 ... 
+[NOTE    ]: Login for node m1 [SUCCESS] 
+------------------------------------------------------------
+[PROGRESS]: Checking the login of node m2 ... 
+[NOTE    ]: Login for node m2 [SUCCESS] 
+------------------------------------------------------------
+[PROGRESS]: Checking the login of node m3 ... 
+[NOTE    ]: Login for node m3 [SUCCESS] 
+[PROGRESS]: Retrieving internal IP of node m1 ... 
+[NOTE    ]: Obtained internal IP is empty 
+[PROGRESS]: Retrieving internal IP of node m2 ... 
+[NOTE    ]: Obtained internal IP is empty 
+[PROGRESS]: Retrieving internal IP of node m3 ... 
+[NOTE    ]: Obtained internal IP is empty 
+------------------------------------------------------------
+[PROGRESS]: Checking the environment status of node m1 ... 
+
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+[PROGRESS]: Checking operation system (OS) version ... 
+[NOTE    ]: OS obtained: RHEL 7.7 
+[NOTE    ]: OS check passed [OK] 
+[PROGRESS]: Checking system prerequisite required tools ... 
+[NOTE    ]: Check prerequisite tools passed [OK] 
+[PROGRESS]: Checking if the machine has enough total memory (RAM) ... 
+[NOTE    ]: Total memory (RAM): 30 GB [ok] 
+[PROGRESS]: Checking if the machine has enough total CPU(s) ... 
+[NOTE    ]: Total CPU(s): 16 [ok] 
+[PROGRESS]: Checking install platform and store graph data directory disk space ... 
+[NOTE    ]: Available disk space: 194 GB [ok] 
+[PROGRESS]: Creating new user: tigergraph 
+[NOTE    ]: User (tigergraph) home directory is: /home/tigergraph 
+[PROGRESS]: Stopping legacy services ... 
+[NOTE    ]: Skip setting NTP system time synchronization 
+[NOTE    ]: Skip setting iptables (firewall) rules 
+[NOTE    ]: Environment status check of node m1 [PASS] 
+------------------------------------------------------------
+[PROGRESS]: Checking the environment status of node m2 ... 
+
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+[PROGRESS]: Checking operation system (OS) version ... 
+[NOTE    ]: OS obtained: RHEL 7.7 
+[NOTE    ]: OS check passed [OK] 
+[PROGRESS]: Checking system prerequisite required tools ... 
+[NOTE    ]: Check prerequisite tools passed [OK] 
+[PROGRESS]: Checking if the machine has enough total memory (RAM) ... 
+[NOTE    ]: Total memory (RAM): 30 GB [ok] 
+[PROGRESS]: Checking if the machine has enough total CPU(s) ... 
+[NOTE    ]: Total CPU(s): 16 [ok] 
+[PROGRESS]: Checking install platform and store graph data directory disk space ... 
+[NOTE    ]: Available disk space: 199 GB [ok] 
+[PROGRESS]: Creating new user: tigergraph 
+[NOTE    ]: User (tigergraph) home directory is: /home/tigergraph 
+[PROGRESS]: Stopping legacy services ... 
+[NOTE    ]: Skip setting NTP system time synchronization 
+[NOTE    ]: Skip setting iptables (firewall) rules 
+[NOTE    ]: Environment status check of node m2 [PASS] 
+------------------------------------------------------------
+[PROGRESS]: Checking the environment status of node m3 ... 
+
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+[PROGRESS]: Checking operation system (OS) version ... 
+[NOTE    ]: OS obtained: RHEL 7.7 
+[NOTE    ]: OS check passed [OK] 
+[PROGRESS]: Checking system prerequisite required tools ... 
+[NOTE    ]: Check prerequisite tools passed [OK] 
+[PROGRESS]: Checking if the machine has enough total memory (RAM) ... 
+[NOTE    ]: Total memory (RAM): 30 GB [ok] 
+[PROGRESS]: Checking if the machine has enough total CPU(s) ... 
+[NOTE    ]: Total CPU(s): 16 [ok] 
+[PROGRESS]: Checking install platform and store graph data directory disk space ... 
+[NOTE    ]: Available disk space: 199 GB [ok] 
+[PROGRESS]: Creating new user: tigergraph 
+[NOTE    ]: User (tigergraph) home directory is: /home/tigergraph 
+[PROGRESS]: Stopping legacy services ... 
+[NOTE    ]: Skip setting NTP system time synchronization 
+[NOTE    ]: Skip setting iptables (firewall) rules 
+[NOTE    ]: Environment status check of node m3 [PASS] 
+============================================================
+[NOTE    ]: The config and environment checks on all cluster nodes have passed! 
+
+[PROGRESS]: Checking tigergraph user home directory status ... 
+[PROGRESS]: Retrieving the home path from node m1 (172.31.87.241) ... 
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+Obtained home and its real path: /home/tigergraph_/home/tigergraph
+------------------------------------------------------------
+[PROGRESS]: Checking the home disk space of node m1 ... 
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+[NOTE    ]: Available disk space: 199078 MB [ok] 
+[PROGRESS]: Checking if the home path of tigergraph user on node m1 is identical to that on m1 ... 
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+[NOTE    ]: Home path is identical with other nodes [OK] 
+------------------------------------------------------------
+[PROGRESS]: Checking the home disk space of node m2 ... 
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+[NOTE    ]: Available disk space: 203799 MB [ok] 
+[PROGRESS]: Checking if the home path of tigergraph user on node m2 is identical to that on m1 ... 
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+[NOTE    ]: Home path is identical with other nodes [OK] 
+------------------------------------------------------------
+[PROGRESS]: Checking the home disk space of node m3 ... 
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+[NOTE    ]: Available disk space: 203799 MB [ok] 
+[PROGRESS]: Checking if the home path of tigergraph user on node m3 is identical to that on m1 ... 
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+[NOTE    ]: Home path is identical with other nodes [OK] 
+============================================================
+------------------------------------------------------------
+[NOTE    ]: Home directory path and disk space check on all cluster nodes passed [OK] 
+
+[PROGRESS]: Set ssh passwordless connections between cluster nodes ... 
+------------------------------------------------------------
+[PROGRESS]: Set ssh passwordless connection of node m1 ... 
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+[PROGRESS]: Generating ssh-key ... 
+Generating public/private rsa key pair.
+Created directory '/home/tigergraph/.ssh'.
+Your identification has been saved in /home/tigergraph/.ssh/tigergraph_rsa.
+Your public key has been saved in /home/tigergraph/.ssh/tigergraph_rsa.pub.
+The key fingerprint is:
+SHA256:thTCLSUD9Das+Pis6HmuM92tNbSovy5qwChNjuZ5gkM tigergraph@ip-172-31-87-241.ec2.internal
+The key's randomart image is:
++---[RSA 4096]----+
+|   .o.o .        |
+|     + =         |
+|      O o        |
+|  .. o + .       |
+|o=. .  .S        |
+|=Eoo  oo..       |
+|B + o..+.        |
+|oO.B.....        |
+|+*@+*=o          |
++----[SHA256]-----+
+[NOTE    ]: Setup ssh key successfully [OK] 
+------------------------------------------------------------
+[PROGRESS]: Set ssh passwordless connection of node m2 ... 
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+[PROGRESS] Installing new ssh key ...
+DONE
+[NOTE    ]: Setup ssh key successfully [OK] 
+[PROGRESS]: DONE 
+------------------------------------------------------------
+[PROGRESS]: Set ssh passwordless connection of node m3 ... 
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+[PROGRESS] Installing new ssh key ...
+DONE
+[NOTE    ]: Setup ssh key successfully [OK] 
+[PROGRESS]: DONE 
+============================================================
+[NOTE    ]: Finished setting up ssh passwordless connections between all cluster nodes. 
+
+[PROGRESS]: Upload offline package to all cluster nodes, this may take a while ... 
+------------------------------------------------------------
+[PROGRESS]: Uploading package to node m1 ... 
+[PROGRESS]: DONE 
+[PROGRESS]: Uploading package to node m2 ... 
+[PROGRESS]: DONE 
+[PROGRESS]: Uploading package to node m3 ... 
+[PROGRESS]: DONE 
+============================================================
+[NOTE    ]: Successfully uploaded offline package to all cluster nodes. 
+[PROGRESS]: Install syspre and gium on all cluster nodes, this may take a while ... 
+------------------------------------------------------------
+[PROGRESS]: Install syspre and gium on node m1 ... 
+
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+[PROGRESS]: Configuring system ... 
+[PROGRESS]: Updating /etc/hosts ... 
+
+[PROGRESS]: Switch user to tigergraph_user: tigergraph 
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+[PROGRESS]: Installing system required tools ... 
+[PROGRESS]: Setting up env path ... 
+[PROGRESS]: Installing gium, this may take a while ... 
+[PROGRESS]: Cleaning up ... 
+[PROGRESS]: DONE 
+------------------------------------------------------------
+[PROGRESS]: Install syspre and gium on node m2 ... 
+
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+[PROGRESS]: Configuring system ... 
+[PROGRESS]: Updating /etc/hosts ... 
+
+[PROGRESS]: Switch user to tigergraph_user: tigergraph 
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+[PROGRESS]: Installing system required tools ... 
+[PROGRESS]: Setting up env path ... 
+[PROGRESS]: Installing gium, this may take a while ... 
+[PROGRESS]: Cleaning up ... 
+[PROGRESS]: DONE 
+------------------------------------------------------------
+[PROGRESS]: Install syspre and gium on node m3 ... 
+
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+[PROGRESS]: Configuring system ... 
+[PROGRESS]: Updating /etc/hosts ... 
+
+[PROGRESS]: Switch user to tigergraph_user: tigergraph 
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+[PROGRESS]: Installing system required tools ... 
+[PROGRESS]: Setting up env path ... 
+[PROGRESS]: Installing gium, this may take a while ... 
+[PROGRESS]: Cleaning up ... 
+[PROGRESS]: DONE 
+============================================================
+
+[PROGRESS]: Configure cluster and install tigergraph.bin on node m1, this may take a while ... 
+[PROGRESS]: Upload tigergraph.bin to node m1 
+
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+[PROGRESS]: Setting up license key ... 
+[NOTE    ] all_internal_ips: m1:172.31.87.241,m2:172.31.86.233,m3:172.31.94.185
+[PROGRESS]: Configuring the cluster ... 
+[33m[Warning] License will expire in 8 days[0m
+[34m[FAB    ][m1,m3,m2][0m [[ -f /home/tigergraph/.gium/tg_md5_dir ]] || exit 0; /home/tigergraph/.gium/tg_md5_dir ~/.gium *.pyc
+[34m[FAB    ][m1,m3,m2][0m [[ -f /home/tigergraph/.gium/tg_md5_dir ]] || exit 0; /home/tigergraph/.gium/tg_md5_dir ~/.gsql *.commited *gsqlcfg*
+[34m[FAB    ][m3,m2][0m mkdir -p ~/.gsql
+[34m[FAB    ][m3,m2][0m scp -r -P 22 ~/.gsql ~/
+[34m[FAB    ][m1,m3,m2][0m [[ -f /home/tigergraph/.gium/tg_md5_dir ]] || exit 0; /home/tigergraph/.gium/tg_md5_dir ~/.venv *.pyc
+[34m[FAB    ][m1,m3,m2][0m cd ~/.gium; ./add_to_path.sh; /home/tigergraph/.gsql/all_log_cleanup_add2cron.sh; rm -rf /home/tigergraph/tigergraph_coredump; mkdir -p /home/tigergraph/tigergraph/logs/coredump; ln -s /home/tigergraph/tigergraph/logs/coredump /home/tigergraph/tigergraph_coredump; /home/tigergraph/.gsql/cleanup_connectors_add2cron.sh
+[34m[RUN    ][0m /home/tigergraph/.gsql/gpe_auto_start_add2cron.sh
+
+[NOTE    ]: Finished gadmin config the cluster! 
+
+[PROGRESS]: Installing tigergraph.bin, this may take a while ... 
+Creating directory /home/tigergraph/tigergraph
+Verifying archive integrity...     0%     0%     0%     0%     0%     1%     1%     1%     1%     2%     2%     2%     2%     3%     3%     3%     3%     4%     4%     4%     4%     5%     5%     5%     5%     5%     6%     6%     6%     6%     7%     7%     7%     7%     8%     8%     8%     8%     9%     9%     9%     9%    10%    10%    10%    10%    11%    11%    11%    11%    11%    12%    12%    12%    12%    13%    13%    13%    13%    14%    14%    14%    14%    15%    15%    15%    15%    16%    16%    16%    16%    16%    17%    17%    17%    17%    18%    18%    18%    18%    19%    19%    19%    19%    20%    20%    20%    20%    21%    21%    21%    21%    22%    22%    22%    22%    22%    23%    23%    23%    23%    24%    24%    24%    24%    25%    25%    25%    25%    26%    26%    26%    26%    27%    27%    27%    27%    28%    28%    28%    28%    28%    29%    29%    29%    29%    30%    30%    30%    30%    31%    31%    31%    31%    32%    32%    32%    32%    33%    33%    33%    33%    33%    34%    34%    34%    34%    35%    35%    35%    35%    36%    36%    36%    36%    37%    37%    37%    37%    38%    38%    38%    38%    39%    39%    39%    39%    39%    40%    40%    40%    40%    41%    41%    41%    41%    42%    42%    42%    42%    43%    43%    43%    43%    44%    44%    44%    44%    45%    45%    45%    45%    45%    46%    46%    46%    46%    47%    47%    47%    47%    48%    48%    48%    48%    49%    49%    49%    49%    50%    50%    50%    50%    50%    51%    51%    51%    51%    52%    52%    52%    52%    53%    53%    53%    53%    54%    54%    54%    54%    55%    55%    55%    55%    56%    56%    56%    56%    56%    57%    57%    57%    57%    58%    58%    58%    58%    59%    59%    59%    59%    60%    60%    60%    60%    61%    61%    61%    61%    61%    62%    62%    62%    62%    63%    63%    63%    63%    64%    64%    64%    64%    65%    65%    65%    65%    66%    66%    66%    66%    67%    67%    67%    67%    67%    68%    68%    68%    68%    69%    69%    69%    69%    70%    70%    70%    70%    71%    71%    71%    71%    72%    72%    72%    72%    73%    73%    73%    73%    73%    74%    74%    74%    74%    75%    75%    75%    75%    76%    76%    76%    76%    77%    77%    77%    77%    78%    78%    78%    78%    78%    79%    79%    79%    79%    80%    80%    80%    80%    81%    81%    81%    81%    82%    82%    82%    82%    83%    83%    83%    83%    84%    84%    84%    84%    84%    85%    85%    85%    85%    86%    86%    86%    86%    87%    87%    87%    87%    88%    88%    88%    88%    89%    89%    89%    89%    90%    90%    90%    90%    90%    91%    91%    91%    91%    92%    92%    92%    92%    93%    93%    93%    93%    94%    94%    94%    94%    95%    95%    95%    95%    95%    96%    96%    96%    96%    97%    97%    97%    97%    98%    98%    98%    98%    99%    99%    99%    99%  100%   All good.
+Uncompressing Product: tg_2.6.4_dev     0%     0%     0%     0%     0%     1%     1%     1%     1%     2%     2%     2%     2%     3%     3%     3%     3%     4%     4%     4%     4%     5%     5%     5%     5%     5%     6%     6%     6%     6%     7%     7%     7%     7%     8%     8%     8%     8%     9%     9%     9%     9%    10%    10%    10%    10%    11%    11%    11%    11%    11%    12%    12%    12%    12%    13%    13%    13%    13%    14%    14%    14%    14%    15%    15%    15%    15%    16%    16%    16%    16%    16%    17%    17%    17%    17%    18%    18%    18%    18%    19%    19%    19%    19%    20%    20%    20%    20%    21%    21%    21%    21%    22%    22%    22%    22%    22%    23%    23%    23%    23%    24%    24%    24%    24%    25%    25%    25%    25%    26%    26%    26%    26%    27%    27%    27%    27%    28%    28%    28%    28%    28%    29%    29%    29%    29%    30%    30%    30%    30%    31%    31%    31%    31%    32%    32%    32%    32%    33%    33%    33%    33%    33%    34%    34%    34%    34%    35%    35%    35%    35%    36%    36%    36%    36%    37%    37%    37%    37%    38%    38%    38%    38%    39%    39%    39%    39%    39%    40%    40%    40%    40%    41%    41%    41%    41%    42%    42%    42%    42%    43%    43%    43%    43%    44%    44%    44%    44%    45%    45%    45%    45%    45%    46%    46%    46%    46%    47%    47%    47%    47%    48%    48%    48%    48%    49%    49%    49%    49%    50%    50%    50%    50%    50%    51%    51%    51%    51%    52%    52%    52%    52%    53%    53%    53%    53%    54%    54%    54%    54%    55%    55%    55%    55%    56%    56%    56%    56%    56%    57%    57%    57%    57%    58%    58%    58%    58%    59%    59%    59%    59%    60%    60%    60%    60%    61%    61%    61%    61%    61%    62%    62%    62%    62%    63%    63%    63%    63%    64%    64%    64%    64%    65%    65%    65%    65%    66%    66%    66%    66%    67%    67%    67%    67%    67%    68%    68%    68%    68%    69%    69%    69%    69%    70%    70%    70%    70%    71%    71%    71%    71%    72%    72%    72%    72%    73%    73%    73%    73%    73%    74%    74%    74%    74%    75%    75%    75%    75%    76%    76%    76%    76%    77%    77%    77%    77%    78%    78%    78%    78%    78%    79%    79%    79%    79%    80%    80%    80%    80%    81%    81%    81%    81%    82%    82%    82%    82%    83%    83%    83%    83%    84%    84%    84%    84%    84%    85%    85%    85%    85%    86%    86%    86%    86%    87%    87%    87%    87%    88%    88%    88%    88%    89%    89%    89%    89%    90%    90%    90%    90%    90%    91%    91%    91%    91%    92%    92%    92%    92%    93%    93%    93%    93%    94%    94%    94%    94%    95%    95%    95%    95%    95%    96%    96%    96%    96%    97%    97%    97%    97%    98%    98%    98%    98%    99%    99%    99%    99%  100%  
+Stop existing services ...
+[33m[Warning] License will expire in 8 days[0m
+WARNING: Dictionary init failed (300). Fall back to local configure.
+[32mDetect config change. Please run 'gadmin config-apply' to apply.[0m
+[34m[FAB    ][m1,m3,m2][0m rm -rf /home/tigergraph/tigergraph/logs/ADMIN*.pid 
+[34m[FAB    ][m1,m3,m2][0m rm -rf /home/tigergraph/tigergraph/logs/TS3*.pid 
+[34m[FAB    ][2020-10-26 04:59:50] gsql_mon_alert_off[0m
+[34m[FAB    ][2020-10-26 04:59:51] shutdown_ts3s[0m
+Done.
+[33m[Warning] License will expire in 8 days[0m
+WARNING: Dictionary init failed (300). Fall back to local configure.
+[32mDetect config change. Please run 'gadmin config-apply' to apply.[0m
+[34m[FAB    ][m1,m3,m2][0m rm -rf /home/tigergraph/tigergraph/logs/*.pid 
+[34m[RUN    ][0m rm -rf ~/.gsql/gstore_g*_autostart_flag
+[34m[FAB    ][2020-10-26 04:59:55] gsql_mon_alert_off[0m
+[34m[FAB    ][2020-10-26 04:59:55] shutdown_gsql_subsystems:KAFKA-LOADER[0m
+[34m[FAB    ][2020-10-26 04:59:55] shutdown_gsql_subsystems:RESTPP[0m
+[34m[FAB    ][2020-10-26 04:59:56] shutdown_gsql_subsystems:NGINX[0m
+[34m[FAB    ][2020-10-26 04:59:56] shutdown_gsql_subsystems:GPE[0m
+[34m[FAB    ][2020-10-26 04:59:57] shutdown_gsql_subsystems:GSE[0m
+[34m[FAB    ][2020-10-26 04:59:57] shutdown_kafkas[0m
+[34m[FAB    ][2020-10-26 04:59:57] shutdown_gsql_subsystems:DICT[0m
+[34m[FAB    ][2020-10-26 04:59:58] shutdown_zookeepers[0m
+[GSQL] /home/tigergraph/tigergraph/dev/gdk/gsql/gsql_server_util: NO such file.
+Done.
+[33m[Warning] License will expire in 8 days[0m
+WARNING: Dictionary init failed (300). Fall back to local configure.
+[32mDetect config change. Please run 'gadmin config-apply' to apply.[0m
+[32m=== zk ===[0m
+[SUMMARY][ZK] process is [1m[31mdown[0m
+[SUMMARY][ZK] /home/tigergraph/tigergraph/zk has [1m[31mNOT[0m been initialized
+[32m=== kafka ===[0m
+[SUMMARY][KAFKA] process is [1m[31mdown[0m
+[SUMMARY][KAFKA] queue has [1m[31mNOT[0m been initialized
+[32m=== gse ===[0m
+[SUMMARY][GSE] process is [1m[31mdown[0m
+[SUMMARY][GSE] id service has [1m[31mNOT[0m been initialized
+[32m=== dict ===[0m
+[SUMMARY][DICT] process is [1m[31mdown[0m
+[SUMMARY][DICT] dict server has [1m[31mNOT[0m been initialized
+[32m=== ts3 ===[0m
+[SUMMARY][TS3] process is [1m[31mdown[0m
+[SUMMARY][TS3] ts3 is ready
+[32m=== graph ===[0m
+[SUMMARY][GRAPH] graph has [1m[31mNOT[0m been initialized
+[32m=== nginx ===[0m
+[SUMMARY][NGINX] process is [1m[31mdown[0m
+[SUMMARY][NGINX] nginx has [1m[31mNOT[0m been initialized
+[32m=== restpp ===[0m
+[SUMMARY][RESTPP] process is [1m[31mdown[0m
+[SUMMARY][RESTPP] restpp has [1m[31mNOT[0m been initialized
+[32m=== gpe ===[0m
+[SUMMARY][GPE] process is [1m[31mdown[0m
+[SUMMARY][GPE] graph has [1m[31mNOT[0m been initialized
+[32m=== gsql ===[0m
+[SUMMARY][GSQL] process is [1m[31mdown[0m
+[SUMMARY][GSQL] gsql has [1m[31mNOT[0m been initialized
+Installing tigergraph.bin ...
+./gpkg.sh
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+THIRD_PARTY_HOME: 
+[05:00:31]Running: ./src/er/tools/saferun.sh  ./src/er/buildenv/gpkg_other.conf
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+[05:00:31]Running: rm -rf ${GSQL_PKG_HOME}/*
+[05:00:31]Running: mkdir -p ${GSQL_PKG_HOME}/bin
+[05:00:31]Running: cp ${ER_HOME}/misc/*.sh ${GSQL_PKG_HOME}/bin
+[05:00:31]Running: mkdir -p ${GSQL_PKG_HOME}/third-party-pkgs
+[05:00:31]Running: cp -rf ${ER_HOME}/platform_independent/zookeeper-*.tar.gz ${GSQL_PKG_HOME}/third-party-pkgs
+[05:00:31]Running: cp -rf ${ER_HOME}/platform_independent/kafka_*.tar.gz ${GSQL_PKG_HOME}/third-party-pkgs
+[05:00:31]Running: mkdir -p ${GSQL_PKG_HOME}/config/zk
+[05:00:31]Running: mkdir -p ${GSQL_PKG_HOME}/config/rest
+[05:00:31]Running: mkdir -p ${GSQL_PKG_HOME}/config/ha
+[05:00:31]Running: mkdir -p ${GSQL_PKG_HOME}/scripts/zk
+[05:00:31]Running: mkdir -p ${GSQL_PKG_HOME}/config/kafka
+[05:00:31]Running: mkdir -p ${GSQL_PKG_HOME}/scripts/kafka
+[05:00:31]Running: cp -rf ${ER_HOME}/platform_independent/gsql_config/zoo.cfg.template ${GSQL_PKG_HOME}/config/zk/
+[05:00:31]Running: cp -rf ${ER_HOME}/platform_independent/gsql_config/zk_log4j.properties.template ${GSQL_PKG_HOME}/config/zk/
+[05:00:31]Running: cp -rf ${ER_HOME}/platform_independent/gsql_config/kafka_server.properties.template ${GSQL_PKG_HOME}/config/kafka
+[05:00:31]Running: cp -rf ${ER_HOME}/platform_independent/gsql_config/kafka_log4j.properties.template ${GSQL_PKG_HOME}/config/kafka
+[05:00:31]Running: cp -rf ${ER_HOME}/platform_independent/gsql_config/kafka_connect-distributed.properties.template ${GSQL_PKG_HOME}/config/kafka
+[05:00:31]Running: cp -rf ${ER_HOME}/platform_independent/gsql_config/kafka_connect-log4j.properties.template ${GSQL_PKG_HOME}/config/kafka
+[05:00:31]Running: cp -rf ${ER_HOME}/platform_independent/gsql_config/kafka_tools-log4j.properties.template ${GSQL_PKG_HOME}/config/kafka
+[05:00:31]Running: cp -rf ${ER_HOME}/platform_independent/gsql_config/nginx.conf_template ${GSQL_PKG_HOME}/config/rest
+[05:00:31]Running: cp -rf ${ER_HOME}/platform_independent/gsql_config/haproxy.conf_template ${GSQL_PKG_HOME}/config/ha
+[05:00:31]Running: cp -rf ${ER_HOME}/platform_independent/gsql_config/keepalived.conf_template ${GSQL_PKG_HOME}/config/ha
+[05:00:31]Running: cp -rf ${ER_HOME}/platform_independent/gsql_config/zk_init.py.template ${GSQL_PKG_HOME}/scripts/zk
+[05:00:31]Running: cp -rf ${ER_HOME}/platform_independent/gsql_config/zk_init.sh.template ${GSQL_PKG_HOME}/scripts/zk
+[05:00:31]Running: cp -rf ${ER_HOME}/platform_independent/gsql_config/kafka_plugins_init.sh.template ${GSQL_PKG_HOME}/scripts/kafka
+[05:00:31]Running: cp -rf ${ER_HOME}/platform_independent/gsql_config/kafka_init.sh.template ${GSQL_PKG_HOME}/scripts/kafka
+[05:00:31]Running: cp -rf ${ER_HOME}/platform_independent/gsql_config/package_names.yaml ${GSQL_PKG_HOME}/config
+
+./src/er/tools/saferun.sh finished successfully in 0 seconds. 
+Use GLE from GDK
+[05:00:31]Running: ./src/er/tools/saferun.sh  config/pkg.config
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+[05:00:31]Running: export GSQL_BUILD_SCONS="scons"
+[05:00:31]Running: export GSQL_BUILD_FLAGS="--CPPDEFINES="
+[05:00:31]Running: export cppFlagCmd=src/er/buildenv/get_cpp_flags
+[05:00:31]Running: if [ -f $cppFlagCmd ]; then CFLAGS=$(${cppFlagCmd}); else exit 1; fi
+[05:00:31]Running: export CFLAGS
+[05:00:31]Running: make -f MakeGPE clean
+make[1]: Entering directory `/home/tigergraph/tigergraph/dev/gdk'
+make[1]: Leaving directory `/home/tigergraph/tigergraph/dev/gdk'
+[05:00:31]Running: make -f MakeGPE
+make[1]: Entering directory `/home/tigergraph/tigergraph/dev/gdk'
+g++ -o objs/gperun.o gsdk/include/olgp/gpe/gperun.cpp  --sysroot=/home/tigergraph/.syspre "-DBUILDVERSION=\"enduser    x    x    2020-10-26 05:00:31 +0000,gsdk xxxx tg_2.6.4_dev 2020-10-22 18:01:08 -0700,\"" -c -Wall -fmessage-length=0 -rdynamic -Wno-unused -fpermissive -fno-omit-frame-pointer -ldl -DRELEASE -O3 -D__STDC_FORMAT_MACROS -std=c++11 -Igsdk/include -Igsdk/include/thirdparty -Igsdk/include/thirdparty/jdk -Igsdk/include/thirdparty/jdk/linux -Igsdk/include/thirdparty/sparsehash -Igsdk/include/thirdparty/boost -Igsdk/include/thirdparty/yaml -Igsdk/include/thirdparty/glog -Igsdk/include/thirdparty/jsoncpp/ -Igsdk/include/thirdparty/fcgi -Igsdk/include/thirdparty/http-parser -Igsdk/include/thirdparty/librdkafka -Igsdk/include/thirdparty/cereal --sysroot=/home/tigergraph/.syspre
+g++  -o bin/release/poc_gpe_server  objs/gperun.o  --sysroot=/home/tigergraph/.syspre -Lgsdk/lib/release -ltigergraph -lpthread -ldl -lboost_chrono -lrt ./gsdk/lib/release/libgrpc++.a ./gsdk/lib/release/libgrpc.a
+make[1]: Leaving directory `/home/tigergraph/tigergraph/dev/gdk'
+[05:00:35]Running: make -f MakeUdf clean
+make[1]: Entering directory `/home/tigergraph/tigergraph/dev/gdk'
+make[1]: Leaving directory `/home/tigergraph/tigergraph/dev/gdk'
+[05:00:35]Running: make -f MakeUdf
+make[1]: Entering directory `/home/tigergraph/tigergraph/dev/gdk'
+g++ -o objs/impl_lib.o src/customer/core_impl/gpe_impl/impl_lib.cpp  --sysroot=/home/tigergraph/.syspre "-DBUILDVERSION=\"enduser    x    x    2020-10-26 05:00:31 +0000,gsdk xxxx tg_2.6.4_dev 2020-10-22 18:01:08 -0700,\"" -c -Wall -fmessage-length=0 -Wno-unused -fpermissive -fno-omit-frame-pointer -ldl -DRELEASE -O3 -DREMOVETESTASSERT -D__STDC_FORMAT_MACROS -fPIC -std=c++11 -Isrc -Igsdk/include -Igsdk/include/thirdparty -Igsdk/include/thirdparty/sparsehash -Igsdk/include/thirdparty/glog -Igsdk/include/thirdparty/jsoncpp -Igsdk/include/thirdparty/cereal --sysroot=/home/tigergraph/.syspre
+g++ -o objs/udt.o src/customer/core_impl/udt.cpp  --sysroot=/home/tigergraph/.syspre "-DBUILDVERSION=\"enduser    x    x    2020-10-26 05:00:31 +0000,gsdk xxxx tg_2.6.4_dev 2020-10-22 18:01:08 -0700,\"" -c -Wall -fmessage-length=0 -Wno-unused -fpermissive -fno-omit-frame-pointer -ldl -DRELEASE -O3 -DREMOVETESTASSERT -D__STDC_FORMAT_MACROS -fPIC -std=c++11 -Isrc -Igsdk/include -Igsdk/include/thirdparty -Igsdk/include/thirdparty/sparsehash -Igsdk/include/thirdparty/glog -Igsdk/include/thirdparty/jsoncpp -Igsdk/include/thirdparty/cereal --sysroot=/home/tigergraph/.syspre
+g++ -shared -o bin/release/libudf.so  objs/impl_lib.o objs/udt.o  --sysroot=/home/tigergraph/.syspre -Lgsdk/lib/release -ltigergraph -lpthread -ldl -lboost_chrono -lrt
+make[1]: Leaving directory `/home/tigergraph/tigergraph/dev/gdk'
+[05:00:42]Running: if [ ! -d ${GSQL_PKG_HOME}/bin ] ; then mkdir -p ${GSQL_PKG_HOME}/bin ; fi
+[05:00:42]Running: PARENT=$PWD
+[05:00:42]Running: make -f MakeScheduler clean
+make[1]: Entering directory `/home/tigergraph/tigergraph/dev/gdk'
+rm -rf bin/release/scheduler.so;rm -rf src/customer/restpp_impl/scheduler_impl/impl.o
+make[1]: Leaving directory `/home/tigergraph/tigergraph/dev/gdk'
+[05:00:42]Running: make -f MakeScheduler
+make[1]: Entering directory `/home/tigergraph/tigergraph/dev/gdk'
+g++ -c -w -std=c++11 -fPIC -DRELEASE -O3 --sysroot=/home/tigergraph/.syspre -lstdc++ -shared -L/gsdk/lib/release -ltigergraph -Wl,--rpath='$ORIGIN' -L./gsdk/lib/release -I./src -I./gsdk/include -I./gsdk/include/thirdparty -I./gsdk/include/thirdparty/yaml -I./gsdk/include/thirdparty/sparsehash -I./gsdk/include/thirdparty/glog -I./gsdk/include/thirdparty/jsoncpp -I./gsdk/include/thirdparty/zlib -I./gsdk/include/thirdparty/boost -I./gsdk/include/thirdparty/zookeeper -I./gsdk/include/thirdparty/librdkafka -I./gsdk/include/thirdparty/cereal src/customer/restpp_impl/scheduler_impl/impl.cpp -o src/customer/restpp_impl/scheduler_impl/impl.o
+g++ src/customer/restpp_impl/scheduler_impl/impl.o --sysroot=/home/tigergraph/.syspre -lstdc++ -shared -L/gsdk/lib/release -ltigergraph -Wl,--rpath='$ORIGIN' -L./gsdk/lib/release -o bin/release/scheduler.so
+make[1]: Leaving directory `/home/tigergraph/tigergraph/dev/gdk'
+[05:00:46]Running: cp -r ${GSQL_PROJ_HOME}/src/customer/restpp_impl/endpoint_impl/endpoints ${GSQL_PKG_HOME}/config/endpoints 2>/dev/null || :
+[05:00:46]Running: cd ${PARENT}
+[05:00:46]Running: cp -RL gsdk/bin/release/admin_server gsdk/bin/release/backup_log.sh gsdk/bin/release/batchdelta gsdk/bin/release/cache_generate.sh gsdk/bin/release/cache_upload.sh gsdk/bin/release/gbar gsdk/bin/release/gbar_bootstrap gsdk/bin/release/gbar_master gsdk/bin/release/gbar_postexpand gsdk/bin/release/gbar_slave gsdk/bin/release/gdict_server gsdk/bin/release/gmalloc gsdk/bin/release/gpe_log_parser.sh gsdk/bin/release/graphdump gsdk/bin/release/gse_dump gsdk/bin/release/gsql_data_generator gsdk/bin/release/ids_worker gsdk/bin/release/kafka_loader gsdk/bin/release/launch_daemon.sh gsdk/bin/release/libtigergraph.so gsdk/bin/release/lic_installer gsdk/bin/release/nginx gsdk/bin/release/poc_rest_loader gsdk/bin/release/poc_rest_server gsdk/bin/release/pygdict.py gsdk/bin/release/_pygdict.so gsdk/bin/release/site_ws.sh gsdk/bin/release/statushubcli gsdk/bin/release/swig_dict.py gsdk/bin/release/ts3agent gsdk/bin/release/ts3svc ${GSQL_PKG_HOME}/bin
+[05:00:47]Running: cp -RL bin/release/libudf.so bin/release/poc_gpe_server bin/release/scheduler.so ${GSQL_PKG_HOME}/bin
+[05:00:47]Running: cp -RL gsdk/lib/release/libtigergraph.so ${GSQL_PKG_HOME}/bin
+[05:00:48]Running: mkdir -p ${GSQL_PKG_HOME}/third-party-pkgs
+[05:00:48]Running: mkdir -p ${GSQL_PKG_HOME}/config
+[05:00:48]Running: cp -RL ${GSQL_PROJ_HOME}/src/customer/config/* ${GSQL_PKG_HOME}/config
+[05:00:48]Running: cp -RL ${GSQL_PROJ_HOME}/src/customer/core_impl/gsql_impl/loading_job ${GSQL_PKG_HOME}/config
+[05:00:48]Running: mkdir -p ${GSQL_PKG_HOME}/scripts
+[05:00:48]Running: cp -RL ${GSQL_PROJ_HOME}/src/customer/scripts/* ${GSQL_PKG_HOME}/scripts
+[05:00:48]Running: mkdir -p ${GSQL_PKG_HOME}/sanity_check
+[05:00:48]Running: cp -RL ${GSQL_PROJ_HOME}/src/customer/sanity_check/* ${GSQL_PKG_HOME}/sanity_check
+[05:00:48]Running: mkdir -p ${GSQL_PKG_HOME}/stress_test
+[05:00:48]Running: cp -RL ${GSQL_PROJ_HOME}/src/customer/stress_test/* ${GSQL_PKG_HOME}/stress_test
+[05:00:48]Running: mkdir -p ${GSQL_PKG_HOME}/gsql
+[05:00:48]Running: cp -RL gsdk/gsql/* ${GSQL_PKG_HOME}/gsql 2>/dev/null || :
+[05:00:48]Running: cp -RL gsdk/tutorial ${GSQL_PKG_HOME}/ 2>/dev/null || :
+[05:00:48]Running: cp -r gsdk/visualization ${GSQL_PKG_HOME}/ 2>/dev/null || :
+[05:00:48]Running: cp -r gsdk/kafka_plugins ${GSQL_PKG_HOME}/ 2>/dev/null || :
+[05:00:48]Running: cp -R gsdk/document ${GSQL_PKG_HOME}/ 2>/dev/null
+
+./src/er/tools/saferun.sh finished successfully in 17 seconds. 
+[05:00:48]Running: ./src/er/tools/saferun.sh  ./src/er/buildenv/post_build.conf
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+tput: unknown terminal "unknown"
+[05:00:48]Running: cp -rf "${GSQL_PROJ_HOME}/src/thirdparty/prebuilt/dynamic_libs/gmalloc" "${GSQL_PKG_HOME}/bin/" 2>/dev/null || :
+[05:00:48]Running: cp -rf "${GSQL_PROJ_HOME}/src/thirdparty/prebuilt/bin/jeprof" "${GSQL_PKG_HOME}/bin/gmalloc/jemalloc/" 2>/dev/null || :
+[05:00:48]Running: cp -rf "${GSQL_PKG_HOME}/../gdk/gsdk/bin/release/nginx" "${GSQL_PKG_HOME}/third-party-pkgs/" 2>/dev/null || :
+
+./src/er/tools/saferun.sh finished successfully in 0 seconds. 
+tigergraph_2020.10.26-05.00.31.tar.gz is ready
+
+./gpkg.sh finished successfully in 145 seconds.
+make[1]: Entering directory `/home/tigergraph/tigergraph/dev/gdk'
+make[1]: Leaving directory `/home/tigergraph/tigergraph/dev/gdk'
+[33m[Warning] License will expire in 8 days[0m
+WARNING: Dictionary init failed (300). Fall back to local configure.
+[32mDetect config change. Please run 'gadmin config-apply' to apply.[0m
+[34m[FAB    ][2020-10-26 05:02:59] check_runtime_environment[0m
+[32m== Local source (/home/tigergraph/tigergraph/pkg_pool) ==[0m
+  1: tigergraph_2020.10.26-05.00.31           Mon Oct 26 05:02:56 2020     1114758008
+----------------------------------------------------------------------------------------------------
+[32m==== The chosen components to be installed ====[0m
+pkg:      tigergraph_2020.10.26-05.00.31           Mon Oct 26 05:02:56 2020     1114758008
+[32m=== Installing package ===[0m
+[33m[Warning] License will expire in 8 days[0m
+[32m=== zk ===[0m
+[SUMMARY][ZK] process is [1m[31mdown[0m
+[SUMMARY][ZK] /home/tigergraph/tigergraph/zk has [1m[31mNOT[0m been initialized
+[32m=== kafka ===[0m
+[SUMMARY][KAFKA] process is [1m[31mdown[0m
+[SUMMARY][KAFKA] queue has [1m[31mNOT[0m been initialized
+[34m[FAB    ][m1,m3,m2][0m rm -rf /home/tigergraph/tigergraph/logs/*.pid 
+[34m[FAB    ][m1,m3,m2][0m rm -rf /home/tigergraph/tigergraph/bin/libudf/*
+[34m[FAB    ][2020-10-26 05:03:04] install_pkg:/home/tigergraph/tigergraph/pkg_pool/tigergraph_2020.10.26-05.00.31.tar.gz,conf_tigergraph_fab,true[0m
+[34m[FAB    ][2020-10-26 05:04:04] install_zookeepers[0m
+[34m[FAB    ][2020-10-26 05:04:05] install_kafkas[0m
+[34m[FAB    ][2020-10-26 05:04:07] launch_zookeepers[0m
+[34m[FAB    ][2020-10-26 05:04:19] init_zookeepers[0m
+[34m[FAB    ][2020-10-26 05:04:23] launch_kafkas[0m
+[34m[FAB    ][2020-10-26 05:04:43] init_kafkas[0m
+[34m[FAB    ][2020-10-26 05:04:48] init_kafka_plugins[0m
+[34m[FAB    ][2020-10-26 05:04:54] install_kafka_plugins[0m
+[34m[RUN    ][0m echo "ADMIN_CRON_SCRIPT=/home/tigergraph/tigergraph/.gium/GSQL_LIB/service/../scripts/admin_crontab.sh
+ADMIN_SERVICE_SCRIPT=/home/tigergraph/tigergraph/.gium/GSQL_LIB/service/../scripts/admin_service.sh
+WORK_HOME=/home/tigergraph/tigergraph
+ZK_ADDRESS=172.31.87.241:19999,172.31.86.233:19999,172.31.94.185:19999
+WORK_IP=172.31.87.241
+CLUSTER_MACHINES='172.31.87.241;172.31.86.233;172.31.94.185'
+" > /home/tigergraph/tigergraph/bin/admin_server/config.sh.172.31.87.241
+[34m[RUN    ][0m echo "ADMIN_CRON_SCRIPT=/home/tigergraph/tigergraph/.gium/GSQL_LIB/service/../scripts/admin_crontab.sh
+ADMIN_SERVICE_SCRIPT=/home/tigergraph/tigergraph/.gium/GSQL_LIB/service/../scripts/admin_service.sh
+WORK_HOME=/home/tigergraph/tigergraph
+ZK_ADDRESS=172.31.87.241:19999,172.31.86.233:19999,172.31.94.185:19999
+WORK_IP=172.31.86.233
+CLUSTER_MACHINES='172.31.87.241;172.31.86.233;172.31.94.185'
+" > /home/tigergraph/tigergraph/bin/admin_server/config.sh.172.31.86.233
+[34m[RUN    ][0m echo "ADMIN_CRON_SCRIPT=/home/tigergraph/tigergraph/.gium/GSQL_LIB/service/../scripts/admin_crontab.sh
+ADMIN_SERVICE_SCRIPT=/home/tigergraph/tigergraph/.gium/GSQL_LIB/service/../scripts/admin_service.sh
+WORK_HOME=/home/tigergraph/tigergraph
+ZK_ADDRESS=172.31.87.241:19999,172.31.86.233:19999,172.31.94.185:19999
+WORK_IP=172.31.94.185
+CLUSTER_MACHINES='172.31.87.241;172.31.86.233;172.31.94.185'
+" > /home/tigergraph/tigergraph/bin/admin_server/config.sh.172.31.94.185
+[ADMIN][ALL]/home/tigergraph/tigergraph/.gium/GSQL_LIB/service/../scripts/admin_service.sh daemon /home/tigergraph/tigergraph/bin/admin_server/config.sh.
+[34m[FAB    ][2020-10-26 05:05:06] check_port_of_admin_servers[0m
+[ADMIN][ALL]/home/tigergraph/tigergraph/.gium/GSQL_LIB/service/../scripts/admin_service.sh start /home/tigergraph/tigergraph/bin/admin_server/config.sh.
+[34m[RUN    ][0m /home/tigergraph/tigergraph/pkg_pool/workspace/tigergraph_2020.10.26-05.00.31/deploy_pkg/visualization/ui_package.sh -- -f -p /home/tigergraph/tigergraph;find /home/tigergraph/tigergraph/visualization -exec chmod 755 {} \;
+[32m=== zk ===[0m
+[SUMMARY][ZK] process is up
+[SUMMARY][ZK] /home/tigergraph/tigergraph/zk is ready
+[32m=== kafka ===[0m
+[SUMMARY][KAFKA] process is up
+[SUMMARY][KAFKA] queue is ready
+[32m=== gse ===[0m
+[SUMMARY][GSE] process is up
+[SUMMARY][GSE] id service has [1m[31mNOT[0m been initialized (not_ready not_ready not_ready)
+[32m=== dict ===[0m
+[SUMMARY][DICT] process is up
+[SUMMARY][DICT] dict server is ready
+[32m=== ts3 ===[0m
+[SUMMARY][TS3] process is [1m[31mdown[0m
+[SUMMARY][TS3] ts3 is ready
+[32m=== graph ===[0m
+[SUMMARY][GRAPH] graph has [1m[31mNOT[0m been initialized
+[32m=== nginx ===[0m
+[SUMMARY][NGINX] process is up
+[SUMMARY][NGINX] nginx is ready
+[32m=== restpp ===[0m
+[SUMMARY][RESTPP] process is up
+[SUMMARY][RESTPP] restpp is ready
+[32m=== gpe ===[0m
+[SUMMARY][GPE] process is up
+[SUMMARY][GPE] graph has [1m[31mNOT[0m been initialized (not_ready not_ready not_ready)
+[32m=== gsql ===[0m
+[SUMMARY][GSQL] process is [1m[31mdown[0m
+[SUMMARY][GSQL] gsql has [1m[31mNOT[0m been initialized
+[32m=== Visualization ===[0m
+[SUMMARY][VIS] process is up (VIS server PID: 4325)
+[SUMMARY][VIS] gui server is up
+[34m[FAB    ][m1,m3,m2][0m ~/.gium/gadmin __reset_tid
+[34m[RUN    ][0m rm -rf /home/tigergraph/tigergraph/bin/lib; ln -s /home/tigergraph/tigergraph/dev/gdk/gsql/lib /home/tigergraph/tigergraph/bin/lib
+Done the library setup: /home/tigergraph/tigergraph/bin/lib
+[34m[FAB    ][m1,m3,m2][0m rm -rf /home/tigergraph/tigergraph/logs/DICT*.pid 
+[32m=== zk ===[0m
+[SUMMARY][ZK] process is up
+[SUMMARY][ZK] /home/tigergraph/tigergraph/zk is ready
+[SKIP   ] Skip launch_zookeepers as zk is already up
+[32m=== dict ===[0m
+[SUMMARY][DICT] process is up
+[SUMMARY][DICT] dict server is ready
+[SKIP   ] Skip launch_gsql_subsystems:DICT as dict is already up
+[32m=== zk ===[0m
+[SUMMARY][ZK] process is up
+[SUMMARY][ZK] /home/tigergraph/tigergraph/zk is ready
+[32m=== kafka ===[0m
+[SUMMARY][KAFKA] process is up
+[SUMMARY][KAFKA] queue is ready
+[32m=== gse ===[0m
+[SUMMARY][GSE] process is up
+[SUMMARY][GSE] id service has [1m[31mNOT[0m been initialized (not_ready not_ready not_ready)
+[32m=== dict ===[0m
+[SUMMARY][DICT] process is up
+[SUMMARY][DICT] dict server is ready
+[32m=== ts3 ===[0m
+[SUMMARY][TS3] process is [1m[31mdown[0m
+[SUMMARY][TS3] ts3 is ready
+[32m=== graph ===[0m
+[SUMMARY][GRAPH] graph has [1m[31mNOT[0m been initialized
+[32m=== nginx ===[0m
+[SUMMARY][NGINX] process is up
+[SUMMARY][NGINX] nginx is ready
+[32m=== restpp ===[0m
+[SUMMARY][RESTPP] process is up
+[SUMMARY][RESTPP] restpp is ready
+[32m=== gpe ===[0m
+[SUMMARY][GPE] process is up
+[SUMMARY][GPE] graph has [1m[31mNOT[0m been initialized (not_ready not_ready not_ready)
+[32m=== gsql ===[0m
+[SUMMARY][GSQL] process is [1m[31mdown[0m
+[SUMMARY][GSQL] gsql has [1m[31mNOT[0m been initialized
+[32m=== Visualization ===[0m
+[SUMMARY][VIS] process is up (VIS server PID: 4325)
+[SUMMARY][VIS] gui server is up
+[34m[RUN    ][0m rm -rf ~/.gsql/gstore_gs*_autostart_flag
+Done.
+[34m[RUN    ][0m rm -rf /home/tigergraph/tigergraph/document
+[34m[RUN    ][0m cp -r /home/tigergraph/tigergraph/pkg_pool/workspace/tigergraph_2020.10.26-05.00.31/deploy_pkg/document /home/tigergraph/tigergraph/document
+[34m[FAB    ][m1,m3,m2][0m rm -rf /home/tigergraph/tigergraph/logs/*.pid 
+[34m[FAB    ][2020-10-26 05:07:05] check_port_of_admin_servers[0m
+[ADMIN][ALL]/home/tigergraph/tigergraph/.gium/GSQL_LIB/service/../scripts/admin_service.sh start /home/tigergraph/tigergraph/bin/admin_server/config.sh.
+[32m=== zk ===[0m
+[SUMMARY][ZK] process is up
+[SUMMARY][ZK] /home/tigergraph/tigergraph/zk is ready
+[SKIP   ] Skip launch_zookeepers as zk is already up
+[32m=== dict ===[0m
+[SUMMARY][DICT] process is up
+[SUMMARY][DICT] dict server is ready
+[SKIP   ] Skip launch_gsql_subsystems:DICT as dict is already up
+[32m=== kafka ===[0m
+[SUMMARY][KAFKA] process is up
+[SUMMARY][KAFKA] queue is ready
+[SKIP   ] Skip launch_kafkas as kafka is already up
+[32m=== gse ===[0m
+[SUMMARY][GSE] process is up
+[SUMMARY][GSE] id service has [1m[31mNOT[0m been initialized (not_ready not_ready not_ready)
+[SKIP   ] Skip launch_gsql_subsystems:GSE as gse is already up
+[32m=== gpe ===[0m
+[SUMMARY][GPE] process is up
+[SUMMARY][GPE] graph has [1m[31mNOT[0m been initialized (not_ready not_ready not_ready)
+[SKIP   ] Skip launch_gsql_subsystems:GPE as gpe is already up
+[32m=== nginx ===[0m
+[SUMMARY][NGINX] process is up
+[SUMMARY][NGINX] nginx is ready
+[SKIP   ] Skip launch_gsql_subsystems:NGINX as nginx is already up
+[32m=== restpp ===[0m
+[SUMMARY][RESTPP] process is up
+[SUMMARY][RESTPP] restpp is ready
+[SKIP   ] Skip launch_gsql_subsystems:RESTPP as restpp is already up
+[34m[FAB    ][2020-10-26 05:07:18] launch_ts3s[0m
+[34m[FAB    ][2020-10-26 05:07:21] check_port_of_vis_services[0m
+[34m[RUN    ][0m LD_LIBRARY_PATH="/home/tigergraph/tigergraph/bin" /home/tigergraph/tigergraph/visualization/utils/start.sh
+[34m[FAB    ][2020-10-26 05:07:22] check_port_of_admin_servers[0m
+[ADMIN][ALL]/home/tigergraph/tigergraph/.gium/GSQL_LIB/service/../scripts/admin_service.sh start /home/tigergraph/tigergraph/bin/admin_server/config.sh.
+[34m[FAB    ][m1,m3,m2][0m /home/tigergraph/tigergraph/dev/gdk/gsql/gsql_server_util START || :
+[32m=== zk ===[0m
+[SUMMARY][ZK] process is up
+[SUMMARY][ZK] /home/tigergraph/tigergraph/zk is ready
+[32m=== kafka ===[0m
+[SUMMARY][KAFKA] process is up
+[SUMMARY][KAFKA] queue is ready
+[32m=== gse ===[0m
+[SUMMARY][GSE] process is up
+[SUMMARY][GSE] id service has [1m[31mNOT[0m been initialized (not_ready not_ready not_ready)
+[32m=== dict ===[0m
+[SUMMARY][DICT] process is up
+[SUMMARY][DICT] dict server is ready
+[32m=== ts3 ===[0m
+[SUMMARY][TS3] process is up
+[SUMMARY][TS3] ts3 is ready
+[32m=== graph ===[0m
+[SUMMARY][GRAPH] graph has [1m[31mNOT[0m been initialized
+[32m=== nginx ===[0m
+[SUMMARY][NGINX] process is up
+[SUMMARY][NGINX] nginx is ready
+[32m=== restpp ===[0m
+[SUMMARY][RESTPP] process is up
+[SUMMARY][RESTPP] restpp is ready
+[32m=== gpe ===[0m
+[SUMMARY][GPE] process is up
+[SUMMARY][GPE] graph has [1m[31mNOT[0m been initialized (not_ready not_ready not_ready)
+[32m=== gsql ===[0m
+[SUMMARY][GSQL] process is up
+[SUMMARY][GSQL] gsql is ready
+[32m=== Visualization ===[0m
+[SUMMARY][VIS] process is up (VIS server PID: 4325)
+[SUMMARY][VIS] gui server is up
+[34m[RUN    ][0m rm -rf ~/.gsql/gstore_gs*_autostart_flag
+Done.
+[34m[RUN    ][0m ~/.gium/gsql use global install query -force all
+Done.
+[33m[Warning] License will expire in 8 days[0m
+[34m[FAB    ][2020-10-26 05:07:33] check_config[0m
+[34m[RUN    ][0m echo "ADMIN_CRON_SCRIPT=/home/tigergraph/tigergraph/.gium/GSQL_LIB/service/../scripts/admin_crontab.sh
+ADMIN_SERVICE_SCRIPT=/home/tigergraph/tigergraph/.gium/GSQL_LIB/service/../scripts/admin_service.sh
+WORK_HOME=/home/tigergraph/tigergraph
+ZK_ADDRESS=172.31.87.241:19999,172.31.86.233:19999,172.31.94.185:19999
+WORK_IP=172.31.87.241
+CLUSTER_MACHINES='172.31.87.241;172.31.86.233;172.31.94.185'
+" > /home/tigergraph/tigergraph/bin/admin_server/config.sh.172.31.87.241
+[34m[RUN    ][0m echo "ADMIN_CRON_SCRIPT=/home/tigergraph/tigergraph/.gium/GSQL_LIB/service/../scripts/admin_crontab.sh
+ADMIN_SERVICE_SCRIPT=/home/tigergraph/tigergraph/.gium/GSQL_LIB/service/../scripts/admin_service.sh
+WORK_HOME=/home/tigergraph/tigergraph
+ZK_ADDRESS=172.31.87.241:19999,172.31.86.233:19999,172.31.94.185:19999
+WORK_IP=172.31.86.233
+CLUSTER_MACHINES='172.31.87.241;172.31.86.233;172.31.94.185'
+" > /home/tigergraph/tigergraph/bin/admin_server/config.sh.172.31.86.233
+[34m[RUN    ][0m echo "ADMIN_CRON_SCRIPT=/home/tigergraph/tigergraph/.gium/GSQL_LIB/service/../scripts/admin_crontab.sh
+ADMIN_SERVICE_SCRIPT=/home/tigergraph/tigergraph/.gium/GSQL_LIB/service/../scripts/admin_service.sh
+WORK_HOME=/home/tigergraph/tigergraph
+ZK_ADDRESS=172.31.87.241:19999,172.31.86.233:19999,172.31.94.185:19999
+WORK_IP=172.31.94.185
+CLUSTER_MACHINES='172.31.87.241;172.31.86.233;172.31.94.185'
+" > /home/tigergraph/tigergraph/bin/admin_server/config.sh.172.31.94.185
+[34m[FAB    ][2020-10-26 05:07:36] update_config_all[0m
+[34m[FAB    ][m3,m2][0m mkdir -p /home/tigergraph/.gsql
+[34m[FAB    ][m3,m2][0m scp -r -P 22 /home/tigergraph/.gsql/gsql.cfg.commited /home/tigergraph/.gsql
+[33m[Warning] License will expire in 8 days[0m
+[34m[FAB    ][m1,m3,m2][0m rm -rf /home/tigergraph/tigergraph/logs/*.pid 
+[34m[FAB    ][m1,m3,m2][0m /home/tigergraph/tigergraph/dev/gdk/gsql/gsql_server_util STOP || :
+[34m[FAB    ][2020-10-26 05:07:51] gsql_mon_alert_off[0m
+[34m[FAB    ][2020-10-26 05:07:51] shutdown_gsql_subsystems:KAFKA-LOADER[0m
+[34m[FAB    ][2020-10-26 05:07:52] shutdown_gsql_subsystems:RESTPP[0m
+[34m[FAB    ][2020-10-26 05:07:52] shutdown_gsql_subsystems:NGINX[0m
+[34m[FAB    ][2020-10-26 05:07:53] shutdown_gsql_subsystems:GPE[0m
+[34m[FAB    ][2020-10-26 05:07:53] shutdown_gsql_subsystems:GSE[0m
+[34m[FAB    ][2020-10-26 05:07:53] shutdown_kafkas[0m
+[34m[FAB    ][2020-10-26 05:07:54] shutdown_gsql_subsystems:DICT[0m
+[34m[FAB    ][2020-10-26 05:07:55] shutdown_zookeepers[0m
+[32m=== zk ===[0m
+[SUMMARY][ZK] process is [1m[31mdown[0m
+[SUMMARY][ZK] /home/tigergraph/tigergraph/zk is ready
+[32m=== dict ===[0m
+[SUMMARY][DICT] process is [1m[31mdown[0m
+[SUMMARY][DICT] dict server has [1m[31mNOT[0m been initialized
+[32m=== kafka ===[0m
+[SUMMARY][KAFKA] process is [1m[31mdown[0m
+[SUMMARY][KAFKA] queue has [1m[31mNOT[0m been initialized
+[32m=== gse ===[0m
+[SUMMARY][GSE] process is [1m[31mdown[0m
+[SUMMARY][GSE] id service has [1m[31mNOT[0m been initialized
+[32m=== gpe ===[0m
+[SUMMARY][GPE] process is [1m[31mdown[0m
+[SUMMARY][GPE] graph has [1m[31mNOT[0m been initialized
+[32m=== nginx ===[0m
+[SUMMARY][NGINX] process is [1m[31mdown[0m
+[SUMMARY][NGINX] nginx has [1m[31mNOT[0m been initialized
+[32m=== restpp ===[0m
+[SUMMARY][RESTPP] process is [1m[31mdown[0m
+[SUMMARY][RESTPP] restpp has [1m[31mNOT[0m been initialized
+[34m[FAB    ][2020-10-26 05:08:05] check_port_of_vis_services[0m
+[34m[RUN    ][0m LD_LIBRARY_PATH="/home/tigergraph/tigergraph/bin" /home/tigergraph/tigergraph/visualization/utils/restart.sh
+[34m[FAB    ][2020-10-26 05:08:06] launch_zookeepers[0m
+[34m[FAB    ][2020-10-26 05:08:19] launch_gsql_subsystems:DICT[0m
+[34m[FAB    ][2020-10-26 05:08:21] launch_kafkas[0m
+[34m[FAB    ][2020-10-26 05:08:44] launch_gsql_subsystems:GSE[0m
+[34m[FAB    ][2020-10-26 05:08:46] launch_gsql_subsystems:GPE[0m
+[34m[FAB    ][2020-10-26 05:08:47] launch_gsql_subsystems:NGINX[0m
+[34m[FAB    ][2020-10-26 05:08:49] launch_gsql_subsystems:RESTPP[0m
+[34m[FAB    ][2020-10-26 05:08:51] check_port_of_admin_servers[0m
+[ADMIN][ALL]/home/tigergraph/tigergraph/.gium/GSQL_LIB/service/../scripts/admin_service.sh start /home/tigergraph/tigergraph/bin/admin_server/config.sh.
+[34m[FAB    ][m1,m3,m2][0m /home/tigergraph/tigergraph/dev/gdk/gsql/gsql_server_util START || :
+[32m=== zk ===[0m
+[SUMMARY][ZK] process is up
+[SUMMARY][ZK] /home/tigergraph/tigergraph/zk is ready
+[32m=== kafka ===[0m
+[SUMMARY][KAFKA] process is up
+[SUMMARY][KAFKA] queue is ready
+[32m=== gse ===[0m
+[SUMMARY][GSE] process is up
+[SUMMARY][GSE] id service has [1m[31mNOT[0m been initialized (not_ready not_ready not_ready)
+[32m=== dict ===[0m
+[SUMMARY][DICT] process is up
+[SUMMARY][DICT] dict server is ready
+[32m=== ts3 ===[0m
+[SUMMARY][TS3] process is up
+[SUMMARY][TS3] ts3 is ready
+[32m=== graph ===[0m
+[SUMMARY][GRAPH] graph has [1m[31mNOT[0m been initialized
+[32m=== nginx ===[0m
+[SUMMARY][NGINX] process is up
+[SUMMARY][NGINX] nginx is ready
+[32m=== restpp ===[0m
+[SUMMARY][RESTPP] process is up
+[SUMMARY][RESTPP] restpp is ready
+[32m=== gpe ===[0m
+[SUMMARY][GPE] process is up
+[SUMMARY][GPE] graph has [1m[31mNOT[0m been initialized (not_ready not_ready not_ready)
+[32m=== gsql ===[0m
+[SUMMARY][GSQL] process is up
+[SUMMARY][GSQL] gsql is ready
+[32m=== Visualization ===[0m
+[SUMMARY][VIS] process is up (VIS server PID: 2063)
+[SUMMARY][VIS] gui server is up
+Done.
+---------------------------------------------------------------
+Congratulations! Installation Finished! 
+---------------------------------------------------------------
+
+Thank you for using TigerGraph platform!
+DONE
+[NOTE    ]: Please login to node m1 (172.31.87.241) of the cluster to continue. 
+[NOTE    ]: The TigerGraph user: tigergraph
+installation finished, cost 695 s
+tigergraph version is 2.6

@@ -1,0 +1,28 @@
+Normal loading of tpch data with scale factor: 30
+scale 30 loading:
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |  /home/tigergraph/load_data/./orders.tbl |       45000000 |    519 kl/s |    86.66 s|
+[2K  |    /home/tigergraph/load_data/./part.tbl |        6000000 |    646 kl/s |     9.29 s|
+[2K  |/home/tigergraph/load_data/./partsupp.tbl |       24000000 |    866 kl/s |    27.70 s|
+[2K  |  /home/tigergraph/load_data/./region.tbl |              5 |       5 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./supplier.tbl |         300000 |    240 kl/s |     1.25 s|
+[2K  +-------------------------------------------------------------------------------------+
+Load data cost time: 563 s
+Time           ---cpu-- ---mem-- ---tcp-- -----traffic---- nvme0n1- nvme0n1p  ---load- 
+Time             util     util   retran    bytin  bytout     util     util     load1   
+02/12/20-21:05  25.83    23.78     0.00   ------  ------    68.89    68.89      5.41   
+02/12/20-21:10   9.91    16.21     0.00   ------  ------    39.09    39.09      1.59   
+02/12/20-21:15  16.91    23.16     0.00   ------  ------    31.23    31.23      6.78   
+02/12/20-21:20  66.79    35.08     0.00   ------  ------    45.18    45.18     14.00   
+
+MAX             66.79    35.08     0.00   ------  ------    68.89    68.89     14.00   
+MEAN            31.20    24.82     0.00   ------  ------    38.50    38.50      7.46   
+MIN              9.91    16.21     0.00   ------  ------    31.23    31.23      1.59   
+----------------- summary ------------------
+Total Lines: 259798402
+Total time: 551
+Average speed: 471503

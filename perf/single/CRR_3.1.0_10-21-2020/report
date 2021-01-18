@@ -1,0 +1,18 @@
+=====================installation=====================
+not find install result under /home/tigergraph/results
+=====================Batch Query=====================
+Non distributed mode query:
+wcc:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	0m0.011s
+pagerank:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":0,"loop_count":0}]}
+real	0m0.011s
+distributed mode query:
+wcc:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	0m0.014s
+pagerank:
+real	0m2.237s
+=====================Tpch Load=====================
+=====================Hub Load=====================

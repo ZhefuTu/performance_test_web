@@ -1,0 +1,1087 @@
+Using graph 'tpc_graph'
+The job load_tpc could not be found.
+The job load_tpc is created.
+[Tip: Use "CTRL + C" to stop displaying the loading status update, then use "SHOW LOADING STATUS jobid" to track the loading progress again]
+[Tip: Manage loading jobs with "ABORT/RESUME LOADING JOB jobid"]
+Starting the following job, i.e.
+  JobName: load_tpc, jobid: tpc_graph.load_tpc.file.m1.1606943650316
+  Loading log: '/home/tigergraph/tigergraph/log/restpp/restpp_loader_logs/tpc_graph/tpc_graph.load_tpc.file.m1.1606943650316.log'
+
+Job "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[WAITING] m1 ( Finished: 0 / Total: 0 )
+[2A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 0 / Total: 8 )
+  [LOADING] /home/tigergraph/load_data/./customer.tbl
+  [=====================================                           ] 58%, 819 kl/s
+[4A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+  +-------------------------------------------------------------------------------------+
+[7A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [                                                                 ] 1%, 432 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=                                                                ] 3%, 434 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [==                                                               ] 4%, 435 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [===                                                              ] 5%, 433 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [===                                                              ] 6%, 436 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [====                                                             ] 7%, 434 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=====                                                            ] 9%, 428 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [======                                                          ] 10%, 428 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=======                                                         ] 11%, 426 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=======                                                         ] 12%, 427 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [========                                                        ] 13%, 426 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [========                                                        ] 14%, 427 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [==========                                                      ] 16%, 426 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [==========                                                      ] 17%, 422 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [===========                                                     ] 18%, 422 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [============                                                    ] 19%, 422 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [============                                                    ] 20%, 423 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [==============                                                  ] 22%, 424 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [==============                                                  ] 23%, 424 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [===============                                                 ] 24%, 425 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [================                                                ] 25%, 425 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [================                                                ] 26%, 425 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=================                                               ] 28%, 426 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [==================                                              ] 29%, 425 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [===================                                             ] 30%, 426 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [===================                                             ] 31%, 426 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [====================                                            ] 32%, 425 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=====================                                           ] 34%, 424 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [======================                                          ] 35%, 426 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=======================                                         ] 36%, 427 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=======================                                         ] 37%, 426 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [========================                                        ] 38%, 426 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=========================                                       ] 40%, 426 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [==========================                                      ] 41%, 426 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [==========================                                      ] 42%, 427 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [===========================                                     ] 43%, 428 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [============================                                    ] 44%, 428 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=============================                                   ] 46%, 428 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [==============================                                  ] 47%, 428 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [==============================                                  ] 48%, 428 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [===============================                                 ] 49%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [================================                                ] 50%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=================================                               ] 52%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=================================                               ] 53%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [==================================                              ] 54%, 430 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [===================================                             ] 55%, 430 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [===================================                             ] 56%, 430 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=====================================                           ] 58%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=====================================                           ] 59%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [======================================                          ] 60%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=======================================                         ] 61%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=======================================                         ] 62%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [========================================                        ] 64%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=========================================                       ] 65%, 428 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [==========================================                      ] 66%, 428 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [==========================================                      ] 67%, 427 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [===========================================                     ] 68%, 427 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [============================================                    ] 69%, 427 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=============================================                   ] 71%, 428 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [==============================================                  ] 72%, 428 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [==============================================                  ] 73%, 428 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [===============================================                 ] 74%, 428 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [================================================                ] 75%, 428 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=================================================               ] 77%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=================================================               ] 78%, 428 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [==================================================              ] 79%, 428 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [===================================================             ] 80%, 428 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [===================================================             ] 81%, 428 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=====================================================           ] 83%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=====================================================           ] 84%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [======================================================          ] 85%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=======================================================         ] 86%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [========================================================        ] 88%, 430 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [========================================================        ] 89%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=========================================================       ] 90%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [==========================================================      ] 91%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [==========================================================      ] 92%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [============================================================    ] 94%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [============================================================    ] 95%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=============================================================   ] 96%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [==============================================================  ] 97%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [==============================================================  ] 98%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./lineitem.tbl
+[2K  [=============================================================== ] 99%, 429 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[9A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 3 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./orders.tbl
+[2K  [=                                                                ] 3%, 513 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+  +-------------------------------------------------------------------------------------+
+[11A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 3 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./orders.tbl
+[2K  [=====                                                            ] 9%, 524 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[11A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 3 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./orders.tbl
+[2K  [========                                                        ] 14%, 525 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[11A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 3 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./orders.tbl
+[2K  [============                                                    ] 20%, 525 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[11A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 3 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./orders.tbl
+[2K  [================                                                ] 26%, 522 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[11A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 3 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./orders.tbl
+[2K  [====================                                            ] 32%, 521 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[11A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 3 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./orders.tbl
+[2K  [=======================                                         ] 37%, 521 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[11A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 3 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./orders.tbl
+[2K  [===========================                                     ] 43%, 521 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[11A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 3 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./orders.tbl
+[2K  [===============================                                 ] 49%, 521 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[11A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 3 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./orders.tbl
+[2K  [===================================                             ] 55%, 521 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[11A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 3 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./orders.tbl
+[2K  [=======================================                         ] 61%, 520 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[11A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 3 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./orders.tbl
+[2K  [==========================================                      ] 66%, 520 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[11A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 3 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./orders.tbl
+[2K  [==============================================                  ] 72%, 520 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[11A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 3 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./orders.tbl
+[2K  [=================================================               ] 78%, 519 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[11A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 3 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./orders.tbl
+[2K  [=====================================================           ] 84%, 519 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[11A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 3 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./orders.tbl
+[2K  [========================================================        ] 89%, 518 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[11A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 3 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./orders.tbl
+[2K  [============================================================    ] 95%, 518 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[11A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 4 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./part.tbl
+[2K  [=======                                                         ] 11%, 630 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |  /home/tigergraph/load_data/./orders.tbl |       45000000 |    519 kl/s |    86.66 s|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+  +-------------------------------------------------------------------------------------+
+[12A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 4 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./part.tbl
+[2K  [===========================================                     ] 68%, 668 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |  /home/tigergraph/load_data/./orders.tbl |       45000000 |    519 kl/s |    86.66 s|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[12A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 5 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./partsupp.tbl
+[2K  [==                                                               ] 4%, 703 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |    /home/tigergraph/load_data/./part.tbl |        6000000 |    646 kl/s |     9.29 s|
+[2K  |  /home/tigergraph/load_data/./orders.tbl |       45000000 |    519 kl/s |    86.66 s|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+  +-------------------------------------------------------------------------------------+
+[13A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 5 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./partsupp.tbl
+[2K  [================                                                ] 26%, 964 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |    /home/tigergraph/load_data/./part.tbl |        6000000 |    646 kl/s |     9.29 s|
+[2K  |  /home/tigergraph/load_data/./orders.tbl |       45000000 |    519 kl/s |    86.66 s|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[13A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 5 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./partsupp.tbl
+[2K  [==========================                                      ] 42%, 871 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |    /home/tigergraph/load_data/./part.tbl |        6000000 |    646 kl/s |     9.29 s|
+[2K  |  /home/tigergraph/load_data/./orders.tbl |       45000000 |    519 kl/s |    86.66 s|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[13A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 5 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./partsupp.tbl
+[2K  [========================================                        ] 63%, 909 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |    /home/tigergraph/load_data/./part.tbl |        6000000 |    646 kl/s |     9.29 s|
+[2K  |  /home/tigergraph/load_data/./orders.tbl |       45000000 |    519 kl/s |    86.66 s|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[13A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 5 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./partsupp.tbl
+[2K  [======================================================          ] 85%, 941 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |    /home/tigergraph/load_data/./part.tbl |        6000000 |    646 kl/s |     9.29 s|
+[2K  |  /home/tigergraph/load_data/./orders.tbl |       45000000 |    519 kl/s |    86.66 s|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[13A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 5 / Total: 8 )
+[2K  [LOADING] /home/tigergraph/load_data/./partsupp.tbl
+[2K  [=============================================================== ] 99%, 897 kl/s
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |    /home/tigergraph/load_data/./part.tbl |        6000000 |    646 kl/s |     9.29 s|
+[2K  |  /home/tigergraph/load_data/./orders.tbl |       45000000 |    519 kl/s |    86.66 s|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  +-------------------------------------------------------------------------------------+
+[13A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[RUNNING] m1 ( Finished: 8 / Total: 8 )
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./supplier.tbl |         300000 |    240 kl/s |     1.25 s|
+[2K  |  /home/tigergraph/load_data/./region.tbl |              5 |       5 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./partsupp.tbl |       24000000 |    866 kl/s |    27.70 s|
+[2K  |    /home/tigergraph/load_data/./part.tbl |        6000000 |    646 kl/s |     9.29 s|
+[2K  |  /home/tigergraph/load_data/./orders.tbl |       45000000 |    519 kl/s |    86.66 s|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+  +-------------------------------------------------------------------------------------+
+[14A[2KJob "tpc_graph.load_tpc.file.m1.1606943650316" loading status
+[2K[FINISHED] m1 ( Finished: 8 / Total: 8 )
+[2K  [LOADED]
+[2K  +-------------------------------------------------------------------------------------+
+[2K  |                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/load_data/./customer.tbl |        4500000 |    791 kl/s |     5.69 s|
+[2K  |/home/tigergraph/load_data/./lineitem.tbl |      179998372 |    429 kl/s |   419.26 s|
+[2K  |  /home/tigergraph/load_data/./nation.tbl |             25 |      25 l/s |     1.00 s|
+[2K  |  /home/tigergraph/load_data/./orders.tbl |       45000000 |    519 kl/s |    86.66 s|
+[2K  |    /home/tigergraph/load_data/./part.tbl |        6000000 |    646 kl/s |     9.29 s|
+[2K  |/home/tigergraph/load_data/./partsupp.tbl |       24000000 |    866 kl/s |    27.70 s|
+[2K  |  /home/tigergraph/load_data/./region.tbl |              5 |       5 l/s |     1.00 s|
+[2K  |/home/tigergraph/load_data/./supplier.tbl |         300000 |    240 kl/s |     1.25 s|
+[2K  +-------------------------------------------------------------------------------------+
+Load data cost time: 563 s

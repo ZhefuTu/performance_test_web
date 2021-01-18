@@ -1,0 +1,10 @@
+Loading benchmark data
+1K hub-nodes Loading [second]: 
+[2K  [===========                                                    ] 18%, 1437 kl/s
+[4A[2KJob "poc_graph.load1.file.m1.1602574708618" loading status
+[2K[FAILED] m1 ( Finished: 0 / Total: 1 )
+[2K  [FAILED]
+[2K  +--------------------------------------------------------------------------------------------+
+  |                         FILENAME |   LOADED LINES |   AVG SPEED |   DURATION |   PERCENTAGE|
+  |/home/tigergraph/hub_load/./1.csv |      233561833 |   1437 kl/s |   162.48 s |         18 %|
+  +--------------------------------------------------------------------------------------------+

@@ -33,7 +33,7 @@ MODULE_HEADS = [
     "token_config",
     "cross_region_replication",
 
-    # "stress_test",
+    "stress_test",
     # "wcc_pagerank",
     # "service_failure",
     # "service_recover",
@@ -57,7 +57,7 @@ def get_module_name(file_name, file_path):
             return "install"
         elif file_name.endswith("_result"):
             prefix = file_name.replace("_result", "")
-            if prefix in ["schema_change","backup","restore","query_installation","concurrent_load","upgrade","clear_graph_store","database_export","database_import","kafka_load","ldap","ssl_config","create_schema","load_data","deletion"]:
+            if prefix in ["schema_change","backup","restore","query_installation","concurrent_load","upgrade","clear_graph_store","database_export","database_import","kafka_load","ldap","ssl_config","create_schema","load_data","deletion","stress_test"]:
                 return prefix
             elif prefix == "index":
                 return "secondary_index"
@@ -214,6 +214,18 @@ def get_module_result(module_name, file_path):
         return [r_str, s_result, file_path.replace("\\","/")]
     elif module_name == "gsql_stress":
         report_file = os.path.join(file_path, "gsql_stress_result")
+        r_str = "Pass"
+        s_result = ""
+        if os.path.isfile(report_file):
+            f = open(report_file, "r")
+            data = f.readlines()
+            for line in data:
+                if 'failed' in line:
+                    r_str = "Failed"
+                    break
+        return [r_str, s_result, file_path.replace("\\","/")]
+    elif module_name == "stress_test":
+        report_file = os.path.join(file_path, "stress_test_result")
         r_str = "Pass"
         s_result = ""
         if os.path.isfile(report_file):
@@ -432,6 +444,7 @@ def get_release_result():
         # index_list = result[ver].keys()
         index_list = index_sort(result[ver])
         # index_list.sort(key=get_time, reverse=True)
+        index_list = index_list[0:21]
         html_tag_tbody = []
         for ind in index_list:
             html_tag_tr = [""] * (len(MODULE_HEADS)+1)

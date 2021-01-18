@@ -1,0 +1,10 @@
+=====================installation=====================
+TigerGraph is successfully started! 
+installation finished, cost 162 s
+=====================Batch Query=====================
+=====================Tpch Load=====================
+----------------- summary ------------------
+Total Lines: 86586082
+Total time: 401
+Average speed: 215925
+=====================Hub Load=====================

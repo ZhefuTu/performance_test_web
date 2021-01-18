@@ -1,0 +1,43 @@
+[2K  [LOADING] /home/tigergraph/tigergraph/app/3.0.6/document/benchmark/setup/./data/twitter_rv.net
+[2K  [============================================================== ] 99%, 1599 kl/s
+[4A[2KJob "snap_graph.load_snap.file.m1.1605083211962" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 1 )
+[2K  [LOADED]
+[2K  +--------------------------------------------------------------------------------------------------------------------------------+
+  |                                                                            FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+  |/home/tigergraph/tigergraph/app/3.0.6/document/benchmark/setup/./data/twitter_rv.net |     1468365182 |   1598 kl/s |   918.82 s|
+  +--------------------------------------------------------------------------------------------------------------------------------+
+[7A[2KJob "snap_graph.load_snap.file.m1.1605083211962" loading status
+[2K[FINISHED] m1 ( Finished: 1 / Total: 1 )
+[2K  [LOADED]
+[2K  +--------------------------------------------------------------------------------------------------------------------------------+
+[2K  |                                                                            FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/tigergraph/app/3.0.6/document/benchmark/setup/./data/twitter_rv.net |     1468365182 |   1598 kl/s |   918.82 s|
+[2K  +--------------------------------------------------------------------------------------------------------------------------------+
+*** Elapsed loading time = 926 sec
+
+*** Loading summary
+vertex count: 41,652,230, edge count: 1,468,365,182
+
+Non distributed mode query:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6268639,"loop_count":71}]}
+real	3m51.574s
+user	0m0.004s
+sys	0m0.005s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	12m13.456s
+user	0m0.011s
+sys	0m0.008s
+
+distributed mode query:
+wcc: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6268639,"loop_count":71}]}
+real	2m37.636s
+user	0m0.002s
+sys	0m0.006s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	3m32.628s
+user	0m0.003s
+sys	0m0.007s

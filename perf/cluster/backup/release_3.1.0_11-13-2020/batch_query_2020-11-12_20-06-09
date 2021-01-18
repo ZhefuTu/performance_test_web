@@ -1,0 +1,43 @@
+[2K[RUNNING] m1 ( Finished: 0 / Total: 1 )
+[2K  [LOADING] /data/tigergraph/app/3.1.0/document/benchmark/setup/./data/twitter_rv.net
+[2K  [============================================================== ] 99%, 2854 kl/s
+[4A[2KJob "snap_graph.load_snap.file.m1.1605238082530" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 1 )
+[2K  [LOADED]
+[2K  +---------------------------------------------------------------------------------------------------------------------+
+  |                                                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+  |/data/tigergraph/app/3.1.0/document/benchmark/setup/./data/twitter_rv.net |     1468365182 |   2853 kl/s |   514.58 s|
+  +---------------------------------------------------------------------------------------------------------------------+
+[7A[2KJob "snap_graph.load_snap.file.m1.1605238082530" loading status
+[2K[FINISHED] m1 ( Finished: 1 / Total: 1 )
+[2K  [LOADED]
+[2K  +---------------------------------------------------------------------------------------------------------------------+
+[2K  |                                                                 FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/data/tigergraph/app/3.1.0/document/benchmark/setup/./data/twitter_rv.net |     1468365182 |   2853 kl/s |   514.58 s|
+[2K  +---------------------------------------------------------------------------------------------------------------------+
+*** Elapsed loading time = 522 sec
+
+*** Loading summary
+
+Non distributed mode query:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6268711,"loop_count":46}]}
+real	4m14.455s
+user	0m0.010s
+sys	0m0.012s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	13m34.120s
+user	0m0.019s
+sys	0m0.031s
+
+distributed mode query:
+wcc: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6268711,"loop_count":46}]}
+real	3m58.451s
+user	0m0.005s
+sys	0m0.018s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	6m32.674s
+user	0m0.013s
+sys	0m0.019s

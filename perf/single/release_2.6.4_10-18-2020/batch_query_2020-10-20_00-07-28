@@ -1,0 +1,43 @@
+  |/home/tigergraph/tigergraph/document/benchmark/setup/./data/twitter_rv.net |     1468365182 |   1615 kl/s |   909.04 s|
+  +----------------------------------------------------------------------------------------------------------------------+
+[7A[2KJob "snap_graph.load_snap.file.m1.1603150156495" loading status
+[2K[RUNNING] m1 ( Finished: 1 / Total: 1 )
+[2K  [LOADED]
+[2K  +----------------------------------------------------------------------------------------------------------------------+
+[2K  |                                                                  FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/tigergraph/document/benchmark/setup/./data/twitter_rv.net |     1468365182 |   1615 kl/s |   909.04 s|
+[2K  +----------------------------------------------------------------------------------------------------------------------+
+[7A[2KJob "snap_graph.load_snap.file.m1.1603150156495" loading status
+[2K[FINISHED] m1 ( Finished: 1 / Total: 1 )
+[2K  [LOADED]
+[2K  +----------------------------------------------------------------------------------------------------------------------+
+[2K  |                                                                  FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+[2K  |/home/tigergraph/tigergraph/document/benchmark/setup/./data/twitter_rv.net |     1468365182 |   1615 kl/s |   909.04 s|
+[2K  +----------------------------------------------------------------------------------------------------------------------+
+*** Elapsed loading time = 920 sec
+
+*** Loading summary
+vertex count: 41,652,230, edge count: 1,468,365,182
+
+Non distributed mode query:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6267151,"loop_count":49}]}
+real	2m8.499s
+user	0m0.005s
+sys	0m0.003s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	7m29.299s
+user	0m0.007s
+sys	0m0.007s
+
+distributed mode query:
+wcc: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6267151,"loop_count":49}]}
+real	2m36.933s
+user	0m0.000s
+sys	0m0.008s
+pagerank: 
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	7m55.139s
+user	0m0.012s
+sys	0m0.003s

@@ -1,0 +1,29 @@
+Dropping all, about 1 minute ...
+Abort all active loading jobs
+Try to abort all loading jobs on graph tpc_graph, it may take a while ...
+[ABORT_SUCCESS] No active Loading Job to abort.
+
+Shutdown restpp gse gpe ...
+Graph store /home/tigergraph/tigergraph/gstore/0/ has been cleared!
+Everything is dropped.
+The vertex type lineitem is created.
+The vertex type part is created.
+The vertex type supplier is created.
+The vertex type orders is created.
+The vertex type customer is created.
+The vertex type nation is created.
+The vertex type region is created.
+The edge type li_part is created.
+The edge type li_supp is created.
+The edge type part_supp is created.
+The edge type order_li is created.
+The edge type supp_nation is created.
+The edge type order_cust is created.
+The edge type cust_nation is created.
+The edge type nation_region is created.
+
+Restarting gse gpe restpp ...
+
+Finish restarting services in 26.805 seconds!
+The graph tpc_graph is created.
+Cost time: 149 s

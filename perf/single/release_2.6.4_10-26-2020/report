@@ -1,0 +1,27 @@
+=====================installation=====================
+installation finished, cost 543 s
+=====================Batch Query=====================
+
+   LOADED LINES    AVG SPEED    DURATION
+     1468365182    1634 kl/s    898.32 s
+   LOADED LINES    AVG SPEED    DURATION
+     1468365182    1634 kl/s    898.32 s
+Non distributed mode query:
+wcc:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	1m49.926s
+pagerank:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[{"@@group_cnt":6267079,"loop_count":49}]}
+real	7m2.514s
+distributed mode query:
+wcc:
+{"version":{"edition":"enterprise","api":"v2","schema":0},"error":false,"message":"","results":[]}
+real	2m14.687s
+pagerank:
+real	7m21.858s
+=====================Tpch Load=====================
+----------------- summary ------------------
+Total Lines: 86586082
+Total time: 344
+Average speed: 251703
+=====================Hub Load=====================
