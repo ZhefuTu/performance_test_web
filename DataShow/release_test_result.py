@@ -397,6 +397,8 @@ def get_release_result():
             if version not in result:
                 result[version] = {}
             time = re.match('.*(\d\d-\d\d-\d\d\d\d).*', dir)
+            if not time:
+                continue
             time = time.group(1)
 
             files = os.listdir(dir_path)

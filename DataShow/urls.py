@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^perf_data', views.get_perf_data),
     url(r'^release_test', views.show_release_test),
     url(r'^show_report', views.show_report),
+    url(r'^top_cases', views.get_top_cases),
 ]
