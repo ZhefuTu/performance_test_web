@@ -8,7 +8,7 @@ from perf_show import get_result_info, get_table_html
 from release_test_result import get_release_result, get_module_heads
 import json
 import os
-from mit_server import get_top_cases
+from mit_server import get_top_cases_html
 
 # Create your views here.
 
@@ -81,11 +81,8 @@ def get_top_cases(request):
     days = request.GET.get("days", 30)
     typ = request.GET.get("type", "failed")
 
-    if request.method = "post":
-        days = request.POST.get("days", "")
-        typ = request.POST.get("type", "")
-
+    context = {}
     context['days'] = days
     context['type'] = typ
-    context['content'] = mark_safe(get_top_cases(days, typ))
+    context['content'] = mark_safe(get_top_cases_html(days, typ))
     return render(request, 'DataShow/top_cases.html', context)
