@@ -12,6 +12,7 @@
     <link rel="icon" href="/static/img/logo.jpg">
 
     <title>release_test_result</title>
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/semantic.min.css">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
@@ -36,6 +37,7 @@
     <!-- <script type="text/javascript" language="javascript" src="/htdocs/js/bootstrap.min.js"></script> -->
     <!-- <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script> -->
     <script src="/static/js/echarts.js" type="text/javascript" ></script>
+    <script src="/static/js/semantic.min.js"></script>
     <!-- <script src="/static/js/perf.js" type="text/javascript" ></script> -->
 
 
@@ -54,6 +56,10 @@
     <script type="text/javascript">
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip();
+	    $('.ui.button')
+ 		.popup({
+                    inline: true
+	        });
         });
         function click_version(button){
             $(button).parent().parent().parent().next(".childrens").toggle();
@@ -74,10 +80,10 @@
                             background-repeat:no-repeat;
                             ">
     <div>
-        <table class="table table-bordered">
+        <table class="ui celled structured table">
             <thead>
                 <tr>
-                    <th bgcolor="#3491DB">version/tag</th>
+                    <th class="center aligned">version/tag</th>
                     {{ th_content }}
                 </tr>
             </thead>

@@ -2,7 +2,7 @@
 
 import requests
 
-QUERY_URL = "http://192.168.99.225:9000/query/mwh_graph/top_cases?days=%s&typ=%s"
+QUERY_URL = "http://192.168.11.191:9000/query/mwh_graph/top_cases?days=%s&typ=%s"
 PR_URL = "https://github.com/tigergraph/%s/pull/%s"
 JOB_URL = "http://192.168.11.192:8080/view/MIT WIP and Hourly Pipelines/job/%s_test/%s/"
 STR_LENGHT = 30

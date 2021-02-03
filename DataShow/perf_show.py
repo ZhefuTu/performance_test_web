@@ -167,6 +167,7 @@ def get_result_info(kind='batch_query', node='single'):
                         max_time = max(max_time, max_t)
 
     data_len = len(result_info[0])
+    result_info = result_info[-50:]
     result = []
     for i in range(data_len):
         result.append([])

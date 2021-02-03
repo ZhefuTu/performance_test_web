@@ -1,0 +1,21 @@
+The vertex type lineitem is created.
+The vertex type part is created.
+The vertex type supplier is created.
+The vertex type orders is created.
+The vertex type customer is created.
+The vertex type nation is created.
+The vertex type region is created.
+The edge type li_part is created.
+The edge type li_supp is created.
+The edge type part_supp is created.
+The edge type order_li is created.
+The edge type supp_nation is created.
+The edge type order_cust is created.
+The edge type cust_nation is created.
+The edge type nation_region is created.
+Stopping GPE GSE RESTPP
+Successfully stopped GPE GSE RESTPP in 0.007 seconds
+Starting GPE GSE RESTPP
+Successfully started GPE GSE RESTPP in 0.085 seconds
+The graph tpc_graph is created.
+Cost time: 47 s

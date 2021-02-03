@@ -48,7 +48,7 @@ PERFORMANCE_DIR="/home/graphsql/performance_test_web/perf"
 def get_module_heads():
     html_content = ""
     for module in MODULE_HEADS:
-        html_content += '<th bgcolor="#3491DB">%s</th>'%(" ".join(module.split("_")))
+        html_content += '<th class="center aligned">%s</th>'%(" ".join(module.split("_")))
     return html_content
 
 def get_module_name(file_name, file_path):
@@ -455,7 +455,8 @@ def get_release_result():
                 html_tag_tr[0] = ind.split("+")[0] + " " + ind.split("+")[1]
             else:
                 # html_tag_tr[0] = ind[:16]
-                html_tag_tr[0] = '<a data-toggle="tooltip" data-html="true" data-placement="right" title="%s">%s</a>'%(module_info['gadmin_info'],ind[:16])
+                #html_tag_tr[0] = '<a data-toggle="tooltip" data-html="true" data-placement="right" title="%s">%s</a>'%(module_info['gadmin_info'],ind[:16])
+                html_tag_tr[0] = module_info['gadmin_info']
             for i in range(len(MODULE_HEADS)):
                 mod = MODULE_HEADS[i]
                 if mod in module_info:
@@ -464,22 +465,24 @@ def get_release_result():
                         html_ver_tr[i+1] = module_info[mod]
             html_tag_tbody.append(html_tag_tr)
 
-        html_content += "<tr>"
+        html_content += '<tr class="active">'
         for i in range(len(html_ver_tr)):
             td = html_ver_tr[i]
             if i == 0:
-                html_content += '<td bgcolor="#CDCD00">%s</td>'%get_version_button(td)
+                html_content += '<td>%s</td>'%get_version_button(td)
             else:
-                html_content += '<td bgcolor="#CDCD00">%s</td>'%get_td_html(td)
+                html_content += '<td>%s</td>'%get_td_html(td)
         html_content += "</tr>"
 
         html_content += '<tbody class="childrens">'
         for info in html_tag_tbody:
             html_content += "<tr>"
             for td in info:
-                if str(td).startswith("<a"):
+                if str(td).startswith("<div"):
                     html_content += "<td>%s</td>"%td
                 else:
+                    if not td:
+                        td = "" 
                     html_content += "<td>%s</td>"%get_td_html(td)
             html_content += "</tr>"
         html_content += '</tbody>'
@@ -502,7 +505,7 @@ def get_td_html(td):
 def get_version_button(td):
     return '<a onclick="click_version(this)">%s</a>' % td
 
-def get_version_checksum_and_time(version_path):
+def get_version_checksum_and_time2(version_path):
     f = open(version_path, 'r')
     info = f.readlines()
     info = info[0].replace("\n", "")
@@ -531,6 +534,53 @@ def get_version_checksum_and_time(version_path):
             for j in range(6):
                 gadmin_info += info[i*6+j] + "&nbsp;"*(max_len[j] - len(info[i*6+j])) + "&nbsp;"*2
             gadmin_info += "<br>"
+        return check_sum, lastest_time, gadmin_info
+    else:
+        return "", "", ""
+
+def get_version_checksum_and_time(version_path):
+    f = open(version_path, 'r')
+    info = f.readlines()
+    info = info[0].replace("\n", "")
+    if "TigerGraph version" not in info:
+        return None, None, None
+    info = info.split(" ")
+    if info[2] >= "3.0.0":
+        version = info[2]
+        info = info[3:]
+        count = len(info)/6
+        commit_str=""
+        lastest_time = "1900-01-01 00:00:00"
+        gadmin_info = '<div class="ui button">%s</div><div class="ui flowing popup right center transition hidden"><div class="ui four column divided center aligned grid">'
+	column_list = ['<div class="column">'] * 4
+        max_len = [0]*count
+        for i in range(count):
+            for j in range(6):
+                if len(info[i*6+j]) > max_len[j]:
+                    max_len[j] = len(info[i*6+j])
+            commit_str += info[i*6+2]
+            temp_time = info[i*6+3] + " " + info[i*6+4]
+            if temp_time > lastest_time:
+                lastest_time = temp_time
+        m = hashlib.md5()
+        m.update(commit_str)
+        check_sum = m.hexdigest()
+        gadmin_info = gadmin_info % (version + "_" + check_sum[:10])
+        for i in range(count):
+            for j in range(6):
+                if j <= 2:
+                    column_list[j] += '<p>%s</p>'%info[i*6+j]
+                elif j == 3:
+                    column_list[3] += '<p>' + info[i*6+j] + ' '
+                elif j == 4:
+                    column_list[3] += info[i*6+j] + ' '
+                elif j == 5:
+                    column_list[3] += info[i*6+j] + '</p>'
+                #gadmin_info += info[i*6+j] + "&nbsp;"*(max_len[j] - len(info[i*6+j])) + "&nbsp;"*2
+        for i in range(4):
+            column_list[i] += "</div>"
+        gadmin_info += "".join(column_list) + "</div></div>"
+            #gadmin_info += "<br>"
         return check_sum, lastest_time, gadmin_info
     else:
         return "", "", ""
