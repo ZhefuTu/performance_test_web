@@ -19,8 +19,18 @@ def compare_time(x, y):
 			return -1
 	return 0
 
+def check_pr_exclude(case_name, pr_name):
+	if case_name == "cqrs":
+		if pr_name == "cqrs":
+			return False
+	elif case_name == "rest":
+		if pr_name == "realtime":
+			return False
+	elif case_name == "blackbox":
+		return False
+	return True
 
-def get_top_cases_html(days, typ):
+def get_top_cases_html(days, typ, exclude):
 	res = requests.get(QUERY_URL%(days, typ))
     	res = res.json()
 	res = res.get("results")[0].get("@@result", [])
@@ -28,11 +38,13 @@ def get_top_cases_html(days, typ):
     	if res:
 		active = 0
         	for info in res:
+			html_block = ""
 			if active%2 == 0:
-				html += '<tr class="active">'
+				html_block += '<tr class="active">'
 			else:
-				html += '<tr>'
-	        	html += '<td rowspan="ROWS" style="vertical-align:middle;">%s</td><td rowspan="ROWS" style="vertical-align:middle;">%s</td><td rowspan="ROWS" style="vertical-align:middle;">%s</td>'%(info['ctype'], info['case_name'], info['total_num'])
+				html_block += '<tr>'
+			job_count = info['total_num']
+	        	html_block += '<td rowspan="ROWS" style="vertical-align:middle;">%s</td><td rowspan="ROWS" style="vertical-align:middle;">%s</td><td rowspan="ROWS" style="vertical-align:middle;">JOB_COUNT</td>'%(info['ctype'], info['case_name'])
 		        jobs = info['jobs'].split()
 		        #html += '<td></td><td></td><td></td></tr>'
 	        	temp = {}
@@ -51,31 +63,46 @@ def get_top_cases_html(days, typ):
 	        			jobs_str += '<a href="%s" target="_blank">%s</a> '%(jurl, jobs[0])
 	        		pr_info_list.append([k, temp[k][0][1], jobs_str])
 		       	pr_info_list.sort(cmp=compare_time, reverse=True)
-                        html = html.replace("ROWS", str(len(pr_info_list)))
+			row_count = 0
                         ind = 0
 		       	for pr_info in pr_info_list:
+                                valid = True
+                                html_temp = ""
 	       			dtime = pr_info[1].split("-")
 				for i in range(6):
 					if i !=0 and len(dtime[i]) == 1:
 						dtime[i] = "0%s"%dtime[i]
                                 if ind != 0:
 					if active%2 == 0:
-						html += '<tr class="active">'
+						html_temp += '<tr class="active">'
 					else:
-						html += "<tr>"
+						html_temp += "<tr>"
 				ind += 1
-		       		html += "<td nowrap>%s-%s-%s %s:%s:%s</td>" %(dtime[0],dtime[1],dtime[2],dtime[3],dtime[4],dtime[5])
+		       		html_temp += '<td nowrap class="extra">%s-%s-%s %s:%s:%s</td>' %(dtime[0],dtime[1],dtime[2],dtime[3],dtime[4],dtime[5])
 		       		prs = pr_info[0].split(";")
 				str_len = 0
-				html += "<td>"
+				html_temp += '<td class="extra">'
 		       		for pr in prs:
 			            	if "#" not in pr:
 		        	    		continue
 					str_len += len(pr)
+                                        if exclude == "true":
+                                        	valid = check_pr_exclude(info["case_name"], pr.split("#")[0])
+                                        if not valid:
+						job_count -= len(pr_info[2].split('> <'))
+						ind -= 1
+						break
 			            	purl = PR_URL % (pr.split("#")[0], pr.split("#")[1])
-	        		        html += '<a href="%s" target="_blank">%s</a> '%(purl, pr)
-				html += "</td>"
-	             	        html += "<td>" + pr_info[2] + "</td></tr>"
+	        		        html_temp += '<a href="%s" target="_blank">%s</a> '%(purl, pr)
+				html_temp += "</td>"
+	             	        html_temp += '<td class="extra">' + pr_info[2] + "</td></tr>"
+				if valid:
+					html_block += html_temp
+					row_count += 1
 			active += 1
+			if row_count != 0:
+	                        html_block = html_block.replace("ROWS", str(row_count))
+				html_block = html_block.replace("JOB_COUNT", str(job_count))
+				html += html_block
 		        #html += "</td></table></tr>"
 	return html

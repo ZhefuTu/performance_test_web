@@ -80,9 +80,10 @@ def show_report(request):
 def get_top_cases(request):
     days = request.GET.get("days", 30)
     typ = request.GET.get("type", "failed")
-
+    exclude = request.GET.get("exclude", "false")
     context = {}
     context['days'] = days
     context['type'] = typ
-    context['content'] = mark_safe(get_top_cases_html(days, typ))
+    context['exclude'] = exclude
+    context['content'] = mark_safe(get_top_cases_html(days, typ, exclude))
     return render(request, 'DataShow/top_cases.html', context)

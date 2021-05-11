@@ -51,7 +51,7 @@ def read_file(path, max_time, kind):
                     failed_flag = True
                     break
                 for i in result:
-                    if i > 850:
+                    if i > 1000:
                         failed_flag = True
                         break
         elif kind == 'normal_load':
