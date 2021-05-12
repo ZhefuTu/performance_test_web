@@ -13,6 +13,7 @@
 
     <title>performance_test_show</title>
 
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/semantic.min.css">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <!-- Bootstrap theme -->
@@ -37,6 +38,7 @@
     <!-- <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script> -->
     <script src="/static/js/echarts.js" type="text/javascript" ></script>
     <script src="/static/js/perf.js" type="text/javascript" ></script>
+    <script src="/static/js/semantic.min.js"></script>
 
 
     <style>
@@ -48,12 +50,12 @@
 
     <script type="text/javascript">
         $(document).ready(function(){
-            draw_line_pic("batch_query", "single");
-            draw_line_pic("batch_query", "cluster");
-            draw_line_pic("normal_load", "single");
-            draw_line_pic("normal_load", "cluster");
-            draw_line_pic("hub_load", "single");
-            draw_line_pic("hub_load", "cluster");
+            draw_line_pic("batch_query", "single", "all", "all", "all", "all");
+            draw_line_pic("batch_query", "cluster", "all", "all", "all", "all");
+            draw_line_pic("normal_load", "single", "all", "all", "all", "all");
+            draw_line_pic("normal_load", "cluster", "all", "all", "all", "all");
+            draw_line_pic("hub_load", "single", "all", "all", "all", "all");
+            draw_line_pic("hub_load", "cluster", "all", "all", "all", "all");
         });
         function toggle_table(index, button){
             // $("#table_"+index).toggle();
@@ -66,6 +68,14 @@
                 $("#table_"+index).css({"display":"none"});
             };
             
+        };
+
+        function draw_new(kind, node){
+            var cpu = $("#"+kind+"_"+node+"_cpu").val();
+            var mem = $("#"+kind+"_"+node+"_mem").val();
+            var platform = $("#"+kind+"_"+node+"_platform").val();
+            var count = $("#"+kind+"_"+node+"_count").val();
+            draw_line_pic(kind, node, cpu, mem, platform, count);
         };
     </script>
 </head>
@@ -88,6 +98,7 @@
                 <div id="batch_query_single" class="figure"></div>
                 <br>
                 <button class="btn btn-default" onclick="toggle_table(1, this);">Show Table</button>
+                <div class="ui action right labeled input" id="batch_query_single_options"></div>
                 </center>
             </div>
             <div class="one_fig">
@@ -96,6 +107,7 @@
                 <div id="batch_query_cluster" class="figure"></div>
                 <br>
                 <button class="btn btn-default" onclick="toggle_table(2, this);">Show Table</button>
+                <div class="ui action right labeled input" id="batch_query_cluster_options"></div>
                 </center>
             </div>
         </div>
@@ -110,6 +122,8 @@
             </center>
         </div>
         
+        
+        
         <!-- normal load -->
 
         <div class="two_fig">
@@ -119,6 +133,7 @@
                 <div id="normal_load_single" class="figure"></div>
                 <br>
                 <button class="btn btn-default" onclick="toggle_table(3, this);">Show Table</button>
+                <div class="ui action right labeled input" id="normal_load_single_options"></div>
                 </center>
             </div>
             <div class="one_fig">
@@ -127,6 +142,7 @@
                 <div id="normal_load_cluster" class="figure"></div>
                 <br>
                 <button class="btn btn-default" onclick="toggle_table(4, this);">Show Table</button>
+                <div class="ui action right labeled input" id="normal_load_cluster_options"></div>
                 </center>
             </div>
         </div>
@@ -149,6 +165,7 @@
                 <div id="hub_load_single" class="figure"></div>
                 <br>
                 <button class="btn btn-default" onclick="toggle_table(5, this);">Show Table</button>
+                <div class="ui action right labeled input" id="hub_load_single_options"></div>
                 </center>
             </div>
             <div class="one_fig">
@@ -157,6 +174,7 @@
                 <div id="hub_load_cluster" class="figure"></div>
                 <br>
                 <button class="btn btn-default" onclick="toggle_table(6, this);">Show Table</button>
+                <div class="ui action right labeled input" id="hub_load_cluster_options"></div>
                 </center>
             </div>
         </div>

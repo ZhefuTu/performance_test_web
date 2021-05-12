@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 from django.utils.safestring import mark_safe
 from django.http import HttpResponse
-from perf_show import get_result_info, get_table_html
+from perf_show import get_result_info, get_table_html, get_options_html
 from release_test_result import get_release_result, get_module_heads
 import json
 import os
@@ -31,10 +31,15 @@ def get_perf_data(request):
     if request.method == 'GET':
         node = request.GET.get('node')
         kind = request.GET.get('kind')
+        cpu = str(request.GET.get('cpu', 'all'))
+        mem = str(request.GET.get('mem', 'all'))
+        platform = request.GET.get('platform', 'all')
+        count = str(request.GET.get('count', 'all'))
+        args = {'cpu':cpu, 'mem':mem, 'platform':platform, 'count':count}
         result = {}
         result['x_name'] = 'version'
 
-        data_info, max_time = get_result_info(kind, node)
+        data_info, max_time, cpu_options, mem_options, platform_options, count_options = get_result_info(kind, node, args)
         result['xa'] = data_info[0]
         result['ya'] = data_info[1]
 
@@ -48,6 +53,7 @@ def get_perf_data(request):
                     j + 2][i], 'date': data_info[0][i]})
         result['max_time'] = max_time
         result["table_html"] = get_table_html(data_info, kind, node)
+        result['option_html'] = get_options_html(kind, node, cpu_options, mem_options, platform_options, count_options, cpu, mem, platform, count)
         return HttpResponse(json.dumps(result, ensure_ascii=False), content_type="application/json,charset=utf-8")
 
 def show_release_test(request):

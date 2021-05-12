@@ -1,8 +1,8 @@
-function draw_line_pic(kind, node){
+function draw_line_pic(kind, node, cpu, mem, platform, count){
     $.ajax({
         type: "GET",
         url: "/datashow/perf_data",
-        data: {node: node, kind: kind},
+        data: {node: node, kind: kind, cpu: cpu, mem: mem, platform: platform, count: count},
         dataType: "json",
         success: function(result){
             var ItemLine = function(){
@@ -58,8 +58,11 @@ function draw_line_pic(kind, node){
             };
 
             var myTable = document.getElementById(kind+"_"+node+"_table");
-            console.log(myTable)
             myTable.innerHTML = result.table_html;
+
+            var myOptions = document.getElementById(kind+"_"+node+"_options");
+            console.log(myOptions)
+            myOptions.innerHTML = result.option_html;
 
             var myChart = echarts.init(document.getElementById(kind +"_"+node));
             var option = {
@@ -170,7 +173,7 @@ function draw_line_pic(kind, node){
             myChart.setOption(option);
         },
         error: function(str){
-            alert("connect error");
+            alert("No data found!");
         }
     });
 }

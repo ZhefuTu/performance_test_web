@@ -4,9 +4,6 @@ import os
 import re
 import pprint
 
-TEST_DATA_PATH = "./perf"
-
-
 def convert_time(t):
     h = 0
     if 'h' in t:
@@ -110,19 +107,56 @@ def time_format(file_path):
     return '%s %s' % (t[0], ':'.join(t[1].split('-')[:2]))
 
 
-def get_result_info(kind='batch_query', node='single'):
+def get_machine_info(path):
+    result = {}
+    if "machine_info" in os.listdir(path):
+        f = open(os.path.join(path,"machine_info"), 'r')
+        lines = f.readlines()
+        f.close()
+        for line in lines:
+            line = line.replace("\n", "")
+            if line.startswith("OS:"):
+                result['os'] = line.split()[1]
+            elif line.startswith("Memory:"):
+                result['memory'] = str(int(line.split()[1])/(1024*1024))
+            elif line.startswith("CPU(s):"):
+                result['vcpu'] = line.split()[1]
+            elif line.startswith("Platform:"):
+                result['platform'] = line.split()[1]
+            elif line.startswith("Count:"):
+                result['count'] = line.split()[1]
+    return result
+
+
+def get_result_info(kind='batch_query', node='single', args={}):
     result_info = []
     max_time = 0
 
-    cur_path = os.path.join(TEST_DATA_PATH, node)
+    cur_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+'/perf', node)
     dirs = os.listdir(cur_path)
     dirs.sort(key=dir_sort_by_time)
+    cpu_options = ['all']
+    mem_options = ['all']
+    platform_options = ['all']
+    count_options = ['all']
     for dir in dirs:
         dir_path = os.path.join(cur_path, dir)
-        if os.path.isdir(dir_path): 
-            # version = '_'.join(dir.split('release')[-1].split('_')[1:-1])
-            # version = '_'.join(dir.split('_')[1:-1])
-            # version = re.search("\d\.\d\.\d", dir)
+        if os.path.isdir(dir_path):
+            machine_info = get_machine_info(dir_path)
+            if machine_info.get('vcpu', '') and machine_info.get('vcpu', '') not in cpu_options:
+                cpu_options.append(machine_info.get('vcpu', ''))
+            if machine_info.get('memory', '') and machine_info.get('memory', '') not in mem_options:
+                mem_options.append(machine_info.get('memory', ''))
+            if machine_info.get('platform', '') and machine_info.get('platform', '') not in platform_options:
+                platform_options.append(machine_info.get('platform', ''))
+            if machine_info.get('count', '') and machine_info.get('count', '') not in count_options:
+                count_options.append(machine_info.get('count', ''))
+            select_cpu = args['cpu'] == 'all' or args['cpu'] == machine_info.get('vcpu', '')
+            select_mem = args['mem'] == 'all' or args['mem'] == machine_info.get('memory', '')
+            select_platform = args['platform'] == 'all' or args['platform'] == machine_info.get('platform', '')
+            select_count = args['count'] == 'all' or args['count'] == machine_info.get('count', '')
+            if not (select_cpu and select_mem and select_platform and select_count):
+                continue
 
             version = re.match('.*(\d\.\d\.\d).*', dir)
             if not version or version.group(1) <= '2.2.0':
@@ -165,17 +199,47 @@ def get_result_info(kind='batch_query', node='single'):
                         temp.extend(query_timelist)
                         result_info.append(temp)
                         max_time = max(max_time, max_t)
-
-    data_len = len(result_info[0])
-    result_info = result_info[-50:]
     result = []
-    for i in range(data_len):
-        result.append([])
-    for info in result_info:
-        for i in range(len(result)):
-            result[i].append(info[i])
+    if result_info:
+        data_len = len(result_info[0])
+        result_info = result_info[-50:]
+        for i in range(data_len):
+            result.append([])
+        for info in result_info:
+            for i in range(len(result)):
+                result[i].append(info[i])
     max_time = ((int(max_time) / 10) + 1) * 10
-    return result, max_time
+    return result, max_time, cpu_options, mem_options, platform_options, count_options
+
+def get_options_html(kind, node, cpu_options, mem_options, platform_options, count_options, cpu, mem, platform, count):
+    html = '<div class="ui basic label">cpu</div><select class="ui compact selection dropdown" id="%s_%s_cpu">'%(kind, node)
+    for opt in cpu_options:
+        if opt == cpu:
+            html += '<option value="%s" selected>%s</option>'%(opt, opt)
+        else:
+            html += '<option value="%s">%s</option>'%(opt, opt)
+    html += '</select>'
+    html += '<div class="ui basic label">memory</div><select class="ui compact selection dropdown" id="%s_%s_mem">'%(kind, node)
+    for opt in mem_options:
+        if opt == mem:
+            html += '<option value="%s" selected>%s</option>'%(opt, opt)
+        else:
+            html += '<option value="%s">%s</option>'%(opt, opt)
+    html += '</select>'
+    html += '<div class="ui basic label">platform</div><select class="ui compact selection dropdown" id="%s_%s_platform">'%(kind, node)
+    for opt in platform_options:
+        if opt == platform:
+            html += '<option value="%s" selected>%s</option>'%(opt, opt)
+        else:
+            html += '<option value="%s">%s</option>'%(opt, opt)
+    html += '</select>'
+    html += '<div class="ui basic label">count</div><select class="ui compact selection dropdown" id="%s_%s_count">'%(kind, node)
+    for opt in count_options:
+        html += '<option value="%s">%s</option>'%(opt, opt)
+    html += '</select>'
+    html += '<button class="ui primary button" onclick="draw_new(\'%s\',\'%s\')">Search</button>' %(kind, node)
+    return html
+
 
 def get_table_html(result, kind, node):
     html = ""
@@ -217,3 +281,8 @@ def get_table_html(result, kind, node):
             html += "<td>%s</td>"%info
     html += "</tr></table>"
     return html
+
+
+if __name__ == "__main__":
+    result = get_result_info('batch_query','single',{'cpu':'8','mem':'all','platform':'all','count':'all'})
+    print result
