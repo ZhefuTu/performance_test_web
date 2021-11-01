@@ -1,6 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0038)http://v3.bootcss.com/examples/theme/# -->
 <html lang="zh-CN">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
@@ -15,9 +17,11 @@
 
     <link rel="stylesheet" type="text/css" href="/static/assets/css/semantic.min.css">
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <!-- Bootstrap theme -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+        integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
     <!-- Custom styles for this template -->
     <!-- <link href="http://v3.bootcss.com/examples/theme/theme.css" rel="stylesheet"> -->
 
@@ -27,55 +31,107 @@
     <script src="/static/js/jquery.js"></script>
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
 
     <!-- <script language="javascript" type="text/javascript" src="/htdocs/js/jquery-1.8.3.min.js"></script> -->
-    
+
     <!-- <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script src="//code.jquery.com/jquery-1.9.1.js"></script>
     <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script> -->
     <!-- <script type="text/javascript" language="javascript" src="/htdocs/js/bootstrap.min.js"></script> -->
     <!-- <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script> -->
-    <script src="/static/js/echarts.js" type="text/javascript" ></script>
-    <script src="/static/js/perf.js" type="text/javascript" ></script>
+    <script src="/static/js/echarts.js" type="text/javascript"></script>
+    <script src="/static/js/perf.js" type="text/javascript"></script>
     <script src="/static/js/semantic.min.js"></script>
 
 
     <style>
-        .two_fig {width:100%;height:600px;display: flex;justify-content: center;}
-        .one_fig {float:left;width:45%;height:500px;}
-        .figure {float:left;width:95%;height:500px;left:25px;}
-        .data_table{overflow:scroll;width:90%;}
+        .two_fig {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .one_fig {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+        }
+
+        .figure {
+            width: 95%;
+            height: 500px;
+            left: 25px;
+        }
+
+        .data_table {
+            overflow: scroll;
+            width: 90%;
+        }
+
+        .ui.fluid.dropdown.version {
+            width: 180px;
+        }
+
+        .ui.fluid.dropdown.platform {
+            width: 100px;
+        }
+
+        .ui.fluid.dropdown.query {
+            width: 180px;
+        }
     </style>
 
     <script type="text/javascript">
-        $(document).ready(function(){
-            draw_line_pic("batch_query", "single", "all", "all", "all", "all");
-            draw_line_pic("batch_query", "cluster", "all", "all", "all", "all");
-            draw_line_pic("normal_load", "single", "all", "all", "all", "all");
-            draw_line_pic("normal_load", "cluster", "all", "all", "all", "all");
-            draw_line_pic("hub_load", "single", "all", "all", "all", "all");
-            draw_line_pic("hub_load", "cluster", "all", "all", "all", "all");
+        $(document).ready(function () {
+            draw_line_pic("batch_query", "single", ["GCP"], "all", "all", ["bi_1"]);
+            draw_line_pic("batch_query", "cluster", ["GCP"], "all", "all", ["bi_1"]);
+            draw_line_pic("normal_load", "single", ["GCP"], "all", "all", ["bi_1"]);
+            draw_line_pic("normal_load", "cluster", ["GCP"], "all", "all", ["bi_1"]);
+            draw_line_pic("hub_load", "single", ["GCP"], "all", "all", ["bi_1"]);
+            draw_line_pic("hub_load", "cluster", ["GCP"], "all", "all", ["bi_1"]);
+            draw_line_pic("ldbc_queries", "single", ["GCP"], "all", "all", ["bi_1","bi_19", "bi_22"]);
+            draw_line_pic("ldbc_queries", "cluster", ["GCP"], "all", "all", ["bi_1", "bi_19", "bi_22"]);
         });
-        function toggle_table(index, button){
-            // $("#table_"+index).toggle();
+
+        function toggle_table(index, button) {
             var text = $(button).text();
-            if(text=="Show Table"){
+            if (text == "Show Table") {
                 $(button).text("Hide Table");
-                $("#table_"+index).css({"display":"block"});
-            }else{
+                $("#table_" + index).css({ "display": "block" });
+            } else {
                 $(button).text("Show Table");
-                $("#table_"+index).css({"display":"none"});
+                $("#table_" + index).css({ "display": "none" });
             };
-            
         };
 
-        function draw_new(kind, node){
-            var cpu = $("#"+kind+"_"+node+"_cpu").val();
-            var mem = $("#"+kind+"_"+node+"_mem").val();
-            var platform = $("#"+kind+"_"+node+"_platform").val();
-            var count = $("#"+kind+"_"+node+"_count").val();
-            draw_line_pic(kind, node, cpu, mem, platform, count);
+        function draw_new(kind, node) {
+            var platform = $("#" + kind + "_" + node + "_platform").val();
+            var version = $("#" + kind + "_" + node + "_version").val();
+            var query = $("#" + kind + "_" + node + "_query").val();
+            // var query = "bi_1";
+            if (platform == "") {
+                platform = "all";
+            };
+            if (version == "") {
+                version = "all";
+            };
+            if (query == "") {
+                query = "all";
+            };
+            // alert(query);
+            draw_line_pic(kind, node, platform, version, "pic", query);
+        };
+
+        function clear_options(kind, node) {
+            $("#" + kind + "_" + node + "_platform").dropdown('clear');
+            $("#" + kind + "_" + node + "_version").dropdown('clear');
+            $("#" + kind + "_" + node + "_query").dropdown('clear');
+            draw_line_pic(kind, node, "all", "all", "all", "bi_1");
         };
     </script>
 </head>
@@ -87,108 +143,123 @@
                             background-attachment:fixed;
                             background-repeat:no-repeat;
                             ">
-    <div>
-        <center>
-        <!-- batch query -->
-        <div class="two_fig">
-
-            <div class="one_fig">
-                <center>
-                <h2> Query in Single Mode </h2>
-                <div id="batch_query_single" class="figure"></div>
-                <br>
-                <button class="btn btn-default" onclick="toggle_table(1, this);">Show Table</button>
+    <!-- batch query -->
+    <div class="two_fig">
+        <div class="one_fig">
+            <h2> Query in Single Mode </h2>
+            <div id="batch_query_single" class="figure"></div>
+            <div style="display: flex;align-items: center;font-size: 12px;">
+                <!-- <button class="btn btn-default" onclick="toggle_table(1, this);">Show Table</button>
+                &nbsp;&nbsp;&nbsp; -->
                 <div class="ui action right labeled input" id="batch_query_single_options"></div>
-                </center>
             </div>
-            <div class="one_fig">
-                <center>
-                <h2> Query in Cluster Mode </h2>
-                <div id="batch_query_cluster" class="figure"></div>
-                <br>
-                <button class="btn btn-default" onclick="toggle_table(2, this);">Show Table</button>
+        </div>
+
+        <div class="one_fig">
+            <h2> Query in Cluster Mode </h2>
+            <div id="batch_query_cluster" class="figure"></div>
+            <div style="display: flex;align-items: center;font-size: 12px;">
+                <!-- <button class="btn btn-default" onclick="toggle_table(2, this);">Show Table</button>
+                &nbsp;&nbsp;&nbsp; -->
                 <div class="ui action right labeled input" id="batch_query_cluster_options"></div>
-                </center>
             </div>
         </div>
-        <div id="table_1" style="display: none">
-            <center>
-            <div id="batch_query_single_table" class="data_table"></div>
-            </center>
-        </div>
-        <div id="table_2" style="display: none">
-            <center>
-            <div id="batch_query_cluster_table" class="data_table"></div>
-            </center>
-        </div>
-        
-        
-        
-        <!-- normal load -->
-
-        <div class="two_fig">
-            <div class="one_fig">
-                <center>
-                <h2> Tpch Load in Single Mode </h2>
-                <div id="normal_load_single" class="figure"></div>
-                <br>
-                <button class="btn btn-default" onclick="toggle_table(3, this);">Show Table</button>
-                <div class="ui action right labeled input" id="normal_load_single_options"></div>
-                </center>
-            </div>
-            <div class="one_fig">
-                <center>
-                <h2> Tpch Load in Cluster Mode </h2>
-                <div id="normal_load_cluster" class="figure"></div>
-                <br>
-                <button class="btn btn-default" onclick="toggle_table(4, this);">Show Table</button>
-                <div class="ui action right labeled input" id="normal_load_cluster_options"></div>
-                </center>
-            </div>
-        </div>
-        <div id="table_3" style="display: none">
-            <center>
-            <div id="normal_load_single_table" class="data_table"></div>
-            </center>
-        </div>
-        <div id="table_4" style="display: none">
-            <center>
-            <div id="normal_load_cluster_table" class="data_table"></div>
-            </center>
-        </div>
-
-        <!-- hub load -->
-        <div class="two_fig">
-            <div class="one_fig">
-                <center>
-                <h2> Hub Load in Single Mode </h2>
-                <div id="hub_load_single" class="figure"></div>
-                <br>
-                <button class="btn btn-default" onclick="toggle_table(5, this);">Show Table</button>
-                <div class="ui action right labeled input" id="hub_load_single_options"></div>
-                </center>
-            </div>
-            <div class="one_fig">
-                <center>
-                <h2> Hub Load in Cluster Mode </h2>
-                <div id="hub_load_cluster" class="figure"></div>
-                <br>
-                <button class="btn btn-default" onclick="toggle_table(6, this);">Show Table</button>
-                <div class="ui action right labeled input" id="hub_load_cluster_options"></div>
-                </center>
-            </div>
-        </div>
-        <div id="table_5" style="display: none">
-            <center>
-            <div id="hub_load_single_table" class="data_table"></div>
-            </center>
-        </div>
-        <div id="table_6" style="display: none">
-            <center>
-            <div id="hub_load_cluster_table" class="data_table"></div>
-            </center>
-        </div>
-        </center>
     </div>
+    <div id="table_1" style="display: none">
+        <div id="batch_query_single_table" class="data_table"></div>
+    </div>
+    <div id="table_2" style="display: none">
+        <div id="batch_query_cluster_table" class="data_table"></div>
+    </div>
+    <br>
+
+    <!-- normal load -->
+    <div class="two_fig">
+        <div class="one_fig">
+            <h2> Tpch Load in Single Mode </h2>
+            <div id="normal_load_single" class="figure"></div>
+            <div style="display: flex;align-items: center;font-size: 12px;">
+                <!-- <button class="btn btn-default" onclick="toggle_table(3, this);">Show Table</button>
+                &nbsp;&nbsp;&nbsp; -->
+                <div class="ui action right labeled input" id="normal_load_single_options"></div>
+            </div>
+        </div>
+
+        <div class="one_fig">
+            <h2> Tpch Load in Cluster Mode </h2>
+            <div id="normal_load_cluster" class="figure"></div>
+            <div style="display: flex;align-items: center;font-size: 12px;">
+                <!-- <button class="btn btn-default" onclick="toggle_table(4, this);">Show Table</button>
+                &nbsp;&nbsp;&nbsp; -->
+                <div class="ui action right labeled input" id="normal_load_cluster_options"></div>
+            </div>
+        </div>
+    </div>
+    <div id="table_3" style="display: none">
+        <div id="normal_load_single_table" class="data_table"></div>
+    </div>
+    <div id="table_4" style="display: none">
+        <div id="normal_load_cluster_table" class="data_table"></div>
+    </div>
+    <br>
+
+    <!-- hub load -->
+    <div class="two_fig">
+        <div class="one_fig">
+            <h2> Hub Load in Single Mode </h2>
+            <div id="hub_load_single" class="figure"></div>
+            <div style="display: flex;align-items: center;font-size: 12px;">
+                <!-- <button class="btn btn-default" onclick="toggle_table(5, this);">Show Table</button>
+                &nbsp;&nbsp;&nbsp; -->
+                <div class="ui action right labeled input" id="hub_load_single_options"></div>
+            </div>
+        </div>
+        <div class="one_fig">
+            <h2> Hub Load in Cluster Mode </h2>
+            <div id="hub_load_cluster" class="figure"></div>
+            <div style="display: flex;align-items: center;font-size: 12px;">
+                <!-- <button class="btn btn-default" onclick="toggle_table(6, this);">Show Table</button>
+                &nbsp;&nbsp;&nbsp; -->
+                <div class="ui action right labeled input" id="hub_load_cluster_options"></div>
+            </div>
+        </div>
+    </div>
+    <div id="table_5" style="display: none">
+        <div id="hub_load_single_table" class="data_table"></div>
+    </div>
+    <div id="table_6" style="display: none">
+        <div id="hub_load_cluster_table" class="data_table"></div>
+    </div>
+    
+    <br>
+    <!-- ldbc queries -->
+    <div class="two_fig">
+        <div class="one_fig">
+            <h2> Ldbc Queries in Single Mode </h2>
+            <div id="ldbc_queries_single" class="figure"></div>
+            <div style="display: flex;align-items: center;font-size: 12px;">
+                <!-- <button class="btn btn-default" onclick="toggle_table(5, this);">Show Table</button>
+                &nbsp;&nbsp;&nbsp; -->
+                <div class="ui action right labeled input" id="ldbc_queries_single_options"></div>
+            </div>
+        </div>
+        <div class="one_fig">
+            <h2> Ldbc Queries in Cluster Mode </h2>
+            <div id="ldbc_queries_cluster" class="figure"></div>
+            <div style="display: flex;align-items: center;font-size: 12px;">
+                <!-- <button class="btn btn-default" onclick="toggle_table(6, this);">Show Table</button>
+                &nbsp;&nbsp;&nbsp; -->
+                <div class="ui action right labeled input" id="ldbc_queries_cluster_options"></div>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+    <!-- <div id="table_5" style="display: none">
+        <div id="hub_load_single_table" class="data_table"></div>
+    </div>
+    <div id="table_6" style="display: none">
+        <div id="hub_load_cluster_table" class="data_table"></div>
+    </div> -->
 </body>
+
 </html>

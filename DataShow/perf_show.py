@@ -48,7 +48,7 @@ def read_file(path, max_time, kind):
                     failed_flag = True
                     break
                 for i in result:
-                    if i > 1000:
+                    if i > 1200:
                         failed_flag = True
                         break
         elif kind == 'normal_load':
@@ -84,6 +84,18 @@ def read_file(path, max_time, kind):
             except:
                 failed_flag = True
                 break
+        elif kind == 'ldbc_queries':
+            try:
+                if "Memory usage Average" in line:
+                    pass
+                elif "Average" in line:
+                    cost = float(line.split()[2])
+                    max_t = max(max_t, cost)
+                    result.append(cost)
+                    break
+            except:
+                failed_flag = True
+                break
         index += 1
     if failed_flag:
         return [], 0
@@ -108,23 +120,27 @@ def time_format(file_path):
 
 
 def get_machine_info(path):
-    result = {}
+    result = {"platform":"no-record"}
     if "machine_info" in os.listdir(path):
         f = open(os.path.join(path,"machine_info"), 'r')
         lines = f.readlines()
         f.close()
         for line in lines:
             line = line.replace("\n", "")
-            if line.startswith("OS:"):
-                result['os'] = line.split()[1]
-            elif line.startswith("Memory:"):
-                result['memory'] = str(int(line.split()[1])/(1024*1024))
-            elif line.startswith("CPU(s):"):
-                result['vcpu'] = line.split()[1]
-            elif line.startswith("Platform:"):
-                result['platform'] = line.split()[1]
-            elif line.startswith("Count:"):
-                result['count'] = line.split()[1]
+            # if line.startswith("OS:"):
+            #     result['os'] = line.split()[1]
+            # elif line.startswith("Memory:"):
+            #     result['memory'] = str(int(line.split()[1])/(1024*1024))
+            # elif line.startswith("CPU(s):"):
+            #     result['vcpu'] = line.split()[1]
+            if line.startswith("Platform:"):
+                temp = line.split()
+                if len(temp) > 1:
+                    result['platform'] = temp[1]    
+            # elif line.startswith("Count:"):
+            #     temp = line.split()
+            #     if len(temp) > 1:
+            #         result['count'] = line.split()[1]
     return result
 
 
@@ -135,33 +151,32 @@ def get_result_info(kind='batch_query', node='single', args={}):
     cur_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+'/perf', node)
     dirs = os.listdir(cur_path)
     dirs.sort(key=dir_sort_by_time)
-    cpu_options = ['all']
-    mem_options = ['all']
-    platform_options = ['all']
-    count_options = ['all']
+    platform_options = []
+    version_options = []
+    query_options = []
+    version_count = {}
     for dir in dirs:
         dir_path = os.path.join(cur_path, dir)
-        if os.path.isdir(dir_path):
-            machine_info = get_machine_info(dir_path)
-            if machine_info.get('vcpu', '') and machine_info.get('vcpu', '') not in cpu_options:
-                cpu_options.append(machine_info.get('vcpu', ''))
-            if machine_info.get('memory', '') and machine_info.get('memory', '') not in mem_options:
-                mem_options.append(machine_info.get('memory', ''))
-            if machine_info.get('platform', '') and machine_info.get('platform', '') not in platform_options:
-                platform_options.append(machine_info.get('platform', ''))
-            if machine_info.get('count', '') and machine_info.get('count', '') not in count_options:
-                count_options.append(machine_info.get('count', ''))
-            select_cpu = args['cpu'] == 'all' or args['cpu'] == machine_info.get('vcpu', '')
-            select_mem = args['mem'] == 'all' or args['mem'] == machine_info.get('memory', '')
-            select_platform = args['platform'] == 'all' or args['platform'] == machine_info.get('platform', '')
-            select_count = args['count'] == 'all' or args['count'] == machine_info.get('count', '')
-            if not (select_cpu and select_mem and select_platform and select_count):
-                continue
-
+        if os.path.isdir(dir_path):          
             version = re.match('.*(\d\.\d\.\d).*', dir)
-            if not version or version.group(1) <= '2.2.0':
+            if not version or version.group(1) <= '2.5.0':
                 continue
             version = version.group(1)
+            if version not in version_options:
+                version_options.append(version)
+
+            machine_info = get_machine_info(dir_path)
+            if machine_info.get('platform', '') not in platform_options:
+                platform_options.append(machine_info.get('platform', ''))
+
+            select_platform = machine_info.get('platform', '') in args['platform'] or args['platform'] == "all"
+            if not (version in args['version'] or args['version'] == "all"):
+                continue
+            if not select_platform:
+                continue
+
+            if args['platform'] == 'all' and args['version'] == 'all' and version_count.get(version, 0) >= 5:
+                continue
             files = os.listdir(dir_path)
             if node == 'cluster' and kind == 'normal_load':
                 temp = [dir, version, 0, 0]
@@ -182,6 +197,29 @@ def get_result_info(kind='batch_query', node='single', args={}):
                             max_time = max(max_time, max_t)
                 if temp[2] != 0 and temp[3] != 0:
                     result_info.append(temp)
+                    if version not in version_count:
+                        version_count[version] = 0
+                    version_count[version] += 1
+            elif kind == 'ldbc_queries':
+                for file in files:
+                    if file.startswith(kind):
+                        # time = time_format(file)
+                        ldbc_dir = os.path.join(dir_path, file)
+                        queries = os.listdir(ldbc_dir)
+                        query_options = list(set(queries + query_options))
+                        temp = [dir, version]
+                        for qn in args.get("query_name", ["bi_1"]):
+                            file_path = os.path.join(ldbc_dir, "%s.base"%qn)
+                            query_timelist, max_t = read_file(
+                                file_path, max_time, kind)
+                            if len(query_timelist) != 1:
+                                continue
+                            temp.extend(query_timelist)
+                            max_time = max(max_time, max_t)
+                        result_info.append(temp)
+                        if version not in version_count:
+                            version_count[version] = 0
+                        version_count[version] += 1
             else:
                 for file in files:
                     if file.startswith(kind):
@@ -199,45 +237,50 @@ def get_result_info(kind='batch_query', node='single', args={}):
                         temp.extend(query_timelist)
                         result_info.append(temp)
                         max_time = max(max_time, max_t)
+                        if version not in version_count:
+                            version_count[version] = 0
+                        version_count[version] += 1
     result = []
     if result_info:
         data_len = len(result_info[0])
-        result_info = result_info[-50:]
+        # result_info = result_info[-50:]
         for i in range(data_len):
             result.append([])
         for info in result_info:
             for i in range(len(result)):
                 result[i].append(info[i])
-    max_time = ((int(max_time) / 10) + 1) * 10
-    return result, max_time, cpu_options, mem_options, platform_options, count_options
+    max_time = ((int(max_time) / 1) + 1) * 1
+    for i in range(len(query_options)):
+        query_options[i] = query_options[i].replace(".base", "")
+    query_options.sort()
+    version_options.sort(reverse=True)
+    return result, max_time, platform_options, version_options, query_options
 
-def get_options_html(kind, node, cpu_options, mem_options, platform_options, count_options, cpu, mem, platform, count):
-    html = '<div class="ui basic label">cpu</div><select class="ui compact selection dropdown" id="%s_%s_cpu">'%(kind, node)
-    for opt in cpu_options:
-        if opt == cpu:
-            html += '<option value="%s" selected>%s</option>'%(opt, opt)
+def get_options_html(kind, node, platform_options, version_options, query_options, platform, version, query_name):
+    html = ""
+    if kind == "ldbc_queries":
+        html += '<div class="ui basic label">Query</div><select class="ui fluid dropdown query" multiple="" id="%s_%s_query" onchange="draw_new(\'%s\', \'%s\')">'%(kind, node, kind, node)
+        for opt in query_options:
+            if opt in query_name:
+                html += '<option class="item" value="%s" selected>%s</option>'%(opt, opt)
+            else:
+                html += '<option class="item" value="%s">%s</option>'%(opt, opt)
+        html += '</select>'
+    html += '<div class="ui basic label">Version</div><select class="ui fluid dropdown version" multiple="" id="%s_%s_version" onchange="draw_new(\'%s\', \'%s\')">'%(kind, node, kind, node)
+    for opt in version_options:
+        if opt in version:
+            html += '<option class="item" value="%s" selected>%s</option>'%(opt, opt)
         else:
-            html += '<option value="%s">%s</option>'%(opt, opt)
+            html += '<option class="item" value="%s">%s</option>'%(opt, opt)
     html += '</select>'
-    html += '<div class="ui basic label">memory</div><select class="ui compact selection dropdown" id="%s_%s_mem">'%(kind, node)
-    for opt in mem_options:
-        if opt == mem:
-            html += '<option value="%s" selected>%s</option>'%(opt, opt)
-        else:
-            html += '<option value="%s">%s</option>'%(opt, opt)
-    html += '</select>'
-    html += '<div class="ui basic label">platform</div><select class="ui compact selection dropdown" id="%s_%s_platform">'%(kind, node)
+    html += '<div class="ui basic label">Platform</div><select class="ui fluid dropdown platform" multiple="" id="%s_%s_platform" onchange="draw_new(\'%s\', \'%s\')">'%(kind, node, kind, node)
     for opt in platform_options:
-        if opt == platform:
-            html += '<option value="%s" selected>%s</option>'%(opt, opt)
+        if opt in platform:
+            html += '<option class="item" value="%s" selected>%s</option>'%(opt, opt)
         else:
-            html += '<option value="%s">%s</option>'%(opt, opt)
+            html += '<option class="item" value="%s">%s</option>'%(opt, opt)
     html += '</select>'
-    html += '<div class="ui basic label">count</div><select class="ui compact selection dropdown" id="%s_%s_count">'%(kind, node)
-    for opt in count_options:
-        html += '<option value="%s">%s</option>'%(opt, opt)
-    html += '</select>'
-    html += '<button class="ui primary button" onclick="draw_new(\'%s\',\'%s\')">Search</button>' %(kind, node)
+    html += '<div class="ui negative button" onclick="clear_options(\'%s\', \'%s\')">Clear</div>'%(kind, node)
     return html
 
 
@@ -284,5 +327,12 @@ def get_table_html(result, kind, node):
 
 
 if __name__ == "__main__":
-    result = get_result_info('batch_query','single',{'cpu':'8','mem':'all','platform':'all','count':'all'})
-    print result
+    result1 = get_result_info('ldbc_queries','single',{'platform':'GCP','version':'all', 'query_name':["bi_1","bi_10","bi_9"]})
+
+    result2 = get_result_info('batch_query','single',{'platform':'GCP','version':'all'})
+    # temp = result[4]
+    # temp.sort()
+    import pprint
+    pp = pprint.PrettyPrinter(indent=2)
+    pp.pprint(result1[0])
+    # print result2[0][3]

@@ -31,15 +31,17 @@ def get_perf_data(request):
     if request.method == 'GET':
         node = request.GET.get('node')
         kind = request.GET.get('kind')
-        cpu = str(request.GET.get('cpu', 'all'))
-        mem = str(request.GET.get('mem', 'all'))
-        platform = request.GET.get('platform', 'all')
-        count = str(request.GET.get('count', 'all'))
-        args = {'cpu':cpu, 'mem':mem, 'platform':platform, 'count':count}
+        # cpu = str(request.GET.get('cpu', 'all'))
+        # mem = str(request.GET.get('mem', 'all'))
+        platform = [request.GET.get('platform', '')]
+        platform = request.GET.getlist('platform[]', 'all')
+        # count = str(request.GET.get('count', 'all'))
+        version = request.GET.getlist('version[]', 'all')
+        query_name = request.GET.getlist('query[]', ['bi_1'])
+        args = {'platform':platform, 'version':version, "query_name": query_name}
         result = {}
         result['x_name'] = 'version'
-
-        data_info, max_time, cpu_options, mem_options, platform_options, count_options = get_result_info(kind, node, args)
+        data_info, max_time, platform_options, version_options, query_options = get_result_info(kind, node, args)
         result['xa'] = data_info[0]
         result['ya'] = data_info[1]
 
@@ -52,8 +54,8 @@ def get_perf_data(request):
                 result['data'][j].append({'value': data_info[
                     j + 2][i], 'date': data_info[0][i]})
         result['max_time'] = max_time
-        result["table_html"] = get_table_html(data_info, kind, node)
-        result['option_html'] = get_options_html(kind, node, cpu_options, mem_options, platform_options, count_options, cpu, mem, platform, count)
+        # result["table_html"] = get_table_html(data_info, kind, node)
+        result['option_html'] = get_options_html(kind, node, platform_options, version_options, query_options, platform, version, query_name)
         return HttpResponse(json.dumps(result, ensure_ascii=False), content_type="application/json,charset=utf-8")
 
 def show_release_test(request):

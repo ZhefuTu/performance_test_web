@@ -1,8 +1,22 @@
-function draw_line_pic(kind, node, cpu, mem, platform, count){
+const color_const_list =["#C0392B", "#9B59B6", "#3498DB", "#1ABC9C", "#F7DC6F", "#D35400", "#34495E", "#17202A"];
+const chooseRandom = (arr, num = 1) => {
+   const res = [];
+   for(let i = 0; i < num; ){
+      const random = Math.floor(Math.random() * arr.length);
+      if(res.indexOf(arr[random]) !== -1){
+         continue;
+      };
+      res.push(arr[random]);
+      i++;
+   };
+   return res;
+};
+
+function draw_line_pic(kind, node, platform, version, flag, query){
     $.ajax({
         type: "GET",
         url: "/datashow/perf_data",
-        data: {node: node, kind: kind, cpu: cpu, mem: mem, platform: platform, count: count},
+        data: {node: node, kind: kind, platform: platform, version: version, query: query},
         dataType: "json",
         success: function(result){
             var ItemLine = function(){
@@ -28,6 +42,7 @@ function draw_line_pic(kind, node, cpu, mem, platform, count){
                 }
             };
             var seriesTotal = [];
+            
             if (kind=="batch_query") {
                 category_list = ['non_batch_wcc','non_batch_pgrank','batch_wcc','batch_pgrank'];
                 y_name = 'time_cost';
@@ -44,27 +59,42 @@ function draw_line_pic(kind, node, cpu, mem, platform, count){
                 category_list = ['hub_load_1'];
                 y_name = 'avg_speed';
                 color_list = ['#00EE00'];
+            }else if (kind=="ldbc_queries") {
+                category_list = query;
+                y_name = 'avg_time_cost';
+                color_list = color_const_list.slice(0,query.length);
             };
+            console.log(category_list);
 
             for (var i=0; i<category_list.length; i++) {
                 var item_line = new ItemLine();
                 item_line.name = category_list[i];
                 if (kind=="normal_load" && node=="single") {
                     item_line.data = result.data[3];
+                }else if (kind=="ldbc_queries") {
+                    item_line.data = result.data[i];
                 }else{
                     item_line.data = result.data[i];
                 };
                 seriesTotal.push(item_line);
             };
+            // console.log(seriesTotal);
+            // console.log(color_list);
 
-            var myTable = document.getElementById(kind+"_"+node+"_table");
-            myTable.innerHTML = result.table_html;
+            // var myTable = document.getElementById(kind+"_"+node+"_table");
+            // myTable.innerHTML = result.table_html;
 
-            var myOptions = document.getElementById(kind+"_"+node+"_options");
-            console.log(myOptions)
-            myOptions.innerHTML = result.option_html;
+            if (flag == "all") {
+                var myOptions = $("#" + kind+"_"+node+"_options");
+                myOptions.html(result.option_html);
+                $('.ui.fluid.dropdown')
+                    .dropdown()
+                ;
+            }
 
             var myChart = echarts.init(document.getElementById(kind +"_"+node));
+            
+            $("#" + kind +"_"+node).removeAttr('_echarts_instance_');
             var option = {
                 backgroundColor: '#FFF0F5',
 
@@ -102,25 +132,62 @@ function draw_line_pic(kind, node, cpu, mem, platform, count){
                         align: 'left'
                     },
                     formatter(params){
-                        // console.log(params);
+                        console.log(params.length);
                         var relVal = "";
+                        var per = "";
                         relVal += 'ver: <font color="yellow">'+params[0].axisValue+'</font><br>';
                         relVal += 'tag: '+params[0].data.date+'<br>';
                         if (kind=="batch_query") {
                             for (var i = 0; i < params.length; i++){
-                                relVal += params[i].seriesName + ': <font color="#00EE00">' + params[i].value + '</font> s<br>';
+                                per = (parseFloat(params[i].value) - parseFloat(seriesTotal[i].data[0].value))/parseFloat(seriesTotal[i].data[0].value)*100;
+                                if (per > 0) {
+                                    per = per.toFixed(2);
+                                    relVal += params[i].seriesName + ': <font color="#54c8ff">' + params[i].value + '</font> s (+<font color="#ff695e">' + per+ '%</font>)<br>';
+                                } else {
+                                    per = per.toFixed(2);
+                                    relVal += params[i].seriesName + ': <font color="#54c8ff">' + params[i].value + '</font> s  (<font color="#2ecc40">' + per+ '%</font>)<br>';
+                                };
                             }
                         }else if(kind=="normal_load" && node=="single") {
-                            relVal += params[0].seriesName + ': <font color="#00EE00">' + params[0].value + '</font> l/s';
+                            per = (parseFloat(params[0].value) - parseFloat(seriesTotal[0].data[0].value))/parseFloat(seriesTotal[0].data[0].value)*100;
+                            if (per > 0) {
+                                per = per.toFixed(2);
+                                relVal += params[0].seriesName + ': <font color="#54c8ff">' + params[0].value + '</font> l/s (+<font color="#2ecc40">' + per+ '%</font>)<br>';
+                            } else {
+                                per = per.toFixed(2);
+                                relVal += params[0].seriesName + ': <font color="#54c8ff">' + params[0].value + '</font> l/s  (<font color="#ff695e">' + per+ '%</font>)<br>';
+                            };
                         }else if(kind=="normal_load" && node=="cluster") {
                             for (var i = 0; i < params.length; i++){
-                                relVal += params[i].seriesName + ': <font color="#00EE00">' + params[i].value + '</font> l/s<br>';
+                                per = (parseFloat(params[i].value) - parseFloat(seriesTotal[i].data[0].value))/parseFloat(seriesTotal[i].data[0].value)*100;
+                                if (per > 0) {
+                                    per = per.toFixed(2);
+                                    relVal += params[i].seriesName + ': <font color="#54c8ff">' + params[i].value + '</font> l/s (+<font color="#2ecc40">' + per+ '%</font>)<br>';
+                                } else {
+                                    per = per.toFixed(2);
+                                    relVal += params[i].seriesName + ': <font color="#54c8ff">' + params[i].value + '</font> l/s  (<font color="#ff695e">' + per+ '%</font>)<br>';
+                                };
                             }
-                        }else if (kind="hub_load") {
-                            // for (var i = 0; i < params.length; i++){
-                            //     relVal += params[i].seriesName + ': <font color="#00EE00">' + params[i].value + '</font> kl/s<br>';
-                            // }
-                            relVal += params[0].seriesName + ': <font color="#00EE00">' + params[0].value + '</font> kl/s';
+                        }else if (kind=="hub_load") {
+                            per = (parseFloat(params[0].value) - parseFloat(seriesTotal[0].data[0].value))/parseFloat(seriesTotal[0].data[0].value)*100;
+                            if (per > 0) {
+                                per = per.toFixed(2);
+                                relVal += params[0].seriesName + ': <font color="#54c8ff">' + params[0].value + '</font> s (+<font color="#2ecc40">' + per+ '%</font>)<br>';
+                            } else {
+                                per = per.toFixed(2);
+                                relVal += params[0].seriesName + ': <font color="#54c8ff">' + params[0].value + '</font> s  (<font color="#ff695e">' + per+ '%</font>)<br>';
+                            };
+                        }else if (kind=="ldbc_queries") {
+                            for (var i = 0; i < params.length; i++){
+                                per = (parseFloat(params[i].value) - parseFloat(seriesTotal[i].data[0].value))/parseFloat(seriesTotal[i].data[0].value)*100;
+                                if (per > 0) {
+                                    per = per.toFixed(4);
+                                    relVal += params[i].seriesName + ' cost: <font color="#54c8ff">' + params[i].value + '</font> s (+<font color="#2ecc40">' + per+ '%</font>)<br>';
+                                } else {
+                                    per = per.toFixed(4);
+                                    relVal += params[i].seriesName + ' cost: <font color="#54c8ff">' + params[i].value + '</font> s  (<font color="#ff695e">' + per+ '%</font>)<br>';
+                                };
+                            }
                         }
                         return relVal
                     }
@@ -177,3 +244,6 @@ function draw_line_pic(kind, node, cpu, mem, platform, count){
         }
     });
 }
+
+
+

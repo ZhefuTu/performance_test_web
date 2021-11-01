@@ -1,85 +1,96 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0038)http://v3.bootcss.com/examples/theme/# -->
 <html lang="zh-CN">
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="/static/img/logo.jpg">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/static/img/logo.jpg">
 
-    <title>MIT/WIP regression</title>
-    <link rel="stylesheet" type="text/css" href="/static/assets/css/semantic.min.css">
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <!-- Bootstrap theme -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
-    <!-- Custom styles for this template -->
-    <!-- <link href="http://v3.bootcss.com/examples/theme/theme.css" rel="stylesheet"> -->
+  <title>MIT/WIP regression</title>
+  <link rel="stylesheet" type="text/css" href="/static/assets/css/semantic.min.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  <!-- Bootstrap theme -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+    integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <!-- <link href="http://v3.bootcss.com/examples/theme/theme.css" rel="stylesheet"> -->
 
-    <!-- <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+  <!-- <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet"> -->
-    <script src="/static/js/jquery.js"></script>
+  <script src="/static/js/jquery.js"></script>
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+    crossorigin="anonymous"></script>
 
-    <!-- <script language="javascript" type="text/javascript" src="/htdocs/js/jquery-1.8.3.min.js"></script> -->
-    
-    <!-- <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <!-- <script language="javascript" type="text/javascript" src="/htdocs/js/jquery-1.8.3.min.js"></script> -->
+
+  <!-- <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script src="//code.jquery.com/jquery-1.9.1.js"></script>
     <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script> -->
-    <!-- <script type="text/javascript" language="javascript" src="/htdocs/js/bootstrap.min.js"></script> -->
-    <!-- <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script> -->
-    <script src="/static/js/echarts.js" type="text/javascript" ></script>
-    <script src="/static/js/semantic.min.js"></script>
-    <!-- <script src="/static/js/perf.js" type="text/javascript" ></script> -->
+  <!-- <script type="text/javascript" language="javascript" src="/htdocs/js/bootstrap.min.js"></script> -->
+  <!-- <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script> -->
+  <script src="/static/js/echarts.js" type="text/javascript"></script>
+  <script src="/static/js/semantic.min.js"></script>
+  <!-- <script src="/static/js/perf.js" type="text/javascript" ></script> -->
 
 
-    <style>
-	a:hover {cursor:pointer;}
-        a {color: blue;}
-    </style>
+  <style>
+    a:hover {
+      cursor: pointer;
+    }
 
-    <script type="text/javascript">
-	$(document).ready(function(){
-		if ("{{type}}"=="failed"){
-			document.getElementById("stat")[0].selected=true;
-		} else if ("{{type}}"=="uncompleted"){
-			document.getElementById("stat")[1].selected=true;
-		} else if ("{{type}}"=="success"){
-                        document.getElementById("stat")[2].selected=true;
-                };
-		$('.ui.compact.selection.dropdown')
- 		  .dropdown();
-		$('.ui.checkbox.simple')
-		  .checkbox().checkbox({
-    		    onChecked: function() {
-                      $(".table").css({"width":"20%"});
-	              $(".extra").hide(500);
-  	            },
-		    onUnchecked: function() {
-                      $(".table").css({"width":"50%"});
-		      $(".extra").show(500);
-    		    }
-		  });
-		$('.ui.checkbox.exclude')
-                  .checkbox().checkbox({
-                    onChecked: function() {
-                      $("input[name='exclude']").val("true");
-                      $(".ui.primary.button").click();
-                    },
-                    onUnchecked: function() {
-		      $("input[name='exclude']").val("false");
-                      $(".ui.primary.button").click();
-                    }
-                  });
+    a {
+      color: blue;
+    }
+  </style>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if ("{{type}}" == "failed") {
+        document.getElementById("stat")[0].selected = true;
+      } else if ("{{type}}" == "uncompleted") {
+        document.getElementById("stat")[1].selected = true;
+      } else if ("{{type}}" == "success") {
+        document.getElementById("stat")[2].selected = true;
+      };
+      $('.ui.compact.selection.dropdown')
+        .dropdown();
+      $('.ui.checkbox.simple')
+        .checkbox().checkbox({
+          onChecked: function () {
+            $(".table").css({ "width": "20%" });
+            $(".extra").hide(500);
+          },
+          onUnchecked: function () {
+            $(".table").css({ "width": "50%" });
+            $(".extra").show(500);
+          }
         });
-    </script>
+      $('.ui.checkbox.exclude')
+        .checkbox().checkbox({
+          onChecked: function () {
+            $("input[name='exclude']").val("true");
+            $(".ui.primary.button").click();
+          },
+          onUnchecked: function () {
+            $("input[name='exclude']").val("false");
+            $(".ui.primary.button").click();
+          }
+        });
+    });
+  </script>
 </head>
 
 <body role="document" style="
@@ -89,57 +100,58 @@
                             background-attachment:fixed;
                             background-repeat:no-repeat;
                             ">
-    <div>
-	<center>
-        <form action="/datashow/top_cases" method="get">
-            <!--Days: <input type="text" name="days" value="{{days}}" />
+  <div>
+    <center>
+      <form action="/datashow/top_cases" method="get">
+        <!--Days: <input type="text" name="days" value="{{days}}" />
             Status: <select name="type" id="stat">
                 <option value="failed">failed</option>
                 <option value="uncompleted">uncompleted</option>
                 <option value="success">success</option>
             </select>
             <input type="submit" value="Search">-->
-	  <br>
-          <input name="exclude" hidden/>
-	  <div class="ui action right labeled input">
-	    <input type="text" value="{{days}}" name="days">
-	    <div class="ui basic label">days</div>
-	    <select class="ui compact selection dropdown" id="stat" name="type">
-	      <option value="failed">Failed</option>
-	      <option value="uncompleted">Uncompleted</option>
-	      <option value="success">Success</option>
-	    </select>
-	    <button class="ui primary button" type="submit">Search</button>
-	  </div>
-        </form>
-	<br>
-        <div class="ui toggle checkbox simple">
-	  <input type="checkbox">
-	  <label>Simple mode</label>
-	</div>
-	<div class="ui toggle checkbox exclude">
-          <input type="checkbox" {% ifequal exclude "true" %} checked="" {% endifequal %}>
-          <label>Exclude owner repo</label>
+        <br>
+        <input name="exclude" hidden />
+        <div class="ui action right labeled input">
+          <input type="text" value="{{days}}" name="days">
+          <div class="ui basic label">days</div>
+          <select class="ui compact selection dropdown" id="stat" name="type">
+            <option value="failed">Failed</option>
+            <option value="uncompleted">Uncompleted</option>
+            <option value="success">Success</option>
+          </select>
+          <button class="ui primary button" type="submit">Search</button>
         </div>
-        <table class="ui celled structured grey table" style="width:50%;">
-            <thead>
-                <tr>
-                    <th rowspan="2" class="center aligned">Type</th>
-                    <th rowspan="2" class="center aligned">Case</th>
-                    <th rowspan="2" class="center aligned">Count</th>
-                    <th colspan="3" class="center aligned extra">Jobs&PRs</th>
-                </tr>
-		<tr>
-		    <th class="center aligned extra">Last Time</th>
-		    <th class="center aligned extra">PRs</th>
-                    <th class="center aligned extra">Jobs</th>
-		</tr>
-            </thead>
-            <tbody>
-                {{ content }}
-            </tbody>
-        </table>
-	</center>
-    </div>
+      </form>
+      <br>
+      <div class="ui toggle checkbox simple">
+        <input type="checkbox">
+        <label>Simple mode</label>
+      </div>
+      <div class="ui toggle checkbox exclude">
+        <input type="checkbox" {% ifequal exclude "true" %} checked="" {% endifequal %}>
+        <label>Exclude owner repo</label>
+      </div>
+      <table class="ui celled structured grey table" style="width:50%;">
+        <thead>
+          <tr>
+            <th rowspan="2" class="center aligned">Type</th>
+            <th rowspan="2" class="center aligned">Case</th>
+            <th rowspan="2" class="center aligned">Count</th>
+            <th colspan="3" class="center aligned extra">Jobs&PRs</th>
+          </tr>
+          <tr>
+            <th class="center aligned extra">Last Time</th>
+            <th class="center aligned extra">PRs</th>
+            <th class="center aligned extra">Jobs</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ content }}
+        </tbody>
+      </table>
+    </center>
+  </div>
 </body>
+
 </html>
